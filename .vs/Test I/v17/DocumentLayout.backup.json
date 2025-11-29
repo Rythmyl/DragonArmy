@@ -1,0 +1,342 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GameDev2\\Test III\\Test I\\Test I\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|c:\\gamedev2\\test iii\\test i\\test i\\assets\\scripts\\dragonai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragonai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|c:\\gamedev2\\test iii\\test i\\test i\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\idamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\idamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\damage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\damage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\gunstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gunstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\buttonfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buttonfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\ipickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ipickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\gunpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gunpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\golemai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\golemai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\golemspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\golemspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\bugai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bugai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\bugspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bugspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|C:\\GameDev2\\Test III\\Test I\\Test I\\assets\\scripts\\weaponcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB28AF54-3257-D75D-DA62-D649C27DE409}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dragonAI.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\dragonAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\dragonAI.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\dragonAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\dragonAI.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAzwMEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T07:11:45.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "weaponCollider.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\weaponCollider.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\weaponCollider.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\weaponCollider.cs",
+              "RelativeToolTip": "Assets\\Scripts\\weaponCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T18:03:58.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "bugSpawner.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\bugSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\bugSpawner.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\bugSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\bugSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T19:36:40.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "bugAI.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\bugAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\bugAI.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\bugAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\bugAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T19:35:38.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "golemSpawner.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\golemSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\golemSpawner.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\golemSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\golemSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T18:22:33.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "golemAI.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\golemAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\golemAI.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\golemAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\golemAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T18:49:33.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "enemySpawner.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\enemySpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\enemySpawner.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\enemySpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\enemySpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T18:44:46.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "enemyAI.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\enemyAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\enemyAI.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\enemyAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\enemyAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:10:25.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "gamemanager.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gamemanager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\gamemanager.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gamemanager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\gamemanager.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAYwMwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T17:51:27.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "checkpoint.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\checkpoint.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\checkpoint.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\checkpoint.cs",
+              "RelativeToolTip": "Assets\\Scripts\\checkpoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T21:43:00.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "gunPickup.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gunPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\gunPickup.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gunPickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\gunPickup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:47:01.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPickup.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\IPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\IPickup.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\IPickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\IPickup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:49:54.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "playerController.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\playerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\playerController.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\playerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\playerController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAYwN4AAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T17:43:42.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "buttonFunctions.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\buttonFunctions.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\buttonFunctions.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\buttonFunctions.cs",
+              "RelativeToolTip": "Assets\\Scripts\\buttonFunctions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T17:19:50.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "gunStats.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gunStats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\gunStats.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\gunStats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\gunStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:33:18.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "damage.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\damage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\damage.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\damage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\damage.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAYwF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T01:13:42.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IDamage.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\IDamage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\IDamage.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\IDamage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\IDamage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:05:06.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "cameraController.cs",
+              "DocumentMoniker": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\cameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\cameraController.cs",
+              "ToolTip": "C:\\GameDev2\\Test III\\Test I\\Test I\\Assets\\Scripts\\cameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\cameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T19:05:47.244Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

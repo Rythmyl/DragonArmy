@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ea6f1663687310945bf1d8f2c49394e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234278
+  packageName: MobileWaterShader_EKV
+  packageVersion: 1.1.0
+  assetPath: Assets/MobileWaterShader_EKV/Scripts/WaterControl_EKV.cs
+  uploadId: 615947

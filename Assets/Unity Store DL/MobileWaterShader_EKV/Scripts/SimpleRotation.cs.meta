@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 91dd9763a5ae8ae4e9960ab2e1382ed6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234278
+  packageName: MobileWaterShader_EKV
+  packageVersion: 1.1.0
+  assetPath: Assets/MobileWaterShader_EKV/Scripts/SimpleRotation.cs
+  uploadId: 615947

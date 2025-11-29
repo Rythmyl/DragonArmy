@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531482fbbdeb6614a93507c37f93c606, type: 3}
+  m_Name: Gun - Shotgun
+  m_EditorClassIdentifier: Assembly-CSharp::gunStats
+  gunModel: {fileID: 1389226789046872936, guid: 0b240f8136ffe4f0da814d74966c0b01, type: 3}
+  shootDamage: 7
+  shootDist: 15
+  shootRate: 0.5
+  ammoCur: 8
+  ammoMax: 8
+  hitEffect: {fileID: 4117341631155570352, guid: e3414d7241e8af54ea44af20b6b93a02, type: 3}
+  shootSound:
+  - {fileID: 8300000, guid: 5220e8ae75f0d3445a30cb6cca593fc7, type: 3}
+  shootSoundVol: 0.5
