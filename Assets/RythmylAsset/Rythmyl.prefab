@@ -707,6 +707,7 @@ Transform:
   - {fileID: 6594378739562927050}
   - {fileID: 8448541817105127922}
   - {fileID: 2286906794147828903}
+  - {fileID: 2094514461132419984}
   m_Father: {fileID: 4767232068645334416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9012132052324828336
@@ -721,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de9e38790d198044988014eb8e2d94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::cameraController
-  sens: 300
+  sens: 100
   lockVertMin: -90
   lockVertMax: 90
   invertY: 0
@@ -829,6 +830,95 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &4183130033318183046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094514461132419984}
+  - component: {fileID: 7257419692238367257}
+  - component: {fileID: 3749799004548993162}
+  m_Layer: 0
+  m_Name: Staff Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094514461132419984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183130033318183046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.30038297, y: 0.6575706, z: 0.057895735, w: 0.6884905}
+  m_LocalPosition: {x: -0.26700002, y: -0.195, z: 0.64573383}
+  m_LocalScale: {x: 0.40802854, y: 0.3010773, z: 0.44887593}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3256677431073650840}
+  m_LocalEulerAnglesHint: {x: 19.723, y: 2.756, z: 30.289}
+--- !u!33 &7257419692238367257
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183130033318183046}
+  m_Mesh: {fileID: 0}
+--- !u!23 &3749799004548993162
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183130033318183046}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4212624812663755930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,8 +1390,10 @@ MonoBehaviour:
   JumpSpeed: 12
   maxJumps: 2
   gravity: 35
-  gunList: []
+  weaponList: []
+  weaponTypes: 
   gunModel: {fileID: 4212624812663755930}
+  staffModel: {fileID: 4183130033318183046}
   aud: {fileID: 5408611377893775112}
   audStep:
   - {fileID: 8300000, guid: 44f244f1614e7404dbe88fac8d075711, type: 3}
