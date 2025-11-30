@@ -4,3 +4,6 @@ Library/PackageCache/
 Library/
 Library/PackageCache/
 Library/Artifacts/
+.vs/
+Library/
+Artifacts/
