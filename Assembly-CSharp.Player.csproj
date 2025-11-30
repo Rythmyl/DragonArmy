@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\IDamage.cs" />
     <Compile Include="Assets\Unity Store DL\LB3D\CrabMonster\Scripts\Rikayon.cs" />
     <Compile Include="Assets\Scripts\enemyAI.cs" />
+    <Compile Include="Assets\Scripts\dragonSpawner.cs" />
     <Compile Include="Assets\Unity Store DL\MobileWaterShader_EKV\Scripts\DisplayControl.cs" />
     <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\golemAI.cs" />

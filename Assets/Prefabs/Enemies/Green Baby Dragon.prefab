@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 6277909461976385402}
   - component: {fileID: 2068058831623057679}
   m_Layer: 0
-  m_Name: Dragon
+  m_Name: Green Baby Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1073,7 @@ Transform:
   m_GameObject: {fileID: 7618543864616175509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.223583, y: 0, z: -30.47088}
+  m_LocalPosition: {x: -54.518257, y: 0, z: 45.40323}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1099,14 +1099,15 @@ MonoBehaviour:
   headPos: {fileID: 7618543863825098224}
   weaponCol: {fileID: 0}
   HP: 30
-  FOV: 120
+  FOV: 180
   faceTargetSpeed: 8
   roamDist: 15
   roamPauseTime: 3
-  animTranSpeed: 15
+  animTranSpeed: 1
   bullet: {fileID: 5592098548552792025, guid: 7e31b812dfe857e4ea75f7f8c0da7bf2, type: 3}
-  shootRate: 0.5
+  shootRate: 0.1
   shootPos: {fileID: 4083105311244311453}
+  bulletSpeed: 25
 --- !u!195 &-2234759039423153893
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1116,7 +1117,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7618543864616175509}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.64
+  m_Radius: 2.26
   m_Speed: 3.5
   m_Acceleration: 32
   avoidancePriority: 50
@@ -1125,7 +1126,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 4.31
+  m_Height: 7.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1142,7 +1143,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1b447a681891ea74894a0ce0bded5a81, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1171,9 +1172,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.66
-  m_Height: 5.33
+  m_Height: 7.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.66, z: 0}
+  m_Center: {x: 0, y: 3.68, z: 0}
 --- !u!135 &2068058831623057679
 SphereCollider:
   m_ObjectHideFlags: 0

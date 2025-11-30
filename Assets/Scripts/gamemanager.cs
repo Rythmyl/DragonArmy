@@ -33,9 +33,8 @@ public class gamemanager : MonoBehaviour
     int enemyCountFromEnemies;
     int enemyCountFromGolems;
     int enemyCountFromBugs;
-    int enemyCountFromDragons;  // New dragon count
+    int enemyCountFromDragons;
 
-    // Store last checkpoint position
     private Vector3 lastCheckpointPosition;
 
     void Awake()
@@ -54,7 +53,6 @@ public class gamemanager : MonoBehaviour
 
         rythmylSpawnPos = GameObject.FindWithTag("Rythmyl Spawn Pos");
 
-        // Initialize last checkpoint to initial spawn position
         if (rythmylSpawnPos != null)
             lastCheckpointPosition = rythmylSpawnPos.transform.position;
         else
@@ -76,6 +74,7 @@ public class gamemanager : MonoBehaviour
             else if (menuActive == menuPause)
             {
                 stateUnpause();
+                menuActive = null;
             }
         }
     }
@@ -103,7 +102,6 @@ public class gamemanager : MonoBehaviour
         gameGoalCountText.text = "Enemy Count: " + totalCount.ToString("F0");
     }
 
-    // Added isDragon flag for dragon enemies
     public void updateGameGoal(int amount, bool isGolem = false, bool isBug = false, bool isDragon = false)
     {
         if (isBug)
@@ -137,6 +135,11 @@ public class gamemanager : MonoBehaviour
         }
     }
 
+    public void DecrementDragonCount()
+    {
+        updateGameGoal(-1, isDragon: true);
+    }
+
     public void youLose()
     {
         statePause();
@@ -165,7 +168,6 @@ public class gamemanager : MonoBehaviour
         }
     }
 
-    // Update the stored checkpoint position and show popup
     public void UpdateCheckpoint(Vector3 checkpointPos)
     {
         lastCheckpointPosition = checkpointPos;
@@ -182,7 +184,6 @@ public class gamemanager : MonoBehaviour
             checkpointPopup.SetActive(false);
     }
 
-    // Respawn player at last checkpoint position
     public void RespawnPlayer()
     {
         if (rythmyl != null)
@@ -191,13 +192,13 @@ public class gamemanager : MonoBehaviour
 
             if (rythmylScript != null)
             {
-                rythmylScript.ResetHealth(); // Make sure playerController has this method
+                rythmylScript.ResetHealth();
             }
 
             Rigidbody rb = rythmyl.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.linearVelocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero; 
                 rb.angularVelocity = Vector3.zero;
             }
         }

@@ -20,10 +20,10 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(1, 20)][SerializeField] int animTranSpeed;
 
     [Header("----- Shooting -----")]
-    [SerializeField] GameObject bullet;         // Assign Green Fire prefab here in Inspector
+    [SerializeField] GameObject bullet;
     [Range(0.1f, 10f)][SerializeField] float shootRate;
-    [SerializeField] Transform shootPos;        // Assign Green Fire transform here in Inspector
-    [SerializeField] float bulletSpeed = 25f;  // Speed of the bullet
+    [SerializeField] Transform shootPos;
+    [Range(0.1f, 50f)][SerializeField] float bulletSpeed;
 
     Color colorOrig;
 
@@ -147,7 +147,7 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (HP <= 0)
         {
-            gamemanager.instance.updateGameGoal(-1, false, false, true);
+            gamemanager.instance.updateGameGoal(-1, isDragon: true);
             Destroy(gameObject);
         }
         else
@@ -169,7 +169,6 @@ public class dragonAI : MonoBehaviour, IDamage
         anim.SetTrigger("Shoot");
     }
 
-    // Called by Animation Event at shooting frame
     public void createBullet()
     {
         GameObject newBullet = Instantiate(bullet, shootPos.position, shootPos.rotation);
@@ -177,7 +176,6 @@ public class dragonAI : MonoBehaviour, IDamage
         Rigidbody rb = newBullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            // Set velocity along shootPos forward to follow line of sight
             rb.linearVelocity = shootPos.forward * bulletSpeed;
         }
     }
