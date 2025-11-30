@@ -1,9 +1,9 @@
-Built from '6000.2/staging' branch; Version is '6000.2.9f1 (e0c4e791ab71) revision 14730471'; Using compiler version '194234433'; Build Type 'Release'
 [Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.9f1 (e0c4e791ab71) revision 14730471'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-haans" at "2025-11-29T21:50:04.3997899Z"
 OS: 'Windows 11  (10.0.26200) 64bit Core' Language: 'en' Physical Memory: 30420 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2025-11-29T21:24:50Z
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-haans" at "2025-11-29T21:24:50.0225007Z"
+Date: 2025-11-29T21:50:04Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.2.9f1\Editor\Unity.exe
@@ -17,9 +17,7 @@ C:/DragonArmy
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-50187
--licensingIpc
-LicenseClient-haans
+50299
 -job-worker-count
 15
 -background-job-worker-count
@@ -65,12 +63,12 @@ C:/DragonArmy
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [61324]  Target information:
+Player connection [21500]  Target information:
 
-Player connection [61324]  * "[IP] 192.168.4.53 [Port] 0 [Flags] 2 [Guid] 632237766 [EditorId] 632237766 [Version] 1048832 [Id] WindowsEditor(7,Sam2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [21500]  * "[IP] 192.168.4.53 [Port] 0 [Flags] 2 [Guid] 372962483 [EditorId] 372962483 [Version] 1048832 [Id] WindowsEditor(7,Sam2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [61324] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [61324] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21500] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [21500] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 15
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -79,13 +77,13 @@ Input System module state changed to: Initialized.
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.3+a4e98f1
-  Session Id:              b36c0ce68d7f441d9522974cea26c3ba
+  Session Id:              cf2687a305044ca4aaf9eac2c82dbdb6
   Correlation Id:          25725a65bcdfc20e774c244a8768d0cc
-  External correlation Id: 7931746802997306900
+  External correlation Id: 7522455260645383011
   Machine Id:              k5BrK8WAiyATjP7kFPs29ToZAHM=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-haans" (connect: 0.00s, validation: 0.00s, handshake: 0.04s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-haans-notifications" at "2025-11-29T21:24:50.0645145Z"
-[Licensing::Module] Licensing Background thread has ended after 0.04s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-haans" (connect: 0.00s, validation: 0.00s, handshake: 0.03s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-haans-notifications" at "2025-11-29T21:50:04.4300147Z"
+[Licensing::Module] Licensing Background thread has ended after 0.03s
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -93,7 +91,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.9f1 (e0c4e791ab71)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/Resources/UnitySubsystems
@@ -109,43 +107,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56488
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000937 seconds.
-- Loaded All Assemblies, in  0.275 seconds
+Registered in 0.000964 seconds.
+- Loaded All Assemblies, in  0.281 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.299 seconds
-Domain Reload Profiling: 573ms
-	BeginReloadAssembly (88ms)
+- Finished resetting the current domain, in  0.280 seconds
+Domain Reload Profiling: 559ms
+	BeginReloadAssembly (94ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (8ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (34ms)
 	LoadAllAssembliesAndSetupDomain (115ms)
-		LoadAssemblies (84ms)
+		LoadAssemblies (92ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (113ms)
-			TypeCache.Refresh (112ms)
-				TypeCache.ScanAssembly (102ms)
+		AnalyzeDomain (112ms)
+			TypeCache.Refresh (111ms)
+				TypeCache.ScanAssembly (101ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (299ms)
+	FinalizeReload (280ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (265ms)
+		SetupLoadedEditorAssemblies (247ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (41ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (60ms)
-			ProcessInitializeOnLoadAttributes (117ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			InitializePlatformSupportModulesInManaged (37ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (58ms)
+			ProcessInitializeOnLoadAttributes (111ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -160,17 +158,17 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  0.601 seconds
-Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.591 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.578 seconds
-Domain Reload Profiling: 1177ms
-	BeginReloadAssembly (146ms)
+- Finished resetting the current domain, in  0.562 seconds
+Domain Reload Profiling: 1152ms
+	BeginReloadAssembly (142ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
@@ -178,422 +176,202 @@ Domain Reload Profiling: 1177ms
 		CreateAndSetChildDomain (28ms)
 	RebuildCommonClasses (24ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (394ms)
-		LoadAssemblies (268ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (384ms)
+		LoadAssemblies (264ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (199ms)
-			TypeCache.Refresh (153ms)
-				TypeCache.ScanAssembly (140ms)
-			BuildScriptInfoCaches (36ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (578ms)
+		AnalyzeDomain (188ms)
+			TypeCache.Refresh (139ms)
+				TypeCache.ScanAssembly (124ms)
+			BuildScriptInfoCaches (37ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (563ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (426ms)
+		SetupLoadedEditorAssemblies (419ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (103ms)
-			ProcessInitializeOnLoadAttributes (272ms)
-			ProcessInitializeOnLoadMethodAttributes (40ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (293ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6151 unused Assets / (4.3 MB). Loaded Objects now: 6870.
-Memory consumption went from 154.3 MB to 150.1 MB.
-Total: 6.434000 ms (FindLiveObjects: 1.137500 ms CreateObjectMapping: 0.379300 ms MarkObjects: 3.288900 ms  DeleteObjects: 1.627400 ms)
+Unloading 6151 unused Assets / (4.5 MB). Loaded Objects now: 6870.
+Memory consumption went from 152.3 MB to 147.8 MB.
+Total: 8.327700 ms (FindLiveObjects: 0.474700 ms CreateObjectMapping: 0.301900 ms MarkObjects: 4.789700 ms  DeleteObjects: 2.760200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 53253.726917 seconds.
-  path: Assets/Unity Store DL/FreeDragons/Texture/DragonSoulEaterHP/BlueHP.png
-  artifactKey: Guid(11ae2c7ef2ee4f745810a00f1cbbd469) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/FreeDragons/Texture/DragonSoulEaterHP/BlueHP.png using Guid(11ae2c7ef2ee4f745810a00f1cbbd469) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'e8dfa78305b3956bb34baaaab8e17d46') in 0.1722911 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01/Texture02/Recolor
-  artifactKey: Guid(6b953e3d60b2d4e428ae0ed7b303778e) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01/Texture02/Recolor using Guid(6b953e3d60b2d4e428ae0ed7b303778e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a5a134e32fe4ac22df42f2eb77834157') in 0.0109407 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP
-  artifactKey: Guid(af3d823667174834fb5d36a5f40c966f) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP using Guid(af3d823667174834fb5d36a5f40c966f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'bff9773418980789d9b13e94f9169f31') in 0.0116718 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Unity Store DL/FreeDragons/Materials/DragonSoulEaterHP
-  artifactKey: Guid(4f758ed43819193428efa81e0aba5a49) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/FreeDragons/Materials/DragonSoulEaterHP using Guid(4f758ed43819193428efa81e0aba5a49) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '032d4d2112e45fd4675c494f224b3efd') in 0.0112574 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Unity Store DL/FreeDragons/Materials/DragonSoulEaterHP/RedHP.mat
-  artifactKey: Guid(35305181e90534745b25a3b3799091a9) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/FreeDragons/Materials/DragonSoulEaterHP/RedHP.mat using Guid(35305181e90534745b25a3b3799091a9) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '26f7979f5d8a14ad5f55503f22c47d37') in 0.0300208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Animations/Movement/Walk/Giant@Walk01 - Right [RM].fbx
-  artifactKey: Guid(7acc1000120716b4197a8232f2b9f090) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Animations/Movement/Walk/Giant@Walk01 - Right [RM].fbx using Guid(7acc1000120716b4197a8232f2b9f090) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'fd7c69525baa0cb252a8177e7090eac1') in 0.0475345 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 114
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Unity Store DL/FreeDragons/Animations/DragonBoar/Scream.fbx
-  artifactKey: Guid(131e870b83920764e869069cf8c977e9) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/FreeDragons/Animations/DragonBoar/Scream.fbx using Guid(131e870b83920764e869069cf8c977e9) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'f6c8554a75e7c8b0b7337e8e4de4b0f0') in 0.0326556 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 93
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Unity Store DL/LB3D/CrabMonster/Scenes
-  artifactKey: Guid(9aeabde5ef8aef342a0079f319997586) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/LB3D/CrabMonster/Scenes using Guid(9aeabde5ef8aef342a0079f319997586) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'f0a833a8077ff4c60412f76b86b740c5') in 0.0120439 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/URP/URP - FloorMaterial.mat
-  artifactKey: Guid(7d8a40d4c6f082e4abc02958d25ee320) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/URP/URP - FloorMaterial.mat using Guid(7d8a40d4c6f082e4abc02958d25ee320) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '262e8accc78a765d5b4cdf3f37ba2e89') in 0.0218549 seconds
+  Time since last request: 54768.125104 seconds.
+  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/FloorMaterial.mat
+  artifactKey: Guid(7e66d38d06f83294ca884df035c763fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/FloorMaterial.mat using Guid(7e66d38d06f83294ca884df035c763fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '69f00292fb2083a53c597f6f530fb562') in 0.4377012 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@WalkForward.controller
-  artifactKey: Guid(b81beb43b06063f459027d83a78d7abb) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@WalkForward.controller using Guid(b81beb43b06063f459027d83a78d7abb) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '776596e5b97d1d3357fc6d92471162c8') in 0.0141258 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock_Flat.mat
-  artifactKey: Guid(0e87d8c57156a8649b8e3337d730df70) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock_Flat.mat using Guid(0e87d8c57156a8649b8e3337d730df70) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '8926179d799fcb93969307da8dce77f7') in 0.015002 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01.mat
-  artifactKey: Guid(4b4520f8acdca9747970254c78c0606b) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01.mat using Guid(4b4520f8acdca9747970254c78c0606b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '627848b500fb02f90a4ce277c71febad') in 0.0278171 seconds
+  Time since last request: 0.000048 seconds.
+  path: Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_sphere.mat
+  artifactKey: Guid(adefeb7606871ca4f8e0cc9276542ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_sphere.mat using Guid(adefeb7606871ca4f8e0cc9276542ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef10f57d1d400ac9a51bc7f2257d50d9') in 0.0210622 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01 Recolor01.mat
-  artifactKey: Guid(858f0d626ad414948aa54b463e03519a) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01 Recolor01.mat using Guid(858f0d626ad414948aa54b463e03519a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'cda3eae937c701c3036a5d15b27ddb09') in 0.0264314 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP/URP - Giant01_Texture05_Flat.mat
-  artifactKey: Guid(c1d5772437a95f941b7ade6f08805fe1) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP/URP - Giant01_Texture05_Flat.mat using Guid(c1d5772437a95f941b7ade6f08805fe1) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'ee64560e9f94638af7a29ba21ce37fae') in 0.0132857 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/URP/URP - Giant01_Texture02.mat
-  artifactKey: Guid(db093346282b50d41b353a364c5ce936) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/URP/URP - Giant01_Texture02.mat using Guid(db093346282b50d41b353a364c5ce936) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '494e8deedbd7a938784fd984dc23bf16') in 0.0277178 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01_Flat/Giant01-Texture02_Flat.png
-  artifactKey: Guid(e00b2464f0beca74b9dbb6a0706af713) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01_Flat/Giant01-Texture02_Flat.png using Guid(e00b2464f0beca74b9dbb6a0706af713) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0d8685f1e0a33d874af8b045e333c2ec') in 0.0189253 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@RunForwardRight.controller
-  artifactKey: Guid(b03faf2994553c94fbdec5907e5300d5) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@RunForwardRight.controller using Guid(b03faf2994553c94fbdec5907e5300d5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'd4fdfe228e0b3eecb1d597e869f4318e') in 0.0148166 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01_Flat/Giant01-Texture01_Flat.png
-  artifactKey: Guid(7973fbf19c96f97499a5724755a76cde) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01_Flat/Giant01-Texture01_Flat.png using Guid(7973fbf19c96f97499a5724755a76cde) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '518296b45b3d409516fd4ca4cbe167ad') in 0.0167318 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Unity Store DL/FreeDragons/Texture/DragonBoarPBR
-  artifactKey: Guid(a6907480e2ad24842b43b158748e6487) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/FreeDragons/Texture/DragonBoarPBR using Guid(a6907480e2ad24842b43b158748e6487) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '5ae0d90a39cfbdfc5e329926281e91c6') in 0.0120851 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Textures/rock_ekv.png
-  artifactKey: Guid(c5919f1101b380a46922356e00651bc3) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Textures/rock_ekv.png using Guid(c5919f1101b380a46922356e00651bc3) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '41c6ca5ce921660d6707f5d2ce58f5e8') in 0.0178991 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@Damages.controller
-  artifactKey: Guid(08d825eb7aeab5a4db18e5776dbade8d) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Animator Controllers/Giant@Damages.controller using Guid(08d825eb7aeab5a4db18e5776dbade8d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '1d1ec9c144c16e4acca08c4d187f395f') in 0.0134355 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Animations/Combat/Giant@Damage01.fbx
-  artifactKey: Guid(b6a7b84ddb110c24e89c671725d80157) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Animations/Combat/Giant@Damage01.fbx using Guid(b6a7b84ddb110c24e89c671725d80157) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'da56032a85434868eb534b3b60520124') in 0.0202094 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 114
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01/Texture01/Recolor/Giant01_Texture01-Recolor03.png
-  artifactKey: Guid(378f094dc82144647b285ea683c7a29e) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Textures/Giant01/Texture01/Recolor/Giant01_Texture01-Recolor03.png using Guid(378f094dc82144647b285ea683c7a29e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '2f35e07bb82719995f5a37049adaf113') in 0.0181521 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Unity Store DL/LB3D/CrabMonster/Textures/crab-monster_Rikayon_MetallicSmoothness.png
-  artifactKey: Guid(18e2885f05f960643b1cecca550f5b62) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/LB3D/CrabMonster/Textures/crab-monster_Rikayon_MetallicSmoothness.png using Guid(18e2885f05f960643b1cecca550f5b62) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '949777985685d133aa74bf1bd99b6f60') in 0.1064417 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Textures/Water_HeightMap.png
-  artifactKey: Guid(e850f6d5235e1ba4c914a64b04b128ac) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Textures/Water_HeightMap.png using Guid(e850f6d5235e1ba4c914a64b04b128ac) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '51d77b87cb26b1b8ffb5b065b2528da6') in 0.0208539 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Unity Store DL/LB3D/CrabMonster/Textures/crab-monster_Eyes_MetallicSmoothness.png
-  artifactKey: Guid(946fbb371f1e6ba4ea28f0e6bac12f96) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/LB3D/CrabMonster/Textures/crab-monster_Eyes_MetallicSmoothness.png using Guid(946fbb371f1e6ba4ea28f0e6bac12f96) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '896bc020fd3db8a2f969e654333c9142') in 0.0711614 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Textures/Floor/Floor_HumanoidGiant01-BaseColor.png
-  artifactKey: Guid(f9825abeb4abb69448f90aacdff0e267) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Textures/Floor/Floor_HumanoidGiant01-BaseColor.png using Guid(f9825abeb4abb69448f90aacdff0e267) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a16bbca2796047e2beb82e8e15e773d9') in 0.018808 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Materials/Rock.mat
-  artifactKey: Guid(8100eebd6f034ae45a87b6741b89d201) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Materials/Rock.mat using Guid(8100eebd6f034ae45a87b6741b89d201) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'c794c201e3794b71e8053a44c7766fc2') in 0.0167526 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Materials/Bark.mat
-  artifactKey: Guid(ec67924e66cce9e4f976e0ba9b8d4f97) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Materials/Bark.mat using Guid(ec67924e66cce9e4f976e0ba9b8d4f97) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '6420eae553e84d88edfd8ee0871946c8') in 0.012984 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Prefabs/InvertedUVSphere Variant.prefab
-  artifactKey: Guid(5af9883f3609b1e4fb61bfb7e0c962bd) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Prefabs/InvertedUVSphere Variant.prefab using Guid(5af9883f3609b1e4fb61bfb7e0c962bd) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0ec3630e67d0fc5949ed0109bddb6f7f') in 0.0253151 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Unity Store DL/MobileWaterShader_EKV/Terrain/Terrain_Layer_Grass.terrainlayer
-  artifactKey: Guid(65f76bca3f6e3794188b8043eb6848b5) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Terrain/Terrain_Layer_Grass.terrainlayer using Guid(65f76bca3f6e3794188b8043eb6848b5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '404af3cff3ee6eb40266afc7769d0b6f') in 0.0166501 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/URP/URP - Giant01_Texture02 Recolor03.mat
-  artifactKey: Guid(06915e08f60277d46b5db42694688495) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/URP/URP - Giant01_Texture02 Recolor03.mat using Guid(06915e08f60277d46b5db42694688495) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '66dcb9e53be6ef42443021afee2afd52') in 0.0240632 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 54.031003 seconds.
-  path: Assets/Prefabs/Level Items/Level Items.prefab
-  artifactKey: Guid(b8075c686e0f93749887930bad2fe5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Level Items.prefab using Guid(b8075c686e0f93749887930bad2fe5a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b55236a77b14f348f0d1560b8bc5bc3') in 0.3277527 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1350
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.838481 seconds.
-  path: Assets/Prefabs/Level Items/Bug Spawner .prefab
-  artifactKey: Guid(27b0cf840655b6349925df6a858ed493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Bug Spawner .prefab using Guid(27b0cf840655b6349925df6a858ed493) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4afae296fc403d0d626ec308fafea13') in 0.0041029 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 302
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.956610 seconds.
-  path: Assets/Prefabs/Level Items/Bug Spawner .prefab
-  artifactKey: Guid(27b0cf840655b6349925df6a858ed493) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Level Items/Bug Spawner .prefab using Guid(27b0cf840655b6349925df6a858ed493) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '9ddc352afdb5e45446f1c155a0339397') in 0.0264594 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 302
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.192849 seconds.
-  path: Assets/Prefabs/Level Items/Golem Spawner .prefab
-  artifactKey: Guid(862ab62f6b30fe24986446c3b131ab6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Golem Spawner .prefab using Guid(862ab62f6b30fe24986446c3b131ab6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d95a648588afce07a86325ac0398d47') in 0.0030572 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 150
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.970564 seconds.
-  path: Assets/Prefabs/Level Items/Golem Spawner .prefab
-  artifactKey: Guid(862ab62f6b30fe24986446c3b131ab6e) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Level Items/Golem Spawner .prefab using Guid(862ab62f6b30fe24986446c3b131ab6e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'bfa8ff14362384fce8e72c6b33fde4f7') in 0.0186285 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 150
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.423159 seconds.
-  path: Assets/Prefabs/Level Items/Enemy Spawner.prefab
-  artifactKey: Guid(51935c5709806a14eaeda386ce5369be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Enemy Spawner.prefab using Guid(51935c5709806a14eaeda386ce5369be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '51ba9f00302591f424f9f9be7541299f') in 0.0013275 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.273007 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Shotgun.prefab
-  artifactKey: Guid(bcb9803d14cf2514ea424f5c592e85eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Shotgun.prefab using Guid(bcb9803d14cf2514ea424f5c592e85eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41bcacb3cf6ea25b2773573cc577c5f8') in 0.0354392 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.915848 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Shotgun.prefab
-  artifactKey: Guid(bcb9803d14cf2514ea424f5c592e85eb) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Shotgun.prefab using Guid(bcb9803d14cf2514ea424f5c592e85eb) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '3ebc04f563367ccfeadb00e8486a5765') in 0.0191063 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.831705 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Rifle.prefab
-  artifactKey: Guid(cfb0f194ca777bd44a54205c6514648a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Rifle.prefab using Guid(cfb0f194ca777bd44a54205c6514648a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b581fa17ce389802749b254c51311c8d') in 0.032434 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.929696 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Rifle.prefab
-  artifactKey: Guid(cfb0f194ca777bd44a54205c6514648a) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Rifle.prefab using Guid(cfb0f194ca777bd44a54205c6514648a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '6921a425dface417f35b0a3e34cfa088') in 0.0152776 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.492046 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Pistol.prefab
-  artifactKey: Guid(4c8058c937499b849a8cd61234b583f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Pistol.prefab using Guid(4c8058c937499b849a8cd61234b583f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '907142446cb19761c5e409a3a8508d3b') in 0.026595 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.789381 seconds.
-  path: Assets/Prefabs/Level Items/Gun Pickup - Pistol.prefab
-  artifactKey: Guid(4c8058c937499b849a8cd61234b583f3) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Level Items/Gun Pickup - Pistol.prefab using Guid(4c8058c937499b849a8cd61234b583f3) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '36c61aece10980593ed671ec200bc1b4') in 0.0165346 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
-
-========================================================================
-Received Import Request.
-  Time since last request: 105.133651 seconds.
-  path: Assets/Prefabs/Dragon/Player.prefab
-  artifactKey: Guid(a322f9601edffbe4c8854048cbd1ac9d) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Dragon/Player.prefab using Guid(a322f9601edffbe4c8854048cbd1ac9d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '1aee0cbb0a3c5b1fd68fb5343c79db82') in 0.0411171 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Prefabs/Dragon/NavMesh Surface.prefab
-  artifactKey: Guid(3c86a28de31a37849bb37a03dff1a9f4) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Dragon/NavMesh Surface.prefab using Guid(3c86a28de31a37849bb37a03dff1a9f4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'd25a36009483e76d236ecc3d3cd2e37a') in 0.0204875 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Prefabs/Dragon/PlayerSpawnPos.prefab
-  artifactKey: Guid(8fb0cd832d02ba44e8179581663b518c) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Dragon/PlayerSpawnPos.prefab using Guid(8fb0cd832d02ba44e8179581663b518c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'ebb90ed75f796c8b5d8cfa47a8704ea0') in 0.0131145 seconds
+  Time since last request: 0.000052 seconds.
+  path: Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_n_gon.mat
+  artifactKey: Guid(29db5ef27b4b0c843aeecac55b22b762) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_n_gon.mat using Guid(29db5ef27b4b0c843aeecac55b22b762) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '259ebd641f35b838dfb01ca12d10986e') in 0.0120048 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Prefabs/Dragon/Directional Light.prefab
-  artifactKey: Guid(2807bafbbc0d8d04dbf003cbe56b6998) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Prefabs/Dragon/Directional Light.prefab using Guid(2807bafbbc0d8d04dbf003cbe56b6998) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '60de012452babfe3fce0520e28422382') in 0.017321 seconds
+  path: Assets/Materials/Water_Texture_A.mat
+  artifactKey: Guid(53dfb6490343217499c7227019a95e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Water_Texture_A.mat using Guid(53dfb6490343217499c7227019a95e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f518ba63356a907537f9538ded4981b') in 0.0387305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e3840d548b1efdb4c70712420807deb8') in 0.0349346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/RedPBR.mat
+  artifactKey: Guid(73c9ddefc022e2c4d8dc53890b1738b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/RedPBR.mat using Guid(73c9ddefc022e2c4d8dc53890b1738b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '892d3a80e6b10af5279c3fc9c3de9f13') in 0.0749678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph
+  artifactKey: Guid(f63d574838ccfb44f84acc05fed0af48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph using Guid(f63d574838ccfb44f84acc05fed0af48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f997d5761059b5f2b0606402323c97ef') in 0.0220525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Unity Store DL/StylizedGuns - WW2 US/Source/Main/M1Garand.fbx
+  artifactKey: Guid(e23ab8f095718425c967ae1e8ad24cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/StylizedGuns - WW2 US/Source/Main/M1Garand.fbx using Guid(e23ab8f095718425c967ae1e8ad24cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8dd9323ddef71c3674770270269b398d') in 0.0557179 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+  artifactKey: Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph using Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1180fa7d50c53a69f62c644839615ec2') in 0.0078609 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/GreenPBR.mat
+  artifactKey: Guid(2c1ae55f713e6434eaeec26f629100bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/GreenPBR.mat using Guid(2c1ae55f713e6434eaeec26f629100bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7c01840797f9a8ef0ba2e63f2c9d4065') in 0.0713207 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Materials/Wall.mat
+  artifactKey: Guid(0b5a46c424943b44aada148751dc4478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Wall.mat using Guid(0b5a46c424943b44aada148751dc4478) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '97906a35654deb2de65eb77df2c9b7e3') in 0.020321 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP/URP - Giant01_Texture03_Flat.mat
+  artifactKey: Guid(508d2709b69178e4fba946ac37763476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/URP/URP - Giant01_Texture03_Flat.mat using Guid(508d2709b69178e4fba946ac37763476) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '51f4fcd31a376b38ded8664ba32ae12e') in 0.0224501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Unity Store DL/LB3D/CrabMonster/Materials/Rikayon.mat
+  artifactKey: Guid(e061968e56112fe4ca8c0ad3347c2a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/LB3D/CrabMonster/Materials/Rikayon.mat using Guid(e061968e56112fe4ca8c0ad3347c2a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5d0faba5be8cb9c75e73de1ffb14d5d') in 0.4786272 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Materials/Yellow.mat
+  artifactKey: Guid(78d568b4e7add2f45a9cc540713f89e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Yellow.mat using Guid(78d568b4e7add2f45a9cc540713f89e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c407401780e7441fbd01c5f221434ff4') in 0.0238726 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/GoldPBR.mat
+  artifactKey: Guid(0d6b32f7a1327524f8e933d4e0c86b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/FreeDragons/Materials/DragonBoarPBR/GoldPBR.mat using Guid(0d6b32f7a1327524f8e933d4e0c86b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df1aaeda165e5eae880126e9c2ed7ad7') in 0.0631795 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Unity Store DL/StylizedGuns - WW2 US/Source/Box/Woodenbox.fbx
+  artifactKey: Guid(63ecadbc73fe84463ac8d365af499f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/StylizedGuns - WW2 US/Source/Box/Woodenbox.fbx using Guid(63ecadbc73fe84463ac8d365af499f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aacee6274eee0f012f9dbe4bb7d99b57') in 0.0309668 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01.mat
+  artifactKey: Guid(07234b7ff556d604b973668cb01045f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01.mat using Guid(07234b7ff556d604b973668cb01045f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bbfb650413b9f4f9a7b7f3dbecbd5f0b') in 0.0191534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_edge_foam.mat
+  artifactKey: Guid(f8a47b9e17c27bf4984ec21acaf0fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/MobileWaterShader_EKV/Materials/MobileWaterShader_EKV_edge_foam.mat using Guid(f8a47b9e17c27bf4984ec21acaf0fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a39b9c9ec9d3829de61a9072f92d023') in 0.0168785 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01 Recolor02.mat
+  artifactKey: Guid(a546f0aa231daab48810ed798da99c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unity Store DL/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/URP/URP - Giant01_Texture01 Recolor02.mat using Guid(a546f0aa231daab48810ed798da99c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd909e46cb54da8a4d245723ba99d8bab') in 1.9785072 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 1053.798943 seconds.
+  path: Assets/Prefabs/Level Items/4 Trees.prefab
+  artifactKey: Guid(6992671e74d559c4c820dc4baa4683fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level Items/4 Trees.prefab using Guid(6992671e74d559c4c820dc4baa4683fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81306a6163f937306e99ff785c01758f') in 1.4080549 seconds
+Number of updated asset objects reloaded before import = 20Number of asset objects unloaded after import = 43
+
+========================================================================
+Received Import Request.
+  Time since last request: 440.000445 seconds.
+  path: Assets/Prefabs/Level Items/Directional Light.prefab
+  artifactKey: Guid(e822003b208d0be448dd3f1a9e500a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level Items/Directional Light.prefab using Guid(e822003b208d0be448dd3f1a9e500a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf6c1415598eec656c5aea1621441475') in 0.0042403 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+

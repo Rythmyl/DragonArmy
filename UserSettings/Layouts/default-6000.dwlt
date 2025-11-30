@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 976
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -680,23 +680,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 4cac0000
       m_LastClickedID: 0
-      m_ExpandedIDs: b2defeff1eecfeff
+      m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: NavMesh Surface
-        m_OriginalName: NavMesh Surface
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -70634
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -820,7 +820,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b0230000
     m_LastClickedID: 9136
-    m_ExpandedIDs: 00000000e61101005212010086140100a01c0100b21d0100f82801004e2e01004a5301004c5301004e53010050530100525301005453010056530100585301005a5301005c5301005e53010060530100625301006453010066530100685301006a5301006c5301006e5301007053010072530100745301007653010078530100
+    m_ExpandedIDs: 000000005cb900005eb9000060b9000062b9000064b9000066b9000068b900006ab900006cb900006eb9000070b9000072b9000074b9000076b9000078b900007ab900007cb900007eb9000080b9000082b9000084b9000086b9000088b900008ab900008cb900008eb9000090b9000092b9000094b9000096b90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -849,7 +849,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000005212010086140100a01c0100b21d0100f82801004e2e01004a5301004c5301004e5301005053010056530100585301005a5301005c5301005e53010060530100625301006453010066530100685301006a5301006c5301006e530100705301007253010074530100765301005e5501007055010076550100
+    m_ExpandedIDs: ffffffff000000005cb900005eb9000060b9000062b9000064b9000066b9000068b900006ab900006cb900006eb9000070b9000072b9000074b9000076b9000078b900007ab900007cb900007eb9000080b9000082b9000084b9000086b9000088b900008ab900008cb900008eb9000090b9000092b9000094b9000096b90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1637,11 +1637,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.23456003, y: -0.67169267, z: 0.23712757, w: 0.6625427}
     speed: 2
-    m_Value: {x: 0.2350592, y: -0.6709915, z: 0.23763597, w: 0.66185105}
+    m_Value: {x: -0.23456004, y: 0.67169267, z: -0.23712759, w: -0.66254276}
   m_Size:
     m_Target: 8.542355
     speed: 2
-    m_Value: 8.174502
+    m_Value: 8.542355
   m_Ortho:
     m_Target: 0
     speed: 2
