@@ -11,3 +11,5 @@ Library/
 .vs/
 Artifacts/
 Temp/
+/Logs/
+/UserSettings/
