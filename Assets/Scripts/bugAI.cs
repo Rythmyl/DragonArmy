@@ -22,12 +22,11 @@ public class bugAI : MonoBehaviour, IDamage
     [Header("----- Attack -----")]
     [Range(.1f, 10f)][SerializeField] int attackRange;
     [Range(0.5f, 5f)][SerializeField] float attackCooldown;
-    [SerializeField] int damageAmount = 1;
+    [Range(1, 50)][SerializeField] int damageAmount;
 
     Color colorOrig;
 
     bool playerInTrigger;
-    bool isChasingPlayer = false;
     bool isDead = false;
 
     float attackTimer;
@@ -93,7 +92,6 @@ public class bugAI : MonoBehaviour, IDamage
     {
         roamTimer = 0;
         agent.stoppingDistance = 0;
-        isChasingPlayer = false;
 
         Vector3 ranPos = Random.insideUnitSphere * roamDist + startingPos;
         NavMeshHit hit;
@@ -126,8 +124,6 @@ public class bugAI : MonoBehaviour, IDamage
                 {
                     FaceTarget();
                 }
-
-                isChasingPlayer = true;
                 return true;
             }
         }
@@ -148,7 +144,6 @@ public class bugAI : MonoBehaviour, IDamage
         if (other.CompareTag("Rythmyl"))
         {
             playerInTrigger = true;
-            isChasingPlayer = true;
         }
     }
 
@@ -158,7 +153,6 @@ public class bugAI : MonoBehaviour, IDamage
             return;
 
         playerInTrigger = false;
-        isChasingPlayer = false;
         agent.stoppingDistance = 0;
         agent.SetDestination(lastAttackPosition);
     }
@@ -189,7 +183,6 @@ public class bugAI : MonoBehaviour, IDamage
         HP -= amount;
 
         agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
-        isChasingPlayer = true;
 
         if (HP <= 0)
         {

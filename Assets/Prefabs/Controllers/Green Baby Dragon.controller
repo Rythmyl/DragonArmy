@@ -112,7 +112,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SouleaterCTRL
+  m_Name: Green Baby Dragon
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -163,7 +163,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5779542579643890139}
-    m_Position: {x: 167, y: 68, z: 0}
+    m_Position: {x: 170, y: 70, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
