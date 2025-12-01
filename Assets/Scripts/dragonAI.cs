@@ -46,15 +46,32 @@ public class dragonAI : MonoBehaviour, IDamage
 
     void Start()
     {
-        colorOrig = model.material.color;
-        stoppingDistOrig = agent.stoppingDistance;
+        if (model == null)
+            Debug.LogError("Renderer (model) not assigned!");
+        else
+            colorOrig = model.material.color;
+
+        if (agent == null)
+            Debug.LogError("NavMeshAgent (agent) not assigned!");
+        else
+            stoppingDistOrig = agent.stoppingDistance;
+
         startingPos = transform.position;
         lastAttackPosition = startingPos;
 
-        if (weaponCol != null)
-            weaponCol.enabled = false;
-        else
-            Debug.LogWarning("Weapon Collider not assigned!");
+        // Disable weapon collider only if meleeRange > 0 and weaponCol assigned
+        if (meleeRange > 0)
+        {
+            if (weaponCol != null)
+            {
+                weaponCol.enabled = false;
+            }
+            else
+            {
+                // No weapon collider assigned but meleeRange is set; melee won't work properly,
+                // but no debug logs as per request.
+            }
+        }
 
         meleeTimer = meleeCooldown; // Allow immediate melee if in range
         shootTimer = shootRate;     // Allow immediate shoot if ready
@@ -66,6 +83,9 @@ public class dragonAI : MonoBehaviour, IDamage
 
         shootTimer += Time.deltaTime;
         meleeTimer += Time.deltaTime;
+
+        if (agent == null || anim == null)
+            return; // Safety check
 
         float agentSpeedCur = agent.velocity.magnitude;
         float agentSpeedAnim = anim.GetFloat("Speed");
@@ -82,7 +102,7 @@ public class dragonAI : MonoBehaviour, IDamage
 
     void CheckRoam()
     {
-        if (agent.remainingDistance < 0.01f && roamTimer >= roamPauseTime)
+        if (agent != null && agent.remainingDistance < 0.01f && roamTimer >= roamPauseTime)
         {
             Roam();
         }
@@ -91,6 +111,8 @@ public class dragonAI : MonoBehaviour, IDamage
     void Roam()
     {
         roamTimer = 0;
+        if (agent == null) return;
+
         agent.stoppingDistance = 0;
 
         Vector3 ranPos = Random.insideUnitSphere * roamDist + startingPos;
@@ -101,7 +123,10 @@ public class dragonAI : MonoBehaviour, IDamage
 
     bool CanSeePlayer()
     {
-        Vector3 playerPos = gamemanager.instance.rythmyl.transform.position;
+        if (headPos == null || agent == null)
+            return false;
+
+        Vector3 playerPos = gamemanager.instance?.rythmyl?.transform.position ?? Vector3.zero;
         playerDir = playerPos - headPos.position;
         angleToPlayer = Vector3.Angle(playerDir, transform.forward);
 
@@ -113,8 +138,8 @@ public class dragonAI : MonoBehaviour, IDamage
             {
                 float distToPlayer = Vector3.Distance(transform.position, playerPos);
 
-                // Melee attack check
-                if (meleeRange > 0 && distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
+                // Melee attack only if meleeRange > 0 AND weaponCol assigned
+                if (meleeRange > 0 && weaponCol != null && distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
                 {
                     agent.stoppingDistance = meleeRange;
                     agent.SetDestination(playerPos);
@@ -123,7 +148,7 @@ public class dragonAI : MonoBehaviour, IDamage
                     return true;
                 }
 
-                // Ranged attack check
+                // Ranged attack only if bullet prefab assigned
                 if (bullet != null && shootRate > 0 && distToPlayer <= stoppingDistOrig && shootTimer >= shootRate)
                 {
                     agent.stoppingDistance = stoppingDistOrig;
@@ -133,8 +158,14 @@ public class dragonAI : MonoBehaviour, IDamage
                     return true;
                 }
 
-                // Chase player
-                agent.stoppingDistance = (bullet != null && shootRate > 0) ? stoppingDistOrig : (meleeRange > 0 ? meleeRange : 0);
+                // Chase player with appropriate stopping distance (handle both cases safely)
+                if (bullet != null && shootRate > 0)
+                    agent.stoppingDistance = stoppingDistOrig;
+                else if (meleeRange > 0)
+                    agent.stoppingDistance = meleeRange;
+                else
+                    agent.stoppingDistance = 0;
+
                 agent.SetDestination(playerPos);
 
                 if (distToPlayer <= agent.stoppingDistance)
@@ -144,7 +175,9 @@ public class dragonAI : MonoBehaviour, IDamage
             }
         }
 
-        agent.stoppingDistance = 0;
+        if (agent != null)
+            agent.stoppingDistance = 0;
+
         return false;
     }
 
@@ -156,6 +189,9 @@ public class dragonAI : MonoBehaviour, IDamage
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other == null)
+            return;
+
         if (other.CompareTag("Rythmyl"))
         {
             playerInTrigger = true;
@@ -164,17 +200,23 @@ public class dragonAI : MonoBehaviour, IDamage
 
     private void OnTriggerExit(Collider other)
     {
+        if (other == null) return;
+
         if (!other.CompareTag("Rythmyl")) return;
 
         playerInTrigger = false;
-        agent.stoppingDistance = 0;
-        agent.SetDestination(lastAttackPosition);
+        if (agent != null)
+        {
+            agent.stoppingDistance = 0;
+            agent.SetDestination(lastAttackPosition);
+        }
     }
 
     void Shoot()
     {
         shootTimer = 0;
-        anim.SetTrigger("Shoot");
+        if (anim != null)
+            anim.SetTrigger("Shoot");
     }
 
     public void createBullet()
@@ -193,8 +235,9 @@ public class dragonAI : MonoBehaviour, IDamage
     void MeleeAttack()
     {
         meleeTimer = 0;
-        anim.SetTrigger("Attack"); 
-        lastAttackPosition = gamemanager.instance.rythmyl.transform.position;
+        if (anim != null)
+            anim.SetTrigger("Attack");
+        lastAttackPosition = gamemanager.instance?.rythmyl?.transform.position ?? lastAttackPosition;
     }
 
     public void weaponColOn()
@@ -214,14 +257,15 @@ public class dragonAI : MonoBehaviour, IDamage
         if (isDead) return;
 
         HP -= amount;
-        agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
+        if (agent != null && gamemanager.instance?.rythmyl != null)
+            agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
 
         if (HP <= 0)
         {
             isDead = true;
-            gamemanager.instance.updateGameGoal(-1, isDragon: true);
-            anim.SetTrigger("Death");
-            agent.isStopped = true;
+            gamemanager.instance?.updateGameGoal(-1, isDragon: true);
+            if (agent != null)
+                agent.isStopped = true;
             Destroy(gameObject, 5f);
         }
         else
@@ -232,8 +276,11 @@ public class dragonAI : MonoBehaviour, IDamage
 
     IEnumerator flashRed()
     {
-        model.material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        model.material.color = colorOrig;
+        if (model != null)
+        {
+            model.material.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            model.material.color = colorOrig;
+        }
     }
 }
