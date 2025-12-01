@@ -59,22 +59,16 @@ public class dragonAI : MonoBehaviour, IDamage
         startingPos = transform.position;
         lastAttackPosition = startingPos;
 
-        // Disable weapon collider only if meleeRange > 0 and weaponCol assigned
         if (meleeRange > 0)
         {
             if (weaponCol != null)
             {
                 weaponCol.enabled = false;
             }
-            else
-            {
-                // No weapon collider assigned but meleeRange is set; melee won't work properly,
-                // but no debug logs as per request.
-            }
         }
 
-        meleeTimer = meleeCooldown; // Allow immediate melee if in range
-        shootTimer = shootRate;     // Allow immediate shoot if ready
+        meleeTimer = meleeCooldown; 
+        shootTimer = shootRate;    
     }
 
     void Update()
@@ -138,7 +132,6 @@ public class dragonAI : MonoBehaviour, IDamage
             {
                 float distToPlayer = Vector3.Distance(transform.position, playerPos);
 
-                // Melee attack only if meleeRange > 0 AND weaponCol assigned
                 if (meleeRange > 0 && weaponCol != null && distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
                 {
                     agent.stoppingDistance = meleeRange;
@@ -148,7 +141,6 @@ public class dragonAI : MonoBehaviour, IDamage
                     return true;
                 }
 
-                // Ranged attack only if bullet prefab assigned
                 if (bullet != null && shootRate > 0 && distToPlayer <= stoppingDistOrig && shootTimer >= shootRate)
                 {
                     agent.stoppingDistance = stoppingDistOrig;
@@ -158,7 +150,6 @@ public class dragonAI : MonoBehaviour, IDamage
                     return true;
                 }
 
-                // Chase player with appropriate stopping distance (handle both cases safely)
                 if (bullet != null && shootRate > 0)
                     agent.stoppingDistance = stoppingDistOrig;
                 else if (meleeRange > 0)
