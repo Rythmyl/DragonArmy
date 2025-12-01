@@ -22,3 +22,7 @@ Temp/
 *.csproj
 *.sln
 *.unityproj
+*.dll
+*.obj
+/Builds/
+/obj/
