@@ -30,9 +30,6 @@ public class gamemanager : MonoBehaviour
 
     float timeScaleOrig;
 
-    int enemyCountFromEnemies;
-    int enemyCountFromGolems;
-    int enemyCountFromBugs;
     int enemyCountFromDragons;
 
     private Vector3 lastCheckpointPosition;
@@ -81,15 +78,6 @@ public class gamemanager : MonoBehaviour
 
     void InitializeEnemyCount()
     {
-        var enemies = Object.FindObjectsByType<enemyAI>(FindObjectsSortMode.None);
-        enemyCountFromEnemies = enemies.Length;
-
-        var golems = Object.FindObjectsByType<golemAI>(FindObjectsSortMode.None);
-        enemyCountFromGolems = golems.Length;
-
-        var bugs = Object.FindObjectsByType<bugAI>(FindObjectsSortMode.None);
-        enemyCountFromBugs = bugs.Length;
-
         var dragons = Object.FindObjectsByType<dragonAI>(FindObjectsSortMode.None);
         enemyCountFromDragons = dragons.Length;
 
@@ -98,36 +86,20 @@ public class gamemanager : MonoBehaviour
 
     void UpdateGameGoalUI()
     {
-        int totalCount = enemyCountFromEnemies + enemyCountFromGolems + enemyCountFromBugs + enemyCountFromDragons;
-        gameGoalCountText.text = "Enemy Count: " + totalCount.ToString("F0");
+        gameGoalCountText.text = "Enemy Count: " + enemyCountFromDragons.ToString("F0");
     }
 
-    public void updateGameGoal(int amount, bool isGolem = false, bool isBug = false, bool isDragon = false)
+    public void updateGameGoal(int amount, bool isDragon = false)
     {
-        if (isBug)
-        {
-            enemyCountFromBugs += amount;
-            if (enemyCountFromBugs < 0) enemyCountFromBugs = 0;
-        }
-        else if (isGolem)
-        {
-            enemyCountFromGolems += amount;
-            if (enemyCountFromGolems < 0) enemyCountFromGolems = 0;
-        }
-        else if (isDragon)
+        if (isDragon)
         {
             enemyCountFromDragons += amount;
             if (enemyCountFromDragons < 0) enemyCountFromDragons = 0;
         }
-        else
-        {
-            enemyCountFromEnemies += amount;
-            if (enemyCountFromEnemies < 0) enemyCountFromEnemies = 0;
-        }
 
         UpdateGameGoalUI();
 
-        if (enemyCountFromEnemies + enemyCountFromGolems + enemyCountFromBugs + enemyCountFromDragons <= 0)
+        if (enemyCountFromDragons <= 0)
         {
             statePause();
             menuActive = menuWin;
@@ -198,7 +170,7 @@ public class gamemanager : MonoBehaviour
             Rigidbody rb = rythmyl.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.linearVelocity = Vector3.zero; 
+                rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             }
         }
