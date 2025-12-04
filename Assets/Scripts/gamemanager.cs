@@ -13,9 +13,15 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuLose;
 
     [Header("----- UI Elements -----")]
-    public TMP_Text gameGoalCountText;
-    public Image RythmylHPBar;
+    public TMP_Text gameGoalCountText;    // Enemy Count text
+    public Image RythmylHPBar;             // Existing player HP bar
     public GameObject playerDamagePanel;
+
+    // New Tower HP UI references
+    [Header("----- Tower UI Elements -----")]
+    public towerHealth towerHealthComponent;    // Assign Tower GameObject's towerHealth script
+    public Image towerHPBar;                      // Tower HP bar Image (fill)
+    public TMP_Text towerHPText;                  // Tower HP numeric text
 
     [Header("----- Player References -----")]
     public GameObject rythmyl;
@@ -56,6 +62,9 @@ public class gamemanager : MonoBehaviour
             lastCheckpointPosition = rythmyl.transform.position;
 
         InitializeEnemyCount();
+
+        // Optional: Initialize tower health UI on start
+        UpdateTowerHPUI();
     }
 
     void Update()
@@ -74,6 +83,9 @@ public class gamemanager : MonoBehaviour
                 menuActive = null;
             }
         }
+
+        // Update tower HP UI every frame (or you can trigger updates on TakeDamage event instead)
+        UpdateTowerHPUI();
     }
 
     void InitializeEnemyCount()
@@ -174,5 +186,14 @@ public class gamemanager : MonoBehaviour
                 rb.angularVelocity = Vector3.zero;
             }
         }
+    }
+
+    void UpdateTowerHPUI()
+    {
+        if (towerHealthComponent == null || towerHPBar == null || towerHPText == null) return;
+
+        float healthPercent = (float)towerHealthComponent.currentHealth / towerHealthComponent.maxHealth;
+        towerHPBar.fillAmount = healthPercent;
+        towerHPText.text = $"{towerHealthComponent.currentHealth} / {towerHealthComponent.maxHealth}";
     }
 }
