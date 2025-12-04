@@ -79,7 +79,7 @@ public class dragonAI : MonoBehaviour, IDamage
         meleeTimer += Time.deltaTime;
 
         if (agent == null || anim == null)
-            return; // Safety check
+            return; 
 
         float agentSpeedCur = agent.velocity.magnitude;
         float agentSpeedAnim = anim.GetFloat("Speed");

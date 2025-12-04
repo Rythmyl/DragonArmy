@@ -119,33 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &129222267 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 30620365607225907, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-  m_PrefabInstance: {fileID: 3719637897376414449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &644598622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3619080967943060440, guid: bab2a2613d9110e4ba7ec4092706ce6d, type: 3}
   m_PrefabInstance: {fileID: 555007774192257700}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1036871211 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7865610585829253463, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-  m_PrefabInstance: {fileID: 3719637897376414449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1158535257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -554,29 +532,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: towerHPBar
-      value: 
-      objectReference: {fileID: 129222267}
-    - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: towerHPText
-      value: 
-      objectReference: {fileID: 1036871211}
-    - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: rythmylSpawnPos
       value: 
       objectReference: {fileID: 644598622}
     - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: gameGoalCountText
-      value: 
-      objectReference: {fileID: 7509273324890928008}
-    - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: towerHealthComponent
       value: 
       objectReference: {fileID: 8271533771395964579}
-    - target: {fileID: 4350073216178727597, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_text
-      value: Enemy Count
-      objectReference: {fileID: 0}
     - target: {fileID: 5762342664059952911, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -894,17 +856,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6680dd900e3b74bb63a2bd5f1c8c59, type: 3}
---- !u!114 &7509273324890928008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6057155302506031886, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-  m_PrefabInstance: {fileID: 3719637897376414449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &8271533771395964579 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2139201565497557489, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
