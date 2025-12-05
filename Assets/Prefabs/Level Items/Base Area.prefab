@@ -3666,9 +3666,9 @@ GameObject:
   - component: {fileID: 8216495787746526863}
   - component: {fileID: 2139201565497557489}
   - component: {fileID: 2479261927900669226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3726,7 +3726,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.5
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}

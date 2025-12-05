@@ -181,6 +181,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67002b699526044f85d0e36851b5e7c, type: 3}
+--- !u!1 &1983395121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3318195487652872182, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
+  m_PrefabInstance: {fileID: 2546508875134269402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &14406856007492210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,12 +861,73 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6680dd900e3b74bb63a2bd5f1c8c59, type: 3}
+--- !u!1001 &8053084560643457944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 756315738110136552, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 1983395121}
+    - target: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_Name
+      value: Green Baby Dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.294147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618543864616175511, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
 --- !u!114 &8271533771395964579 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2139201565497557489, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
   m_PrefabInstance: {fileID: 2546508875134269402}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1983395121}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21d97a16f2523fe4194ddb33535088ec, type: 3}
@@ -941,3 +1007,4 @@ SceneRoots:
   - {fileID: 4950343675066981954}
   - {fileID: 14406856007492210}
   - {fileID: 2546508875134269402}
+  - {fileID: 8053084560643457944}

@@ -15,8 +15,6 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(50, 500)][SerializeField] int HP;
     [Range(0, 180)][SerializeField] int FOV;
     [Range(1, 360)][SerializeField] int faceTargetSpeed;
-    [Range(1, 50)][SerializeField] int roamDist;
-    [Range(0, 10)][SerializeField] int roamPauseTime;
     [Range(1, 20)][SerializeField] int animTranSpeed;
 
     [Header("----- Shooting (Ranged) -----")]
@@ -30,45 +28,40 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(0.5f, 5f)][SerializeField] float meleeCooldown;
     [Range(1, 20)][SerializeField] int meleeDamage;
 
+    [Header("----- Tower Target -----")]
+    [SerializeField] GameObject tower;
+
     Color colorOrig;
 
     bool playerInTrigger;
     bool isDead = false;
+    bool isEngagedByPlayer = false;
 
     float shootTimer;
     float meleeTimer;
-    float roamTimer;
     float angleToPlayer;
     Vector3 playerDir;
-    Vector3 startingPos;
     Vector3 lastAttackPosition;
     float stoppingDistOrig;
 
     void Start()
     {
-        if (model == null)
-            Debug.LogError("Renderer (model) not assigned!");
-        else
-            colorOrig = model.material.color;
+        colorOrig = model != null ? model.material.color : Color.white;
+        stoppingDistOrig = agent != null ? agent.stoppingDistance : 0;
 
-        if (agent == null)
-            Debug.LogError("NavMeshAgent (agent) not assigned!");
-        else
-            stoppingDistOrig = agent.stoppingDistance;
+        lastAttackPosition = transform.position;
 
-        startingPos = transform.position;
-        lastAttackPosition = startingPos;
+        if (meleeRange > 0 && weaponCol != null)
+            weaponCol.enabled = false;
 
-        if (meleeRange > 0)
+        meleeTimer = meleeCooldown;
+        shootTimer = shootRate;
+
+        if (tower != null && agent != null)
         {
-            if (weaponCol != null)
-            {
-                weaponCol.enabled = false;
-            }
+            agent.stoppingDistance = 10f;
+            agent.SetDestination(GetClosestPointOnTower(transform.position));
         }
-
-        meleeTimer = meleeCooldown; 
-        shootTimer = shootRate;    
     }
 
     void Update()
@@ -78,115 +71,118 @@ public class dragonAI : MonoBehaviour, IDamage
         shootTimer += Time.deltaTime;
         meleeTimer += Time.deltaTime;
 
-        if (agent == null || anim == null)
-            return; 
+        if (agent == null || anim == null) return;
 
         float agentSpeedCur = agent.velocity.magnitude;
         float agentSpeedAnim = anim.GetFloat("Speed");
         anim.SetFloat("Speed", Mathf.Lerp(agentSpeedAnim, agentSpeedCur, Time.deltaTime * animTranSpeed));
 
-        if (agent.remainingDistance < 0.01f)
-            roamTimer += Time.deltaTime;
-
-        if (playerInTrigger && !CanSeePlayer())
-            CheckRoam();
-        else if (!playerInTrigger)
-            CheckRoam();
-    }
-
-    void CheckRoam()
-    {
-        if (agent != null && agent.remainingDistance < 0.01f && roamTimer >= roamPauseTime)
+        if (isEngagedByPlayer)
         {
-            Roam();
+            if (playerInTrigger && !CanSeePlayer())
+                isEngagedByPlayer = false;
+            else if (!playerInTrigger)
+                isEngagedByPlayer = false;
+        }
+
+        if (isEngagedByPlayer)
+        {
+            if (gamemanager.instance?.rythmyl != null)
+            {
+                Vector3 playerPos = gamemanager.instance.rythmyl.transform.position;
+                float distToPlayer = Vector3.Distance(transform.position, playerPos);
+
+                if (distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
+                {
+                    agent.stoppingDistance = meleeRange;
+                    agent.SetDestination(playerPos);
+                    FaceTarget(playerPos);
+                    MeleeAttack();
+                }
+                else if (bullet != null && shootRate > 0 && distToPlayer <= stoppingDistOrig && shootTimer >= shootRate)
+                {
+                    agent.stoppingDistance = stoppingDistOrig;
+                    agent.SetDestination(playerPos);
+                    FaceTarget(playerPos);
+                    Shoot();
+                }
+                else
+                {
+                    agent.SetDestination(playerPos);
+                    FaceTarget(playerPos);
+                }
+            }
+        }
+        else
+        {
+            if (tower == null) return;
+
+            float distToTower = Vector3.Distance(transform.position, GetClosestPointOnTower(transform.position));
+
+            if (distToTower <= 10f)
+            {
+                FaceTarget(tower.transform.position);
+
+                if (bullet != null && shootRate > 0 && shootTimer >= shootRate)
+                    Shoot();
+
+                if (meleeRange > 0 && meleeTimer >= meleeCooldown && distToTower <= meleeRange)
+                    MeleeAttack();
+
+                agent.stoppingDistance = 10f;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
+            }
+            else
+            {
+                agent.stoppingDistance = 10f;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
+            }
         }
     }
 
-    void Roam()
+    Vector3 GetClosestPointOnTower(Vector3 fromPosition)
     {
-        roamTimer = 0;
-        if (agent == null) return;
+        if (tower == null) return Vector3.zero;
 
-        agent.stoppingDistance = 0;
+        CapsuleCollider cap = tower.GetComponent<CapsuleCollider>();
+        if (cap != null)
+            return cap.ClosestPoint(fromPosition);
 
-        Vector3 ranPos = Random.insideUnitSphere * roamDist + startingPos;
-        NavMeshHit hit;
-        NavMesh.SamplePosition(ranPos, out hit, roamDist, NavMesh.AllAreas);
-        agent.SetDestination(hit.position);
+        return tower.transform.position;
     }
 
     bool CanSeePlayer()
     {
-        if (headPos == null || agent == null)
-            return false;
+        if (headPos == null || agent == null) return false;
 
         Vector3 playerPos = gamemanager.instance?.rythmyl?.transform.position ?? Vector3.zero;
         playerDir = playerPos - headPos.position;
         angleToPlayer = Vector3.Angle(playerDir, transform.forward);
 
-        Debug.DrawRay(headPos.position, playerDir, Color.green);
-
         if (Physics.Raycast(headPos.position, playerDir, out RaycastHit hit))
         {
             if (angleToPlayer <= FOV && hit.collider.CompareTag("Rythmyl"))
             {
-                float distToPlayer = Vector3.Distance(transform.position, playerPos);
-
-                if (meleeRange > 0 && weaponCol != null && distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
-                {
-                    agent.stoppingDistance = meleeRange;
-                    agent.SetDestination(playerPos);
-                    FaceTarget();
-                    MeleeAttack();
-                    return true;
-                }
-
-                if (bullet != null && shootRate > 0 && distToPlayer <= stoppingDistOrig && shootTimer >= shootRate)
-                {
-                    agent.stoppingDistance = stoppingDistOrig;
-                    agent.SetDestination(playerPos);
-                    FaceTarget();
-                    Shoot();
-                    return true;
-                }
-
-                if (bullet != null && shootRate > 0)
-                    agent.stoppingDistance = stoppingDistOrig;
-                else if (meleeRange > 0)
-                    agent.stoppingDistance = meleeRange;
-                else
-                    agent.stoppingDistance = 0;
-
-                agent.SetDestination(playerPos);
-
-                if (distToPlayer <= agent.stoppingDistance)
-                    FaceTarget();
-
                 return true;
             }
         }
 
-        if (agent != null)
-            agent.stoppingDistance = 0;
-
         return false;
     }
 
-    void FaceTarget()
+    void FaceTarget(Vector3 targetPos)
     {
-        Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x, 0, playerDir.z));
+        Vector3 dir = targetPos - transform.position;
+        Quaternion rot = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, faceTargetSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == null)
-            return;
+        if (other == null) return;
 
         if (other.CompareTag("Rythmyl"))
-        {
             playerInTrigger = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -196,18 +192,12 @@ public class dragonAI : MonoBehaviour, IDamage
         if (!other.CompareTag("Rythmyl")) return;
 
         playerInTrigger = false;
-        if (agent != null)
-        {
-            agent.stoppingDistance = 0;
-            agent.SetDestination(lastAttackPosition);
-        }
     }
 
     void Shoot()
     {
         shootTimer = 0;
-        if (anim != null)
-            anim.SetTrigger("Shoot");
+        anim?.SetTrigger("Shoot");
     }
 
     public void createBullet()
@@ -218,17 +208,18 @@ public class dragonAI : MonoBehaviour, IDamage
 
         Rigidbody rb = newBullet.GetComponent<Rigidbody>();
         if (rb != null)
-        {
             rb.linearVelocity = shootPos.forward * bulletSpeed;
-        }
     }
 
     void MeleeAttack()
     {
         meleeTimer = 0;
-        if (anim != null)
-            anim.SetTrigger("Attack");
-        lastAttackPosition = gamemanager.instance?.rythmyl?.transform.position ?? lastAttackPosition;
+        anim?.SetTrigger("Attack");
+
+        if (isEngagedByPlayer)
+            lastAttackPosition = gamemanager.instance?.rythmyl?.transform.position ?? lastAttackPosition;
+        else if (tower != null)
+            lastAttackPosition = tower.transform.position;
     }
 
     public void weaponColOn()
@@ -248,7 +239,11 @@ public class dragonAI : MonoBehaviour, IDamage
         if (isDead) return;
 
         HP -= amount;
-        if (agent != null && gamemanager.instance?.rythmyl != null)
+
+        if (!isEngagedByPlayer)
+            isEngagedByPlayer = true;
+
+        if (agent != null && gamemanager.instance?.rythmyl != null && isEngagedByPlayer)
             agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
 
         if (HP <= 0)
@@ -260,9 +255,7 @@ public class dragonAI : MonoBehaviour, IDamage
             Destroy(gameObject, 5f);
         }
         else
-        {
             StartCoroutine(flashRed());
-        }
     }
 
     IEnumerator flashRed()

@@ -9,7 +9,7 @@ public class damage : MonoBehaviour
     [Header("----- Damage Settings -----")]
     [SerializeField] damageType type;
 
-    [Range(1, 1000)][SerializeField] int damageAmount;
+    [Range(1, 1000)]public int damageAmount;
     [Range(0.01f, 5f)][SerializeField] float damageRate;
     [Range(0, 50)][SerializeField] int speed;
     [Range(1, 30)][SerializeField] int destroyTime;
