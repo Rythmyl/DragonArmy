@@ -926,6 +926,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26453fcc9cf493440b6c09d96499eca0, type: 3}
+--- !u!1001 &4567700446405959234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1796556408781409025, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 2546508875134269403}
+    - target: {fileID: 4743786681775991303, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_Name
+      value: Purple Baby Dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586363931245575097, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
 --- !u!114 &8271533771395964579 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2139201565497557489, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
@@ -1010,5 +1071,6 @@ SceneRoots:
   - {fileID: 1591803190226162999}
   - {fileID: 1311599086887084441}
   - {fileID: 8913420881850092520}
-  - {fileID: 364202371}
   - {fileID: 3244845173029427589}
+  - {fileID: 364202371}
+  - {fileID: 4567700446405959234}
