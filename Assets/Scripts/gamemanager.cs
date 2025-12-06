@@ -13,15 +13,15 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuLose;
 
     [Header("----- UI Elements -----")]
-    public TMP_Text gameGoalCountText;   
-    public Image RythmylHPBar;            
+    public TMP_Text gameGoalCountText;
+    public Image RythmylHPBar;
     public GameObject playerDamagePanel;
 
     [Header("----- Tower UI Elements -----")]
-    public towerHealth towerHealthComponent;    
-    public Image towerHPBar;                     
-    public TMP_Text towerHPText;  
-    
+    public towerHealth towerHealthComponent;
+    public Image towerHPBar;
+    public TMP_Text towerHPText;
+
     [Header("----- Player References -----")]
     public GameObject rythmyl;
     public playerController rythmylScript;
@@ -93,7 +93,7 @@ public class gamemanager : MonoBehaviour
 
     void UpdateGameGoalUI()
     {
-        gameGoalCountText.text = "Enemy Count: " + enemyCountFromDragons.ToString("F0");
+        gameGoalCountText.text = enemyCountFromDragons.ToString("F0");
     }
 
     public void updateGameGoal(int amount, bool isDragon = false)
@@ -189,6 +189,5 @@ public class gamemanager : MonoBehaviour
 
         float healthPercent = (float)towerHealthComponent.currentHealth / towerHealthComponent.maxHealth;
         towerHPBar.fillAmount = healthPercent;
-        towerHPText.text = $"{towerHealthComponent.currentHealth} / {towerHealthComponent.maxHealth}";
     }
 }

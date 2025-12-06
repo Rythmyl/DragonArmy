@@ -1,59 +1,64 @@
+using System.Collections;
 using UnityEngine;
 
 public class dragonSpawner : MonoBehaviour
 {
     [Header("----- Spawn Settings -----")]
     [Range(1, 100)][SerializeField] int spawnAmount;
-    [Range(0, 10)][SerializeField] int spawnRate;
+    [Range(0.1f, 10f)][SerializeField] float spawnRate;
 
-    [Header("----- Spawn Objects -----")]
-    [SerializeField] GameObject objectToSpawn;
+    [Header("----- Spawn Object (Single dragon prefab) -----")]
+    [SerializeField] GameObject dragonPrefab;
 
     [Header("----- Spawn Positions -----")]
     [SerializeField] Transform[] spawnPos;
 
-    int spawnCount;
-    float spawnTimer;
-    bool startSpawning;
+    [Header("----- Tower Reference -----")]
+    [SerializeField] GameObject tower;
+
+    private int spawnedCount = 0;
+    private bool isSpawning = false;
+    private float spawnTimer = 0f;
 
     void Start()
     {
         gamemanager.instance.updateGameGoal(spawnAmount, isDragon: true);
+        StartCoroutine(StartSpawningAfterDelay(3f));
     }
 
     void Update()
     {
-        if (startSpawning)
-        {
-            spawnTimer += Time.deltaTime;
-
-            if (spawnCount < spawnAmount && spawnTimer >= spawnRate)
-            {
-                spawn();
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Rythmyl"))
-        {
-            startSpawning = true;
-        }
-    }
-
-    void spawn()
-    {
-        if (spawnPos == null || spawnPos.Length == 0)
-        {
-            Debug.LogError("No spawn positions assigned to dragonSpawner!");
+        if (!isSpawning)
             return;
+
+        spawnTimer += Time.deltaTime;
+
+        if (spawnedCount < spawnAmount && spawnTimer >= spawnRate)
+        {
+            SpawnDragon();
+            spawnTimer = 0f;
         }
+        else if (spawnedCount >= spawnAmount)
+        {
+            isSpawning = false;
+        }
+    }
 
-        int index = Random.Range(0, spawnPos.Length);
-        Instantiate(objectToSpawn, spawnPos[index].position, Quaternion.identity);
+    void SpawnDragon()
+    {
+        int spawnIndex = Random.Range(0, spawnPos.Length);
+        GameObject dragon = Instantiate(dragonPrefab, spawnPos[spawnIndex].position, Quaternion.identity);
+        var ai = dragon.GetComponent<dragonAI>();
+        if (ai != null)
+            ai.tower = tower;
+        spawnedCount++;
+    }
 
-        spawnCount++;
-        spawnTimer = 0;
+    System.Collections.IEnumerator StartSpawningAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        spawnedCount = 0;
+        spawnTimer = spawnRate;
+        isSpawning = true;
     }
 }
