@@ -533,7 +533,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007067571517596122, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.72
+      value: -121.4
       objectReference: {fileID: 0}
     - target: {fileID: 1007067571517596122, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -541,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007067571517596122, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.98
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1007067571517596122, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -575,14 +575,6 @@ PrefabInstance:
       propertyPath: tower
       value: 
       objectReference: {fileID: 2546508875134269403}
-    - target: {fileID: 2977614333753590577, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
-      propertyPath: spawnRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977614333753590577, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
-      propertyPath: spawnAmount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4097052491404933537, guid: 126a8acd0c4c4d74681a8180731c1b9e, type: 3}
       propertyPath: m_Name
       value: Green Baby Dragon Spawner

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3337972720123903650}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -103.97, y: 0, z: 0.63}
+  m_LocalPosition: {x: -2.13, y: 0, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 3698070586663287641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.2, y: 0, z: 3.1}
+  m_LocalPosition: {x: -2.21, y: 0, z: 3.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007067571517596122}
   - component: {fileID: 2977614333753590577}
-  - component: {fileID: 332489664686866517}
   m_Layer: 0
   m_Name: Green Baby Dragon Spawner
   m_TagString: Untagged
@@ -155,36 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd18ed7b61bd5d140b4dd267d426bd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
-  spawnAmount: 5
-  spawnRate: 3
-  objectToSpawn: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+  spawnAmount: 10
+  spawnRate: 2
+  dragonPrefab: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
   spawnPos:
   - {fileID: 1557406253857688242}
   - {fileID: 3394839198777309520}
   - {fileID: 8648486423616281391}
   - {fileID: 8918407968392106335}
   tower: {fileID: 0}
---- !u!135 &332489664686866517
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4097052491404933537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4585563734835930003
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 4585563734835930003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.19, y: 0, z: 5.57}
+  m_LocalPosition: {x: -2.3, y: 0, z: 5.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 6955839918899853239}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.23, y: 0, z: -1.83}
+  m_LocalPosition: {x: -2.26, y: 0, z: -1.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
