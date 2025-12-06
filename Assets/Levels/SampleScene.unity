@@ -982,6 +982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'NavMesh Surface '
       objectReference: {fileID: 0}
+    - target: {fileID: 4585663055433388254, guid: 26453fcc9cf493440b6c09d96499eca0, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 45800bdc6d4399f49b25707dea8b482d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
