@@ -305,7 +305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.339
+      value: -10.83
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalPosition.y
@@ -313,23 +313,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.258
+      value: 11.03
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.38266882
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.008062202
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.92384434
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.003339473
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4767232068645334416, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7681952919071825019, guid: adb3b5a71186a8f4eade4415ba669470, type: 3}
       propertyPath: m_Name
@@ -982,10 +982,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'NavMesh Surface '
       objectReference: {fileID: 0}
-    - target: {fileID: 4585663055433388254, guid: 26453fcc9cf493440b6c09d96499eca0, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 146b30bcab02b784da5b5633ba9e878e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
