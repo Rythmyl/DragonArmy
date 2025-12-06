@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [SerializeField] CharacterController controller;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] Transform cam;
-    [SerializeField] float lookSensitivity = 150f;
+    [SerializeField] float lookSensitivity = 75f;
 
     [Header("----- Stats -----")]
     [Range(1, 100)][SerializeField] int HP;
