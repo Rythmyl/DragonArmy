@@ -142,9 +142,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
   - component: {fileID: 877100574883663835}
   - component: {fileID: 6764584713310186304}
   - component: {fileID: 3825280809526355023}
+=======
   - component: {fileID: 2626303020958852580}
   - component: {fileID: 1439115883443245101}
   - component: {fileID: 6847259908960760346}
@@ -2859,6 +2861,7 @@ GameObject:
   - component: {fileID: 8961632084531348595}
   - component: {fileID: 8578926133536648821}
   - component: {fileID: 824698897059314118}
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
   m_Layer: 0
   m_Name: Blocks
   m_TagString: Untagged
@@ -3079,6 +3082,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
   - component: {fileID: 915477674792982018}
   - component: {fileID: 305351066766247985}
   - component: {fileID: 4974489444403615598}
@@ -3090,6 +3094,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &915477674792982018
+=======
   - component: {fileID: 7531051286304711433}
   - component: {fileID: 576621750932466458}
   - component: {fileID: 2249661527604246392}
@@ -3102,11 +3107,13 @@ GameObject:
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7531051286304711433
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
   m_GameObject: {fileID: 205052819611513441}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071074, z: -0, w: -0.70710623}
@@ -3118,6 +3125,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &305351066766247985
 Light:
+=======
   m_GameObject: {fileID: 953800697023483370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1.2246469e-16, z: -0, w: 1}
@@ -3129,10 +3137,12 @@ Light:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &576621750932466458
 MeshFilter:
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
   m_GameObject: {fileID: 205052819611513441}
   m_Enabled: 1
   serializedVersion: 11
@@ -3194,6 +3204,7 @@ MeshFilter:
   m_EnableSpotReflector: 1
 --- !u!114 &4974489444403615598
 MonoBehaviour:
+=======
   m_GameObject: {fileID: 953800697023483370}
   m_Mesh: {fileID: 8741666285422684383, guid: 32f65586c04145d448d22ab6b516b7c3, type: 3}
 --- !u!23 &2249661527604246392
@@ -3246,10 +3257,12 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &8478538503980038989
 MeshCollider:
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
   m_GameObject: {fileID: 205052819611513441}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3274,6 +3287,7 @@ MeshCollider:
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
 --- !u!1 &216039558685176997
+=======
   m_GameObject: {fileID: 953800697023483370}
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4400,6 +4414,7 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 8741666285422684383, guid: 32f65586c04145d448d22ab6b516b7c3, type: 3}
 --- !u!1 &1187355775610845159
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5289,6 +5304,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
+=======
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -5335,6 +5352,7 @@ NavMeshObstacle:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355201554240627576}
   m_Enabled: 1
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
   serializedVersion: 3
   m_Size: {x: 1.25, y: 9, z: 5.25}
   m_Center: {x: 0, y: 4.5, z: 0}
@@ -5371,7 +5389,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1671981366013548615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Prefabs/Level Items/Purple Chamber.prefab
 --- !u!108 &5149222155328366614
+=======
 --- !u!33 &196401615531308665
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6330,6 +6350,7 @@ Transform:
   m_Father: {fileID: 4420128243552748490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4412401874700371846
+>>>>>>> parent of 27bb4391 (Green boss):Assets/Prefabs/Level Items/Level Items.prefab
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
