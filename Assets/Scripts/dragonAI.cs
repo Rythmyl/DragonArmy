@@ -166,7 +166,6 @@ public class dragonAI : MonoBehaviour, IDamage
                 return true;
             }
         }
-
         return false;
     }
 
@@ -180,7 +179,6 @@ public class dragonAI : MonoBehaviour, IDamage
     private void OnTriggerEnter(Collider other)
     {
         if (other == null) return;
-
         if (other.CompareTag("Rythmyl"))
             playerInTrigger = true;
     }
@@ -188,7 +186,6 @@ public class dragonAI : MonoBehaviour, IDamage
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Rythmyl")) return;
-
         playerInTrigger = false;
     }
 
@@ -201,9 +198,7 @@ public class dragonAI : MonoBehaviour, IDamage
     public void createBullet()
     {
         if (bullet == null || shootPos == null) return;
-
         GameObject newBullet = Instantiate(bullet, shootPos.position, shootPos.rotation);
-
         Rigidbody rb = newBullet.GetComponent<Rigidbody>();
         if (rb != null)
             rb.linearVelocity = shootPos.forward * bulletSpeed;
@@ -261,5 +256,15 @@ public class dragonAI : MonoBehaviour, IDamage
         model.material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         model.material.color = colorOrig;
+    }
+
+    public void SetTowerTarget(GameObject towerTarget)
+    {
+        tower = towerTarget;
+
+        if (agent != null && tower != null)
+        {
+            agent.SetDestination(GetClosestPointOnTower(transform.position));
+        }
     }
 }
