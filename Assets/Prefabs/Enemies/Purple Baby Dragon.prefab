@@ -966,7 +966,6 @@ MonoBehaviour:
   meleeCooldown: 0.5
   meleeDamage: 1
   tower: {fileID: 0}
-  engageTimeout: 5
 --- !u!195 &7233180313863212970
 NavMeshAgent:
   m_ObjectHideFlags: 0

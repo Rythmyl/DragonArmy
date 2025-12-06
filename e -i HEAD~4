@@ -1,0 +1,56 @@
+[33m1821a345[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mDArmy-AlexW[m[33m, [m[1;31morigin/DArmy-AlexW[m[33m)[m Merge branch 'main' into DArmy-AlexW
+[33m9b604eec[m mmm
+[33m451a29a5[m timer for spawning
+[33m300d7658[m Merge branch 'main' of https://github.com/Rythmyl/DragonArmy
+[33me8d5582b[m spawner logic
+[33m47000dab[m Update RedPBR.mat.meta
+[33m0b16cf6b[m Red Dragon
+[33m09ae939d[m Purple Dragon
+[33md7e421ac[m Blue Dragon
+[33m13e963fb[m scene finished
+[33m65ec0c6b[m file clean up
+[33mfb7b3744[m Base Area
+[33mbd44df5f[m adjusted UI
+[33m17932949[m new dragonAI
+[33ma74863a2[m tower
+[33m2f787a5e[m added tower w/health
+[33meba4ee59[m finished green chamber scene
+[33me42efbc7[m removed asset downloads.
+[33m824c95ab[m removed un necessary scripts
+[33md3d26f6e[m adjusted trees
+[33mbb8050d3[m Tower area
+[33m39889b84[m New Scene
+[33m992c33e5[m getting started
+[33m048339c8[m Update project settings and clean up build files from tracking
+[33m31e5102b[m Update project settings
+[33ma5494a5a[m Add .gitignore to exclude Unity build and cache files
+[33mca816443[m Remove unwanted build and cache files from repo
+[33m858ce723[m 1
+[33m30283575[m Update .gitignore to ignore build and binary files
+[33m0035af43[m Remove Unity-generated project files from repo
+[33m1dcb467b[m green boars
+[33mc6d1beb3[m Update dragonAI.cs
+[33m27bb4391[m Green boss
+[33m69ae708b[m added boss
+[33m3254601c[m increased floor size
+[33m10ea5c34[m new environment
+[33m033a1fbe[m baby dragons
+[33m5a50ee46[m staff w/pickup
+[33m107d1e84[m staff
+[33m7bacf1d3[m Add Unity ignore rules; remove duplicate spruce prefabs; add correct prefab meta
+[33ma7c9eff3[m Remove duplicate spruce prefab files; keep correct prefab meta
+[33m65aa439c[m Clean logs and user settings; update scene, materials, and prefabs
+[33m698e5ac3[m Add Temp/ to .gitignore to ignore Unity temp files
+[33m2bbd64c2[m initial commit
+[33mc224106d[m Ignore build and cache folders
+[33m592d7041[m Add large asset files tracked by Git LFS
+[33m1b4bf251[m Track large asset files with Git LFS
+[33meb045843[m Ignore cache and build folders
+[33m0bb1c784[m Track large files with Git LFS
+[33m5f0a6e1a[m Ignore cache and binary folders to clean repo
+[33m5038be5c[m Remove tracked large .suo file and ignore .vs and Library cache folders
+[33m90011af6[m Remove large CodeChunks.db files and ignore .vs and Library/PackageCache directories
+[33m024ddea0[m Track large binary files with Git LFS
+[33m9e39340f[m Remove large files and cache folders from git tracking
+[33m7a3c805d[m Remove large files, track with LFS, and clean push
+[33m6549215a[m Initial project import with LFS and Unity .gitignore

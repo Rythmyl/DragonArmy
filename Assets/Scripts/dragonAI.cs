@@ -29,7 +29,7 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(1, 20)][SerializeField] int meleeDamage;
 
     [Header("----- Tower Target -----")]
-    public GameObject tower;
+    [SerializeField] GameObject tower;
 
     Color colorOrig;
 
@@ -43,9 +43,6 @@ public class dragonAI : MonoBehaviour, IDamage
     Vector3 playerDir;
     Vector3 lastAttackPosition;
     float stoppingDistOrig;
-
-    float lastHitTime = -10f;
-    [SerializeField] float engageTimeout = 5f;
 
     void Start()
     {
@@ -82,18 +79,10 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (isEngagedByPlayer)
         {
-            if (Time.time - lastHitTime > engageTimeout)
-            {
+            if (playerInTrigger && !CanSeePlayer())
                 isEngagedByPlayer = false;
-            }
-            else if (playerInTrigger && !CanSeePlayer())
-            {
-                isEngagedByPlayer = false;
-            }
             else if (!playerInTrigger)
-            {
                 isEngagedByPlayer = false;
-            }
         }
 
         if (isEngagedByPlayer)
@@ -198,8 +187,6 @@ public class dragonAI : MonoBehaviour, IDamage
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == null) return;
-
         if (!other.CompareTag("Rythmyl")) return;
 
         playerInTrigger = false;
@@ -254,17 +241,15 @@ public class dragonAI : MonoBehaviour, IDamage
         if (!isEngagedByPlayer)
             isEngagedByPlayer = true;
 
-        lastHitTime = Time.time; 
-
         if (agent != null && gamemanager.instance?.rythmyl != null && isEngagedByPlayer)
             agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
 
         if (HP <= 0)
         {
             isDead = true;
-            gamemanager.instance?.updateGameGoal(-1, isDragon: true);
-            if (agent != null)
-                agent.isStopped = true;
+            gamemanager.instance.updateGameGoal(-1, isDragon: true);
+            anim.SetTrigger("Death");
+            agent.isStopped = true;
             Destroy(gameObject, 5f);
         }
         else
@@ -273,11 +258,8 @@ public class dragonAI : MonoBehaviour, IDamage
 
     IEnumerator flashRed()
     {
-        if (model != null)
-        {
-            model.material.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            model.material.color = colorOrig;
-        }
+        model.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        model.material.color = colorOrig;
     }
 }
