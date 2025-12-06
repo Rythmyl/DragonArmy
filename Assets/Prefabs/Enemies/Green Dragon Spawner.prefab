@@ -156,12 +156,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
   spawnAmount: 10
   spawnRate: 2
-  objectToSpawn: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
+  dragonPrefab: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
   spawnPos:
   - {fileID: 1557406253857688242}
   - {fileID: 3394839198777309520}
   - {fileID: 8648486423616281391}
   - {fileID: 8918407968392106335}
+  tower: {fileID: 0}
+  allSpawners: []
 --- !u!1 &4585563734835930003
 GameObject:
   m_ObjectHideFlags: 0
