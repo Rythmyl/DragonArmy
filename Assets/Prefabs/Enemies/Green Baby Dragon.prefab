@@ -1100,8 +1100,8 @@ MonoBehaviour:
   weaponCol: {fileID: 0}
   HP: 50
   FOV: 180
-  faceTargetSpeed: 8
-  animTranSpeed: 1
+  faceTargetSpeed: 30
+  animTranSpeed: 10
   bullet: {fileID: 5592098548552792025, guid: 7e31b812dfe857e4ea75f7f8c0da7bf2, type: 3}
   shootRate: 0.1
   shootPos: {fileID: 4083105311244311453}
@@ -1110,6 +1110,7 @@ MonoBehaviour:
   meleeCooldown: 0.5
   meleeDamage: 1
   tower: {fileID: 0}
+  engageTimeout: 5
 --- !u!195 &-2234759039423153893
 NavMeshAgent:
   m_ObjectHideFlags: 0

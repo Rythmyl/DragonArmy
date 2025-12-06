@@ -12,6 +12,9 @@ public class dragonSpawner : MonoBehaviour
     [Header("----- Spawn Positions -----")]
     [SerializeField] Transform[] spawnPos;
 
+    [Header("----- Tower Reference -----")]
+    [SerializeField] GameObject tower;
+
     int spawnCount;
     float spawnTimer;
     bool startSpawning;
@@ -46,12 +49,17 @@ public class dragonSpawner : MonoBehaviour
     {
         if (spawnPos == null || spawnPos.Length == 0)
         {
-            Debug.LogError("No spawn positions assigned to dragonSpawner!");
             return;
         }
 
         int index = Random.Range(0, spawnPos.Length);
-        Instantiate(objectToSpawn, spawnPos[index].position, Quaternion.identity);
+        GameObject spawnedDragon = Instantiate(objectToSpawn, spawnPos[index].position, Quaternion.identity);
+
+        dragonAI dragonScript = spawnedDragon.GetComponent<dragonAI>();
+        if (dragonScript != null && tower != null)
+        {
+            dragonScript.tower = tower;
+        }
 
         spawnCount++;
         spawnTimer = 0;
