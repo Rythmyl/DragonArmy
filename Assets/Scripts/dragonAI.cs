@@ -29,7 +29,7 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(1, 20)][SerializeField] int meleeDamage;
 
     [Header("----- Tower Target -----")]
-    [SerializeField] GameObject tower;
+    public GameObject tower;
 
     Color colorOrig;
 
@@ -43,6 +43,9 @@ public class dragonAI : MonoBehaviour, IDamage
     Vector3 playerDir;
     Vector3 lastAttackPosition;
     float stoppingDistOrig;
+
+    float lastHitTime = -10f;
+    [SerializeField] float engageTimeout = 5f;
 
     void Start()
     {
@@ -79,10 +82,18 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (isEngagedByPlayer)
         {
-            if (playerInTrigger && !CanSeePlayer())
+            if (Time.time - lastHitTime > engageTimeout)
+            {
                 isEngagedByPlayer = false;
+            }
+            else if (playerInTrigger && !CanSeePlayer())
+            {
+                isEngagedByPlayer = false;
+            }
             else if (!playerInTrigger)
+            {
                 isEngagedByPlayer = false;
+            }
         }
 
         if (isEngagedByPlayer)
@@ -242,6 +253,8 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (!isEngagedByPlayer)
             isEngagedByPlayer = true;
+
+        lastHitTime = Time.time; 
 
         if (agent != null && gamemanager.instance?.rythmyl != null && isEngagedByPlayer)
             agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
