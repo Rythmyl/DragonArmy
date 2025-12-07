@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1007067571517596122}
   - component: {fileID: 2977614333753590577}
   m_Layer: 0
-  m_Name: Green Baby Dragon Spawner
+  m_Name: 'Red Dragon Spawner   '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,15 +154,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd18ed7b61bd5d140b4dd267d426bd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
-  spawnAmount: 10
-  spawnRate: 2
-  dragonPrefab: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
-  spawnPos:
-  - {fileID: 1557406253857688242}
-  - {fileID: 3394839198777309520}
-  - {fileID: 8648486423616281391}
-  - {fileID: 8918407968392106335}
-  tower: {fileID: 0}
+  spawners:
+  - dragonPrefab: {fileID: 2484084186865453688, guid: 914d0aa110795d74f8aa23fb87dc073c, type: 3}
+    spawnPoints:
+    - {fileID: 1557406253857688242}
+    - {fileID: 3394839198777309520}
+    - {fileID: 8648486423616281391}
+    - {fileID: 8918407968392106335}
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 10
+    spawnFrequency: 2
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  delayBetweenSpawners: 30
 --- !u!1 &4585563734835930003
 GameObject:
   m_ObjectHideFlags: 0

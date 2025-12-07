@@ -260,11 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd18ed7b61bd5d140b4dd267d426bd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
-  spawnAmount: 10
-  spawnRate: 2
-  objectToSpawn: {fileID: 4743786681775991303, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
-  spawnPos:
-  - {fileID: 7341751332151114146}
-  - {fileID: 1779498163952328910}
-  - {fileID: 8290456758897978225}
-  - {fileID: 4744292833734771617}
+  spawners:
+  - dragonPrefab: {fileID: 4743786681775991303, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
+    spawnPoints:
+    - {fileID: 7341751332151114146}
+    - {fileID: 1779498163952328910}
+    - {fileID: 8290456758897978225}
+    - {fileID: 4744292833734771617}
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 10
+    spawnFrequency: 2
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  delayBetweenSpawners: 30
