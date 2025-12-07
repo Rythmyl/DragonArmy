@@ -57,10 +57,10 @@ MonoBehaviour:
     - {fileID: 2614791498116317371}
     towerTarget: {fileID: 0}
     quantityToSpawn: 10
-    spawnFrequency: 2
+    spawnFrequency: 5
     dragonsSpawned: 0
     nextSpawnIndex: 0
-  delayBetweenSpawners: 30
+  delayBetweenSpawners: 0
 --- !u!1 &5029772534448503201
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,6 +31,8 @@ public class dragonSpawner : MonoBehaviour
             spawner.dragonsSpawned = 0;
             spawner.nextSpawnIndex = 0;
 
+            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
+
             float spawnDuration = spawner.quantityToSpawn * spawner.spawnFrequency;
             float waitTimeAfterSpawn = delayBetweenSpawners - spawnDuration;
             if (waitTimeAfterSpawn < 0) waitTimeAfterSpawn = 0;

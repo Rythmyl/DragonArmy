@@ -244,7 +244,7 @@ public class dragonAI : MonoBehaviour, IDamage
             isDead = true;
             gamemanager.instance.updateGameGoal(-1, isDragon: true);
             agent.isStopped = true;
-            Destroy(gameObject, 5f);
+            Destroy(gameObject); 
         }
         else
             StartCoroutine(flashRed());
