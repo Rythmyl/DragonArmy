@@ -11,6 +11,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [SerializeField] CharacterController controller;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] Transform cam;
+    [SerializeField] Camera gunCam;
     [SerializeField] float lookSensitivity = 75f;
 
     [Header("----- Stats -----")]
@@ -71,10 +72,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     {
         if (!gamemanager.instance.isPaused)
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
-
             shootTimer += Time.deltaTime;
-
             movement();
         }
         sprint();
@@ -96,13 +94,13 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             playerVel.y -= gravity * Time.deltaTime;
         }
 
-        moveDir = moveInput.x *    transform.right+moveInput.y*transform.forward;
+        moveDir = moveInput.x * transform.right + moveInput.y * transform.forward;
         controller.Move(moveDir * speed * Time.deltaTime);
 
         jump();
         controller.Move(playerVel * Time.deltaTime);
 
-        if (shootTimer >= shootRate&& weaponList.Count>0&& Input.GetButton("Fire1"))
+        if (shootTimer >= shootRate && weaponList.Count > 0 && Input.GetButton("Fire1"))
         {
             shoot();
         }
@@ -115,13 +113,10 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         aud.PlayOneShot(audStep[Random.Range(0, audStep.Length)], audStepVol);
 
         if (isSprinting)
-        {
             yield return new WaitForSeconds(0.3f);
-        }
         else
-        {
             yield return new WaitForSeconds(0.5f);
-        }
+
         isPlayingStep = false;
     }
 
@@ -132,7 +127,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             speed *= sprintMod;
             isSprinting = true;
         }
-        else if (!sprintHeld&& isSprinting)
+        else if (!sprintHeld && isSprinting)
         {
             speed /= sprintMod;
             isSprinting = false;
@@ -151,7 +146,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         }
         else
         {
-            jumpPressed=false;
+            jumpPressed = false;
         }
     }
 
@@ -162,17 +157,28 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         aud.pitch = Random.Range(0.9f, 1.1f);
         aud.PlayOneShot(currentWeapon.shootSound[Random.Range(0, currentWeapon.shootSound.Length)], currentWeapon.shootSoundVol);
 
+        Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+        Ray ray = gunCam.ScreenPointToRay(screenCenter);
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDist, ~ignoreLayer))
+
+        Vector3 targetPoint;
+        if (Physics.Raycast(ray, out hit, shootDist, ~ignoreLayer))
         {
+            targetPoint = hit.point;
             IDamage dmg = hit.collider.GetComponent<IDamage>();
             if (dmg != null)
             {
                 dmg.takeDamage(shootDamage);
             }
-
             Instantiate(currentWeapon.hitEffect, hit.point, Quaternion.identity);
         }
+        else
+        {
+            targetPoint = ray.GetPoint(shootDist);
+        }
+
+        Vector3 aimDirection = (targetPoint - gunModel.transform.position).normalized;
+        gunModel.transform.forward = aimDirection;
     }
 
     public void takeDamage(int amount)
@@ -206,7 +212,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     {
         weaponList.Add(gun);
 
-        if (gun.gunModel.name.ToLower().Contains("staff"))
+        if (gun.gunModel.name.ToLower().Contains("Staff"))
             weaponTypes.Add(WeaponType.Staff);
         else
             weaponTypes.Add(WeaponType.Gun);
@@ -264,12 +270,13 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
     void selectWeapon()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && weaponListPos < weaponList.Count - 1)
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll > 0 && weaponListPos < weaponList.Count - 1)
         {
             weaponListPos++;
             changeWeapon();
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponListPos > 0)
+        else if (scroll < 0 && weaponListPos > 0)
         {
             weaponListPos--;
             changeWeapon();
@@ -288,33 +295,45 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         HP = HPOrig;
         updatePlayerUI();
     }
+
     public void OnMove(InputAction.CallbackContext ctx)
     {
-       moveInput=ctx.ReadValue<Vector2>();
-        Debug.Log("OnMove: "+moveInput);
+        moveInput = ctx.ReadValue<Vector2>();
     }
+
     public void OnLook(InputAction.CallbackContext ctx)
     {
-    lookInput=ctx.ReadValue<Vector2>();
+        lookInput = ctx.ReadValue<Vector2>();
     }
+
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if(ctx.performed)
-            jumpPressed=true;
+        if (ctx.performed)
+            jumpPressed = true;
     }
-   public void OnSprint(InputAction.CallbackContext ctx)
+
+    public void OnSprint(InputAction.CallbackContext ctx)
     {
-        sprintHeld=ctx.ReadValue<float>()>0.5f;
+        sprintHeld = ctx.ReadValue<float>() > 0.5f;
     }
+
     void LateUpdate()
     {
         if (gamemanager.instance.isPaused)
             return;
+
         Vector2 li = lookInput * lookSensitivity * Time.deltaTime;
+
         transform.Rotate(0f, li.x, 0f);
+
         pitch -= li.y;
         pitch = Mathf.Clamp(pitch, -80f, 80f);
-        if(cam!=null)
-            cam.localEulerAngles=new Vector3(pitch, 0f, 0f);
+        if (cam != null)
+            cam.localEulerAngles = new Vector3(pitch, 0f, 0f);
+
+        if (gunCam != null && cam != null)
+        {
+            gunCam.transform.rotation = cam.rotation;
+        }
     }
 }

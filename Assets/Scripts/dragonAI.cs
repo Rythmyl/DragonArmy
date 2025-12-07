@@ -243,7 +243,6 @@ public class dragonAI : MonoBehaviour, IDamage
         {
             isDead = true;
             gamemanager.instance.updateGameGoal(-1, isDragon: true);
-            anim.SetTrigger("Death");
             agent.isStopped = true;
             Destroy(gameObject, 5f);
         }
