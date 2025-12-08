@@ -20,6 +20,9 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [Range(5, 20)][SerializeField] int JumpSpeed;
     [Range(1, 3)][SerializeField] int maxJumps;
     [Range(15, 50)][SerializeField] int gravity;
+    [Range(10, 50)][SerializeField] int dash = 25;
+    [Range(1, 10)][SerializeField] float dashCool = 5f;
+    [Range(0.1f, 0.5f)][SerializeField] float dashDur = 0.2f;
 
     [Header("----- Weapons -----")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
@@ -39,6 +42,8 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [Range(0, 1)][SerializeField] float audJumpVol;
     [SerializeField] AudioClip[] audHurt;
     [Range(0, 1)][SerializeField] float audHurtVol;
+    [SerializeField] AudioClip[] audDash;
+    [Range(0, 1)][SerializeField] float DashVol = 0.5f;
 
     Vector3 moveDir;
     Vector3 playerVel;
@@ -58,6 +63,10 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     bool isPlayingStep;
     bool sprintHeld;
 
+    bool isDashing = false;
+    bool canDash = true;
+    float dashTime = 0f;
+
     void Start()
     {
         HPOrig = HP;
@@ -75,6 +84,15 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
             shootTimer += Time.deltaTime;
 
+            if (!canDash)
+            {
+                dashTime += Time.deltaTime;
+                if (dashTime >= dashCool)
+                {
+                    canDash = true;
+                    dashTime = 0f;
+                }
+            }
             movement();
         }
         sprint();
@@ -96,17 +114,18 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             playerVel.y -= gravity * Time.deltaTime;
         }
 
-        moveDir = moveInput.x *    transform.right+moveInput.y*transform.forward;
+        moveDir = moveInput.x * transform.right + moveInput.y * transform.forward;
         controller.Move(moveDir * speed * Time.deltaTime);
 
         jump();
         controller.Move(playerVel * Time.deltaTime);
 
-        if (shootTimer >= shootRate&& weaponList.Count>0&& Input.GetButton("Fire1"))
+        if (shootTimer >= shootRate && weaponList.Count > 0 && Input.GetButton("Fire1"))
         {
             shoot();
         }
         selectWeapon();
+
     }
 
     IEnumerator playStep()
@@ -123,6 +142,49 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             yield return new WaitForSeconds(0.5f);
         }
         isPlayingStep = false;
+    }
+
+    void Dash()
+    {
+        if (canDash && !isDashing)
+        {
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        canDash = false;
+        isDashing = true;
+
+        if (audDash != null && audDash.Length > 0)
+        {
+            aud.PlayOneShot(audDash[Random.Range(0, audDash.Length)], DashVol);
+        }
+        Vector3 dashDir;
+
+        if (moveInput.magnitude > 0.1f)
+        {
+            dashDir = (moveInput.x * transform.right + moveInput.y * transform.forward).normalized;
+        }
+        else
+        {
+            dashDir = transform.forward;
+        }
+        float elapsed = 0f;
+        while (elapsed < dashDur)
+        {
+            controller.Move(dashDir * dash * Time.deltaTime);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        isDashing = false;
+    }
+
+    public void OnDash(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            Dash();
     }
 
     void sprint()
