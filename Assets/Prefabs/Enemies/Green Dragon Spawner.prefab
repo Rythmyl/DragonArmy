@@ -166,7 +166,7 @@ MonoBehaviour:
     spawnFrequency: 5
     dragonsSpawned: 0
     nextSpawnIndex: 0
-  delayBetweenSpawners: 0
+  delayBetweenSpawners: 30
 --- !u!1 &4585563734835930003
 GameObject:
   m_ObjectHideFlags: 0
