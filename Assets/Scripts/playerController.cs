@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class playerController : MonoBehaviour, IDamage, IPickup
 {
@@ -83,6 +82,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         if (!gamemanager.instance.isPaused)
         {
             shootTimer += Time.deltaTime;
+
             if (!canDash)
             {
                 dashTime += Time.deltaTime;
@@ -92,6 +92,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
                     dashTime = 0f;
                 }
             }
+
             movement();
         }
         sprint();
@@ -124,7 +125,6 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             shoot();
         }
         selectWeapon();
-
     }
 
     IEnumerator playStep()
@@ -140,7 +140,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         isPlayingStep = false;
     }
 
-    void Dash()
+    public void Dash()
     {
         if (canDash && !isDashing)
         {
@@ -157,6 +157,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         {
             aud.PlayOneShot(audDash[Random.Range(0, audDash.Length)], DashVol);
         }
+
         Vector3 dashDir;
 
         if (moveInput.magnitude > 0.1f)
@@ -167,6 +168,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         {
             dashDir = transform.forward;
         }
+
         float elapsed = 0f;
         while (elapsed < dashDur)
         {
@@ -174,6 +176,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             elapsed += Time.deltaTime;
             yield return null;
         }
+
         isDashing = false;
     }
 
@@ -231,7 +234,12 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             IDamage dmg = hit.collider.GetComponent<IDamage>();
             if (dmg != null)
             {
-                dmg.takeDamage(shootDamage);
+                buffs buffed = GetComponent<buffs>();
+                int damageToApply = shootDamage;
+                if (buffed != null)
+                    damageToApply = Mathf.RoundToInt(shootDamage * buffed.GetResistMultiply());
+
+                dmg.takeDamage(damageToApply);
             }
             Instantiate(currentWeapon.hitEffect, hit.point, Quaternion.identity);
         }
@@ -248,7 +256,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     {
         buffs buffed = GetComponent<buffs>();
         if (buffed != null)
-        { 
+        {
             amount = Mathf.RoundToInt(amount * buffed.GetResistMultiply());
         }
 
@@ -281,7 +289,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     {
         weaponList.Add(gun);
 
-        if (gun.gunModel.name.ToLower().Contains("Staff"))
+        if (gun.gunModel.name.ToLower().Contains("staff"))
             weaponTypes.Add(WeaponType.Staff);
         else
             weaponTypes.Add(WeaponType.Gun);
@@ -406,10 +414,11 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         }
     }
 
-    public void Heal(int amo)
+    public void Heal(int amount)
     {
-        HP += amo;
-        if (HP > HPOrig) HP = HPOrig;
+        HP += amount;
+        if (HP > HPOrig)
+            HP = HPOrig;
         updatePlayerUI();
     }
 
@@ -418,9 +427,9 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         return speed;
     }
 
-    public void ModifySpeed(int amo)
+    public void ModifySpeed(int amount)
     {
-        speed += amo;
+        speed += amount;
     }
 
     public int GetShootDamage()
@@ -428,8 +437,8 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         return shootDamage;
     }
 
-    public void ModifyDMG(int amo)
+    public void ModifyDMG(int amount)
     {
-        shootDamage += amo;
+        shootDamage += amount;
     }
 }
