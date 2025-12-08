@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class playerController : MonoBehaviour, IDamage, IPickup
 {
@@ -239,6 +240,12 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
     public void takeDamage(int amount)
     {
+        buffs buffed = GetComponent<buffs>();
+        if (buffed != null)
+        { 
+            amount = Mathf.RoundToInt(amount * buffed.GetResistMultiply());
+        }
+
         HP -= amount;
         updatePlayerUI();
         StartCoroutine(screenFlashDamage());
@@ -378,5 +385,32 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         pitch = Mathf.Clamp(pitch, -80f, 80f);
         if(cam!=null)
             cam.localEulerAngles=new Vector3(pitch, 0f, 0f);
+    }
+
+    public void Heal(int amo)
+    {
+        HP += amo;
+        if (HP > HPOrig) HP = HPOrig;
+        updatePlayerUI();
+    }
+
+    public int GetSpeed()
+    {
+        return speed;
+    }
+
+    public void ModifySpeed(int amo)
+    {
+        speed += amo;
+    }
+
+    public int GetShootDamage()
+    {
+        return shootDamage;
+    }
+
+    public void ModifyDMG(int amo)
+    {
+        shootDamage += amo;
     }
 }
