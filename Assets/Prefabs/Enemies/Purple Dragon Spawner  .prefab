@@ -221,7 +221,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235133561413763169}
-  - component: {fileID: 8911359478468446294}
   m_Layer: 0
   m_Name: 'Purple Dragon Spawner  '
   m_TagString: Untagged
@@ -248,28 +247,3 @@ Transform:
   - {fileID: 4744292833734771617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8911359478468446294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3770865077777795586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd18ed7b61bd5d140b4dd267d426bd45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
-  spawners:
-  - dragonPrefab: {fileID: 4743786681775991303, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
-    spawnPoints:
-    - {fileID: 7341751332151114146}
-    - {fileID: 1779498163952328910}
-    - {fileID: 8290456758897978225}
-    - {fileID: 4744292833734771617}
-    towerTarget: {fileID: 0}
-    quantityToSpawn: 10
-    spawnFrequency: 5
-    dragonsSpawned: 0
-    nextSpawnIndex: 0
-  delayBetweenSpawners: 0
