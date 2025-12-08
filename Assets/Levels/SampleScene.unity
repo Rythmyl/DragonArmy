@@ -657,6 +657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2479261927900669226, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3669719777738929711, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
       propertyPath: m_Name
       value: Base Area
