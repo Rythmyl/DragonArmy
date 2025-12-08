@@ -83,9 +83,6 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         if (!gamemanager.instance.isPaused)
         {
             shootTimer += Time.deltaTime;
-<<<<<<< HEAD
-=======
-
             if (!canDash)
             {
                 dashTime += Time.deltaTime;
@@ -95,7 +92,6 @@ public class playerController : MonoBehaviour, IDamage, IPickup
                     dashTime = 0f;
                 }
             }
->>>>>>> Jarrett's-Branch
             movement();
         }
         sprint();
