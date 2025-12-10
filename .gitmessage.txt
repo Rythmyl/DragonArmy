@@ -1,7 +1,0 @@
-Subject line (try to keep under 50 characters)
-
-Detailed explanation of the change, if necessary.
-
-- Bullet points if needed
-- Reference to issue/ticket numbers
-
