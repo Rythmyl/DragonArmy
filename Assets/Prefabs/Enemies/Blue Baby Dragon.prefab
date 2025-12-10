@@ -1805,7 +1805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7474632238602426652}
   m_Layer: 0
-  m_Name: 'Blue Fire '
+  m_Name: Blue Shoot Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

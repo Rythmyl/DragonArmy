@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070463935100091816}
   m_Layer: 0
-  m_Name: 'Purple Fire '
+  m_Name: Purple Shoot Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

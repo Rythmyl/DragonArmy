@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4083105311244311453}
   m_Layer: 0
-  m_Name: Green Fire
+  m_Name: Green Shoot Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
