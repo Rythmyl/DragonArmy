@@ -64,6 +64,14 @@ public class gamemanager : MonoBehaviour
         UpdateTowerHPUI();
     }
 
+    void Start()
+    {
+        if (audioManager.Instance != null)
+        {
+            audioManager.Instance.PlayGameMusic();
+        }
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -132,6 +140,9 @@ public class gamemanager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        if (audioManager.Instance != null)
+            audioManager.Instance.DuckMusic();
     }
 
     public void stateUnpause()
@@ -145,6 +156,9 @@ public class gamemanager : MonoBehaviour
             menuActive.SetActive(false);
             menuActive = null;
         }
+
+        if (audioManager.Instance != null)
+            audioManager.Instance.UnduckMusic();
     }
 
     public void UpdateCheckpoint(Vector3 checkpointPos)
