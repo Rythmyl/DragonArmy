@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour, IDamage, IPickup
 {
@@ -10,8 +9,6 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [Header("----- Components -----")]
     [SerializeField] CharacterController controller;
     [SerializeField] LayerMask ignoreLayer;
-    [SerializeField] Transform cam;
-    [SerializeField] float lookSensitivity = 150f;
 
     [Header("----- Stats -----")]
     [Range(1, 100)][SerializeField] int HP;
@@ -48,15 +45,9 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     int weaponListPos;
 
     float shootTimer;
-    float pitch;
 
-    Vector2 moveInput;
-    Vector2 lookInput;
-
-    bool jumpPressed;
     bool isSprinting;
     bool isPlayingStep;
-    bool sprintHeld;
 
     void Start()
     {
@@ -96,13 +87,13 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             playerVel.y -= gravity * Time.deltaTime;
         }
 
-        moveDir = moveInput.x *    transform.right+moveInput.y*transform.forward;
+        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         controller.Move(moveDir * speed * Time.deltaTime);
 
         jump();
         controller.Move(playerVel * Time.deltaTime);
 
-        if (shootTimer >= shootRate&& weaponList.Count>0&& Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && weaponList.Count > 0 && shootTimer >= shootRate)
         {
             shoot();
         }
@@ -127,12 +118,12 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
     void sprint()
     {
-        if (sprintHeld && !isSprinting)
+        if (Input.GetButtonDown("Sprint"))
         {
             speed *= sprintMod;
             isSprinting = true;
         }
-        else if (!sprintHeld&& isSprinting)
+        else if (Input.GetButtonUp("Sprint"))
         {
             speed /= sprintMod;
             isSprinting = false;
@@ -141,17 +132,12 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
     void jump()
     {
-        if (jumpPressed && jumpCount < maxJumps)
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
-            jumpPressed = false;
             playerVel.y = JumpSpeed;
             jumpCount++;
             aud.pitch = Random.Range(0.9f, 1.1f);
             aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
-        }
-        else
-        {
-            jumpPressed=false;
         }
     }
 
@@ -168,7 +154,13 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             IDamage dmg = hit.collider.GetComponent<IDamage>();
             if (dmg != null)
             {
-                dmg.takeDamage(shootDamage);
+                int damageToApply = shootDamage;
+                buffs buffed = GetComponent<buffs>();
+                if (buffed != null)
+                {
+                    damageToApply = Mathf.RoundToInt(shootDamage * buffed.GetResistMultiply());
+                }
+                dmg.takeDamage(damageToApply);
             }
 
             Instantiate(currentWeapon.hitEffect, hit.point, Quaternion.identity);
@@ -177,6 +169,12 @@ public class playerController : MonoBehaviour, IDamage, IPickup
 
     public void takeDamage(int amount)
     {
+        buffs buffed = GetComponent<buffs>();
+        if (buffed != null)
+        {
+            amount = Mathf.RoundToInt(amount * buffed.GetResistMultiply());
+        }
+
         HP -= amount;
         updatePlayerUI();
         StartCoroutine(screenFlashDamage());
@@ -288,33 +286,22 @@ public class playerController : MonoBehaviour, IDamage, IPickup
         HP = HPOrig;
         updatePlayerUI();
     }
-    public void OnMove(InputAction.CallbackContext ctx)
+
+    public void ModifySpeed(int amount)
     {
-       moveInput=ctx.ReadValue<Vector2>();
-        Debug.Log("OnMove: "+moveInput);
+        speed += amount;
     }
-    public void OnLook(InputAction.CallbackContext ctx)
+
+    public void ModifyDMG(int amount)
     {
-    lookInput=ctx.ReadValue<Vector2>();
+        shootDamage += amount;
     }
-    public void OnJump(InputAction.CallbackContext ctx)
+
+    public void Heal(int amount)
     {
-        if(ctx.performed)
-            jumpPressed=true;
-    }
-   public void OnSprint(InputAction.CallbackContext ctx)
-    {
-        sprintHeld=ctx.ReadValue<float>()>0.5f;
-    }
-    void LateUpdate()
-    {
-        if (gamemanager.instance.isPaused)
-            return;
-        Vector2 li = lookInput * lookSensitivity * Time.deltaTime;
-        transform.Rotate(0f, li.x, 0f);
-        pitch -= li.y;
-        pitch = Mathf.Clamp(pitch, -80f, 80f);
-        if(cam!=null)
-            cam.localEulerAngles=new Vector3(pitch, 0f, 0f);
+        HP += amount;
+        if (HP > HPOrig)
+            HP = HPOrig;
+        updatePlayerUI();
     }
 }

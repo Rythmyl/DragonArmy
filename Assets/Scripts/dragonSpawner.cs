@@ -3,62 +3,69 @@ using UnityEngine;
 
 public class dragonSpawner : MonoBehaviour
 {
-    [Header("----- Spawn Settings -----")]
-    [Range(1, 100)][SerializeField] int spawnAmount;
-    [Range(0.1f, 10f)][SerializeField] float spawnRate;
+    [System.Serializable]
+    public class Spawner
+    {
+        public GameObject dragonPrefab;
+        public Transform[] spawnPoints;
+        public GameObject towerTarget;
+        public int quantityToSpawn;
+        public float spawnFrequency;
 
-    [Header("----- Spawn Object (Single dragon prefab) -----")]
-    [SerializeField] GameObject dragonPrefab;
+        [HideInInspector] public int dragonsSpawned = 0;
+        [HideInInspector] public int nextSpawnIndex = 0;
+    }
 
-    [Header("----- Spawn Positions -----")]
-    [SerializeField] Transform[] spawnPos;
-
-    [Header("----- Tower Reference -----")]
-    [SerializeField] GameObject tower;
-
-    private int spawnedCount = 0;
-    private bool isSpawning = false;
-    private float spawnTimer = 0f;
+    public Spawner[] spawners = new Spawner[4];
+    public float delayBetweenSpawners = 30f;
 
     void Start()
     {
-        gamemanager.instance.updateGameGoal(spawnAmount, isDragon: true);
-        StartCoroutine(StartSpawningAfterDelay(3f));
+        StartCoroutine(SpawnSpawnersSequentially());
     }
 
-    void Update()
+    private IEnumerator SpawnSpawnersSequentially()
     {
-        if (!isSpawning)
-            return;
+        int startIndex = Random.Range(0, spawners.Length);
 
-        spawnTimer += Time.deltaTime;
-
-        if (spawnedCount < spawnAmount && spawnTimer >= spawnRate)
+        for (int i = 0; i < spawners.Length; i++)
         {
-            SpawnDragon();
-            spawnTimer = 0f;
+            int spawnerIndex = (startIndex + i) % spawners.Length;
+            var spawner = spawners[spawnerIndex];
+
+            spawner.dragonsSpawned = 0;
+            spawner.nextSpawnIndex = 0;
+
+            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
+
+            yield return StartCoroutine(SpawnFromSpawner(spawner));
+
+            float spawnDuration = spawner.quantityToSpawn * spawner.spawnFrequency;
+            float waitTimeAfterSpawn = delayBetweenSpawners - spawnDuration;
+            if (waitTimeAfterSpawn < 0) waitTimeAfterSpawn = 0;
+
+            yield return new WaitForSeconds(waitTimeAfterSpawn);
         }
-        else if (spawnedCount >= spawnAmount)
+    }
+
+    private IEnumerator SpawnFromSpawner(Spawner spawner)
+    {
+        while (spawner.dragonsSpawned < spawner.quantityToSpawn)
         {
-            isSpawning = false;
+            SpawnSingleDragon(spawner);
+            spawner.dragonsSpawned++;
+            yield return new WaitForSeconds(spawner.spawnFrequency);
         }
     }
 
-    void SpawnDragon()
+    private void SpawnSingleDragon(Spawner spawner)
     {
-        int spawnIndex = Random.Range(0, spawnPos.Length);
-        GameObject dragon = Instantiate(dragonPrefab, spawnPos[spawnIndex].position, Quaternion.identity);
-        var ai = dragon.GetComponent<dragonAI>();
-        if (ai != null)
-            ai.tower = tower;
-        spawnedCount++;
-    }
+        if (spawner.spawnPoints.Length == 0) return;
 
-    System.Collections.IEnumerator StartSpawningAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        spawnedCount = 0;
-        spawnTimer = spawnRate;
-        isSpawning = true;
+        Transform spawnPoint = spawner.spawnPoints[spawner.nextSpawnIndex];
+        spawner.nextSpawnIndex = (spawner.nextSpawnIndex + 1) % spawner.spawnPoints.Length;
+
+        GameObject dragon = Instantiate(spawner.dragonPrefab, spawnPoint.position, spawnPoint.rotation);
+        dragon.GetComponent<dragonAI>()?.SetTowerTarget(spawner.towerTarget);
     }
 }
