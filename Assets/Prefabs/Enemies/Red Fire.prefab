@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7672880700505270150}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000008940696, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -4.2, z: 15.1}
+  m_LocalPosition: {x: -2.7902842, y: -5.294383, z: 15.1}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,7 +54,7 @@ MonoBehaviour:
   damageRate: 0.5
   speed: 25
   destroyTime: 3
-  rb: {fileID: 0}
+  rb: {fileID: 8912829460972736804}
 --- !u!135 &3990810810773508978
 SphereCollider:
   m_ObjectHideFlags: 0
