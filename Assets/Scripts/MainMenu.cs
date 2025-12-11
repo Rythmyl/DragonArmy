@@ -4,14 +4,26 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+       
+        {
+            audioManager.Instance?.PlayMenuMusic();
+        }
+    }
+
     public void Play()
     {
+        if (audioManager.Instance != null)
+        {
+            audioManager.Instance.PlayGameMusic();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
     public void Quit()
     {
-    Application.Quit();
+        Application.Quit();
         Debug.Log("Player Quit Game");
     }
 }

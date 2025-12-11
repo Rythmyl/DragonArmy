@@ -45,6 +45,8 @@ public class audioManager : MonoBehaviour
         transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
 
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+
         originalMusicVolume = musicvolume;
 
         ApplyVolumes();
@@ -59,16 +61,36 @@ public class audioManager : MonoBehaviour
     {
         if (musicSource != null)
             musicSource.volume = masterVolume * musicvolume;
+
+        if (sfxSource != null)
+            sfxSource.volume = masterVolume * sfxVolume;
     }
+
+    public void SetMasterVolume(float value)
+    {
+        masterVolume = Mathf.Clamp01(value);
+
+        if (Application.isPlaying)
+        {
+            UnityEditor.EditorUtility.SetDirty(this);
+        }
+
+        ApplyVolumes();
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+        PlayerPrefs.Save();
+    }
+
+    public float GetMasterVolume() => masterVolume;
+   
 
     public void PlayMusic(AudioClip clip)
     {
         if (clip == null) return;
 
-
+        musicSource.Stop();
         musicSource.clip = clip;
         musicSource.loop = true;
-        musicSource.volume = masterVolume * musicvolume;
+        ApplyVolumes();
         musicSource.Play();
     }
 
