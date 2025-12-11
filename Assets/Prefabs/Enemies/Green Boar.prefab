@@ -669,8 +669,6 @@ MonoBehaviour:
   HP: 50
   FOV: 180
   faceTargetSpeed: 10
-  roamDist: 15
-  roamPauseTime: 3
   animTranSpeed: 3
   bullet: {fileID: 0}
   shootRate: 0.1
@@ -679,6 +677,7 @@ MonoBehaviour:
   meleeRange: 3
   meleeCooldown: 2
   meleeDamage: 1
+  tower: {fileID: 0}
 --- !u!95 &8501844343430760316
 Animator:
   serializedVersion: 7
@@ -689,10 +688,10 @@ Animator:
   m_GameObject: {fileID: 3967290339680924597}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5c658df0d8d544b4c860c0ad70993a2a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 08f6634017a8e784a8807f193b72bec9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d3021562e2089d49a945121f64eae24, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -717,7 +716,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 3
   m_BaseOffset: 0
@@ -738,7 +737,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
