@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d27345a93dc6f14c8267555d15827ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::weaponCollider
-  damageAmount: 5
+  damageAmount: 1
 --- !u!136 &4781992676459843218
 CapsuleCollider:
   m_ObjectHideFlags: 0
