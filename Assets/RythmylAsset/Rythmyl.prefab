@@ -1385,9 +1385,6 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 8
-  cam: {fileID: 3256677431073650840}
-  gunCam: {fileID: 8346253843912126018}
-  lookSensitivity: 10
   HP: 20
   speed: 5
   sprintMod: 3
@@ -1441,13 +1438,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.26
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.08, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2036744549628851982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1519,14 +1516,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1.34
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: -0.1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &5408611377893775112
 AudioSource:
   m_ObjectHideFlags: 0
