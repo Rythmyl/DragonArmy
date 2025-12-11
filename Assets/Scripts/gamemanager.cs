@@ -68,7 +68,8 @@ public class gamemanager : MonoBehaviour
     {
         if (audioManager.Instance != null)
         {
-            audioManager.Instance.PlayGameMusic();
+            audioManager.Instance.musicSource.Stop();
+            audioManager.Instance?.PlayGameMusic();
         }
     }
 
