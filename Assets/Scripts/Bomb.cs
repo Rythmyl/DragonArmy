@@ -8,6 +8,14 @@ public class Bomb : MonoBehaviour
     public float fuseTime = 5f;
     public GameObject explosionEffect;
 
+
+    private bool isPlanted = false;
+  
+    public void Plant()
+    {
+        isPlanted = true;
+        Invoke("Explode",fuseTime);
+    }
     private void Start()
     {
         Invoke("Explode", fuseTime);
@@ -15,6 +23,9 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
+        if (!isPlanted != null)
+            return;
+
         if (explosionEffect != null)
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
 

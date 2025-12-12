@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12719c67549993c4aa81197e5bc17bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombSpawner
-  bombPrefab: {fileID: 0}
+  bombPrefab: {fileID: 1739432567898002305, guid: 923ac5f57937efc4ca800754db12e0de, type: 3}
   placePoint: {fileID: 0}
   placeDistance: 3
   bombCount: 1

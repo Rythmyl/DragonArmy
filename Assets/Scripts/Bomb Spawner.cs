@@ -34,7 +34,11 @@ public class BombSpawner : MonoBehaviour
         Vector3 spawPos = transform.position + transform.forward * placeDistance;
         spawPos.y = transform.position.y;
 
-        Instantiate(bombPrefab, spawPos, Quaternion.identity);
+        GameObject boomObject  = Instantiate(bombPrefab,spawPos,Quaternion.identity);
+
+        boomObject.GetComponent<Bomb>().Plant();
+
+      
     }
 
     
