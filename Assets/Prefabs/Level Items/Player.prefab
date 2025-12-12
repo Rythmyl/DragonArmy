@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2223612620849709730}
   - component: {fileID: 7968031936655856265}
   - component: {fileID: 4004803384031815863}
+  - component: {fileID: -3890132758664866513}
+  - component: {fileID: 3024545612832624997}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -57,9 +59,17 @@ MonoBehaviour:
   JumpSpeed: 12
   maxJumps: 2
   gravity: 35
-  shootDamage: 1
-  shootDist: 150
-  shootRate: 0.5
+  weaponList: []
+  weaponTypes: 
+  gunModel: {fileID: 0}
+  staffModel: {fileID: 0}
+  aud: {fileID: 0}
+  audStep: []
+  audStepVol: 0
+  audJump: []
+  audJumpVol: 0
+  audHurt: []
+  audHurtVol: 0
 --- !u!143 &2223612620849709730
 CharacterController:
   m_ObjectHideFlags: 0
@@ -141,3 +151,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3890132758664866513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099218369010672509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12719c67549993c4aa81197e5bc17bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BombSpawner
+  bombPrefab: {fileID: 0}
+  placePoint: {fileID: 0}
+  placeDistance: 3
+  bombCount: 1
+--- !u!114 &3024545612832624997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099218369010672509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436d96aff5d695549918ac822bd2eb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BombPickup
