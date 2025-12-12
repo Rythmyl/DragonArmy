@@ -22,11 +22,13 @@ public class dragonAI : MonoBehaviour, IDamage
     [Range(0.1f, 10f)][SerializeField] float shootRate;
     [SerializeField] Transform shootPos;
     [Range(0.1f, 50f)][SerializeField] float bulletSpeed;
+    [SerializeField] float rangedStoppingDistance = 10f;
 
     [Header("----- Melee Attack -----")]
     [Range(0.1f, 10f)][SerializeField] float meleeRange;
     [Range(0.5f, 5f)][SerializeField] float meleeCooldown;
     [Range(1, 20)][SerializeField] int meleeDamage;
+    [SerializeField] float meleeStoppingDistance = 3f;
 
     [Header("----- Tower Target -----")]
     [SerializeField] GameObject tower;
@@ -39,17 +41,13 @@ public class dragonAI : MonoBehaviour, IDamage
 
     float shootTimer;
     float meleeTimer;
-    float angleToPlayer;
     Vector3 playerDir;
+    float angleToPlayer;
     Vector3 lastAttackPosition;
-    float stoppingDistOrig;
 
     void Start()
     {
         colorOrig = model != null ? model.material.color : Color.white;
-        stoppingDistOrig = agent != null ? agent.stoppingDistance : 0;
-
-        lastAttackPosition = transform.position;
 
         if (meleeRange > 0 && weaponCol != null)
             weaponCol.enabled = false;
@@ -59,7 +57,11 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (tower != null && agent != null)
         {
-            agent.stoppingDistance = 10f;
+            if (bullet == null) 
+                agent.stoppingDistance = meleeStoppingDistance;
+            else
+                agent.stoppingDistance = rangedStoppingDistance;
+
             agent.SetDestination(GetClosestPointOnTower(transform.position));
         }
     }
@@ -92,16 +94,16 @@ public class dragonAI : MonoBehaviour, IDamage
                 Vector3 playerPos = gamemanager.instance.rythmyl.transform.position;
                 float distToPlayer = Vector3.Distance(transform.position, playerPos);
 
-                if (distToPlayer <= meleeRange && meleeTimer >= meleeCooldown)
+                if (distToPlayer <= meleeStoppingDistance && meleeTimer >= meleeCooldown)
                 {
-                    agent.stoppingDistance = meleeRange;
+                    agent.stoppingDistance = meleeStoppingDistance;
                     agent.SetDestination(playerPos);
                     FaceTarget(playerPos);
                     MeleeAttack();
                 }
-                else if (bullet != null && shootRate > 0 && distToPlayer <= stoppingDistOrig && shootTimer >= shootRate)
+                else if (bullet != null && shootRate > 0 && distToPlayer <= rangedStoppingDistance && shootTimer >= shootRate)
                 {
-                    agent.stoppingDistance = stoppingDistOrig;
+                    agent.stoppingDistance = rangedStoppingDistance;
                     agent.SetDestination(playerPos);
                     FaceTarget(playerPos);
                     Shoot();
@@ -119,23 +121,44 @@ public class dragonAI : MonoBehaviour, IDamage
 
             float distToTower = Vector3.Distance(transform.position, GetClosestPointOnTower(transform.position));
 
-            if (distToTower <= 10f)
+            if (bullet == null)
             {
-                FaceTarget(tower.transform.position);
+                if (distToTower <= meleeStoppingDistance)
+                {
+                    FaceTarget(tower.transform.position);
 
-                if (bullet != null && shootRate > 0 && shootTimer >= shootRate)
-                    Shoot();
+                    if (meleeTimer >= meleeCooldown)
+                        MeleeAttack();
 
-                if (meleeRange > 0 && meleeTimer >= meleeCooldown && distToTower <= meleeRange)
-                    MeleeAttack();
-
-                agent.stoppingDistance = 10f;
-                agent.SetDestination(GetClosestPointOnTower(transform.position));
+                    agent.stoppingDistance = meleeStoppingDistance;
+                    agent.SetDestination(GetClosestPointOnTower(transform.position));
+                }
+                else
+                {
+                    agent.stoppingDistance = meleeStoppingDistance;
+                    agent.SetDestination(GetClosestPointOnTower(transform.position));
+                }
             }
             else
             {
-                agent.stoppingDistance = 10f;
-                agent.SetDestination(GetClosestPointOnTower(transform.position));
+                if (distToTower <= rangedStoppingDistance)
+                {
+                    FaceTarget(tower.transform.position);
+
+                    if (shootRate > 0 && shootTimer >= shootRate)
+                        Shoot();
+
+                    if (meleeRange > 0 && meleeTimer >= meleeCooldown && distToTower <= meleeStoppingDistance)
+                        MeleeAttack();
+
+                    agent.stoppingDistance = rangedStoppingDistance;
+                    agent.SetDestination(GetClosestPointOnTower(transform.position));
+                }
+                else
+                {
+                    agent.stoppingDistance = rangedStoppingDistance;
+                    agent.SetDestination(GetClosestPointOnTower(transform.position));
+                }
             }
         }
     }
@@ -244,7 +267,7 @@ public class dragonAI : MonoBehaviour, IDamage
             isDead = true;
             gamemanager.instance.updateGameGoal(-1, isDragon: true);
             agent.isStopped = true;
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
         else
             StartCoroutine(flashRed());
@@ -263,6 +286,11 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (agent != null && tower != null)
         {
+            if (bullet == null)
+                agent.stoppingDistance = meleeStoppingDistance;
+            else
+                agent.stoppingDistance = rangedStoppingDistance;
+
             agent.SetDestination(GetClosestPointOnTower(transform.position));
         }
     }

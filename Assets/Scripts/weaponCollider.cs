@@ -6,14 +6,11 @@ public class weaponCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.CompareTag("Rythmyl"))
+        if (other.CompareTag("Rythmyl") || other.CompareTag("Tower"))
         {
             IDamage damageable = other.GetComponent<IDamage>();
             if (damageable != null)
-            {
                 damageable.takeDamage(damageAmount);
-            }
         }
     }
 }

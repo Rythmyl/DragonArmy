@@ -1,11 +1,10 @@
 using UnityEngine;
 using System;
 
-public class towerHealth : MonoBehaviour
+public class towerHealth : MonoBehaviour, IDamage
 {
     [Header("----- Tower Health Settings -----")]
     [Range(1, 1000)][SerializeField] public int maxHealth;
-
     public int currentHealth;
 
     public event Action<int> OnHealthChanged;
@@ -20,13 +19,18 @@ public class towerHealth : MonoBehaviour
     {
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
-
         OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth == 0)
         {
             OnTowerDestroyed();
         }
+    }
+
+    public void takeDamage(int amount)
+    {
+        Debug.Log($"Tower taking damage: {amount}");
+        TakeDamage(amount);
     }
 
     void OnTowerDestroyed()

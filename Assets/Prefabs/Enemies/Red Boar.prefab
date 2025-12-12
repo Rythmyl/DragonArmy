@@ -226,9 +226,11 @@ MonoBehaviour:
   shootRate: 0.1
   shootPos: {fileID: 0}
   bulletSpeed: 0.1
+  rangedStoppingDistance: 2
   meleeRange: 3
   meleeCooldown: 2
   meleeDamage: 1
+  meleeStoppingDistance: 2
   tower: {fileID: 0}
 --- !u!95 &1790187660738178331
 Animator:
@@ -425,6 +427,7 @@ GameObject:
   - component: {fileID: 5085621651034602345}
   - component: {fileID: 4632706733658456814}
   - component: {fileID: 8106789688105607055}
+  - component: {fileID: 7867115840625969742}
   m_Layer: 0
   m_Name: Jaw3
   m_TagString: Untagged
@@ -470,10 +473,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1032
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1015
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -483,6 +486,33 @@ CapsuleCollider:
   m_Height: 185
   m_Direction: 2
   m_Center: {x: 0, y: 20, z: 25}
+--- !u!54 &7867115840625969742
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062785771870708686}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 1032
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1015
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &3532653448317849244
 GameObject:
   m_ObjectHideFlags: 0

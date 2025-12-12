@@ -3790,7 +3790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8216495787746526863}
   - component: {fileID: 2139201565497557489}
-  - component: {fileID: 2479261927900669226}
+  - component: {fileID: 6907449826509858020}
   m_Layer: 10
   m_Name: Tower
   m_TagString: Tower
@@ -3806,8 +3806,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3318195487652872182}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.38268322, z: -0, w: 0.9238797}
-  m_LocalPosition: {x: -17.87745, y: -0.82178, z: -11.05048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.87745, y: -0.66, z: -11.05048}
   m_LocalScale: {x: 10, y: 20, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3817,7 +3817,7 @@ Transform:
   - {fileID: 26574912956880223}
   - {fileID: 8155257623567139520}
   m_Father: {fileID: 8841828256382659679}
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139201565497557489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,7 +3832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::towerHealth
   maxHealth: 100
   currentHealth: 100
---- !u!136 &2479261927900669226
+--- !u!136 &6907449826509858020
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3842,19 +3842,19 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.4
   m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.54, z: 0}
 --- !u!1 &3398305801224179061
 GameObject:
   m_ObjectHideFlags: 0
