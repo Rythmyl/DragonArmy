@@ -1074,7 +1074,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -54.518257, y: 0, z: 45.40323}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7618543864016531773}
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   shootRate: 0.1
   shootPos: {fileID: 4083105311244311453}
   bulletSpeed: 25
-  rangedStoppingDistance: 10
+  rangedStoppingDistance: 20
   meleeRange: 0.1
   meleeCooldown: 0.5
   meleeDamage: 1
