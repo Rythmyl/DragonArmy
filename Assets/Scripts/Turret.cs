@@ -45,7 +45,8 @@ public class Turret : MonoBehaviour
 
 
         GameObject proj = Instantiate(projectilePrefab,firePoint.position,Quaternion.identity);
-        proj.GetComponent<Projectile>().Init(target, damage);
+        proj.GetComponent<Projectile>()
+            .Init(target, damage);
     }
 
     private void OnTriggerEnter(Collider other)
