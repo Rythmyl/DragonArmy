@@ -18,12 +18,17 @@ public class BombPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(playerinRange && Input.GetKeyDown(KeyCode.E))
+        {
+            playerBombSpawner.AddBomb();
+            Destroy(gameObject);
+        }
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        playerController player = other.GetComponent<playerController>();
+       var player = other.GetComponent<playerController>();
 
         if (player != null)
         {

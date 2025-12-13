@@ -23,19 +23,16 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        if (!isPlanted != null)
+        if (!isPlanted)
             return;
-
-        if (explosionEffect != null)
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionraidus);
 
 
-        foreach(Collider hit in hitColliders)
+        foreach(var col in hitColliders)
         {
-            IDamage dmg = hit.GetComponent<IDamage>();
+            IDamage dmg = col.GetComponent<IDamage>();
 
             if(dmg != null)
             {

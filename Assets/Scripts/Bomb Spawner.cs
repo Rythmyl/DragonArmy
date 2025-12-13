@@ -5,7 +5,7 @@ public class BombSpawner : MonoBehaviour
     [Header("---BombSetting---")]
     public GameObject bombPrefab;
     public Transform placePoint;
-    public float placeDistance = 3f;
+    public float placeDistance = 1f;
     public int bombCount = 1; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
