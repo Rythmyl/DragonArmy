@@ -2,59 +2,17 @@ using UnityEngine;
 
 public class BombPickup : MonoBehaviour
 {
-    private bool playerinRange = false;
-    private BombSpawner playerBombSpawner; 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        if (playerinRange && Input.GetKeyDown(KeyCode.E))
-            {
-            Pickup();
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(playerinRange && Input.GetKeyDown(KeyCode.E))
-        {
-            playerBombSpawner.AddBomb();
-            Destroy(gameObject);
-        }
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-       var player = other.GetComponent<playerController>();
+        BombSpawner spawner = other.GetComponent<BombSpawner>();
 
-        if (player != null)
+        if (spawner != null)
         {
-            playerinRange = true;
-            playerBombSpawner = other.GetComponent<BombSpawner>();
+            spawner.AddBomb();
+            Destroy(gameObject);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.GetComponent<playerController>() != null)
-        {
-            playerinRange=false;
-        }
-    }
-
-    void Pickup()
-    {
-        if(playerBombSpawner != null)
-        {
-            playerBombSpawner.AddBomb();
-     
-        }
-
-        Destroy(gameObject);
-    
-    }
+   
 
 }
