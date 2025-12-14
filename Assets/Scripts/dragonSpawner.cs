@@ -16,8 +16,10 @@ public class dragonSpawner : MonoBehaviour
         [HideInInspector] public int nextSpawnIndex = 0;
     }
 
-    public Spawner[] babyDragonSpawners = new Spawner[4]; 
-    public Spawner[] dragonBoarSpawners = new Spawner[4]; 
+    public Spawner[] babyDragonSpawners = new Spawner[4];
+    public Spawner[] dragonBoarSpawners = new Spawner[4];
+    public Spawner[] bossSpawners = new Spawner[1];  
+
     public float delayBetweenSpawners = 30f;
 
     void Start()
@@ -54,6 +56,27 @@ public class dragonSpawner : MonoBehaviour
         {
             int spawnerIndex = (boarStartIndex + i) % dragonBoarSpawners.Length;
             var spawner = dragonBoarSpawners[spawnerIndex];
+
+            spawner.dragonsSpawned = 0;
+            spawner.nextSpawnIndex = 0;
+
+            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
+
+            yield return StartCoroutine(SpawnFromSpawner(spawner));
+
+            float spawnDuration = spawner.quantityToSpawn * spawner.spawnFrequency;
+            float waitTimeAfterSpawn = delayBetweenSpawners - spawnDuration;
+            if (waitTimeAfterSpawn < 0) waitTimeAfterSpawn = 0;
+
+            yield return new WaitForSeconds(waitTimeAfterSpawn);
+        }
+
+        int bossStartIndex = Random.Range(0, bossSpawners.Length);
+
+        for (int i = 0; i < bossSpawners.Length; i++)
+        {
+            int spawnerIndex = (bossStartIndex + i) % bossSpawners.Length;
+            var spawner = bossSpawners[spawnerIndex];
 
             spawner.dragonsSpawned = 0;
             spawner.nextSpawnIndex = 0;
