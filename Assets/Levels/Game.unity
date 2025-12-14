@@ -1317,6 +1317,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d8fef2bab408b46bfd6465c8dc87a7, type: 3}
+--- !u!1001 &8013206440039662563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -77.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.053418927
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536620492471652930, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866150274510282600, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 1234120298}
+    - target: {fileID: 9153301434852153888, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
+      propertyPath: m_Name
+      value: Green Dragon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
 --- !u!4 &8144327796762913302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8144327798008019551, guid: ebc882ebb7bb3e647a743997e321dba1, type: 3}
@@ -1482,3 +1543,4 @@ SceneRoots:
   - {fileID: 2212592744957256555}
   - {fileID: 7234334381518903415}
   - {fileID: 7080295026712989763}
+  - {fileID: 8013206440039662563}
