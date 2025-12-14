@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7672880700505270150
+--- !u!1 &3390865122011743032
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7393575571007824262}
-  - component: {fileID: 3441374292368656582}
-  - component: {fileID: 3990810810773508978}
-  - component: {fileID: 8912829460972736804}
-  - component: {fileID: 757767530061715884}
-  - component: {fileID: 4445320218720024076}
-  - component: {fileID: 7964879263689847097}
+  - component: {fileID: 695485796785390984}
+  - component: {fileID: 7944374510220117045}
+  - component: {fileID: 1993449689902543958}
+  - component: {fileID: 781984206405070908}
+  - component: {fileID: 5792387587123649996}
+  - component: {fileID: 7543890101986458030}
+  - component: {fileID: 6689313786306972761}
   m_Layer: 0
-  m_Name: 'Blue Fire '
+  m_Name: Purple Dragon Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7393575571007824262
+--- !u!4 &695485796785390984
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000008940696, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -4.2, z: 15.1}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: -2.4420078, y: 0.46321273, z: 24.19212}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3441374292368656582
+--- !u!114 &7944374510220117045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa6add9aca9078e429ed908269ae1e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damage
   type: 0
-  damageAmount: 1
+  damageAmount: 5
   damageRate: 0.5
-  speed: 25
+  speed: 30
   destroyTime: 3
-  rb: {fileID: 8912829460972736804}
---- !u!135 &3990810810773508978
+  rb: {fileID: 781984206405070908}
+--- !u!135 &1993449689902543958
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -76,13 +76,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8912829460972736804
+--- !u!54 &781984206405070908
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -103,14 +103,14 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!96 &757767530061715884
+--- !u!96 &5792387587123649996
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -213,13 +213,13 @@ TrailRenderer:
   m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!108 &4445320218720024076
+--- !u!108 &7543890101986458030
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
@@ -278,13 +278,13 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &7964879263689847097
+--- !u!114 &6689313786306972761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672880700505270150}
+  m_GameObject: {fileID: 3390865122011743032}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}

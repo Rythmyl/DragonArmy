@@ -2100,9 +2100,11 @@ MonoBehaviour:
   shootRate: 0.1
   shootPos: {fileID: 7474632238602426652}
   bulletSpeed: 25
+  rangedStoppingDistance: 10
   meleeRange: 0.1
   meleeCooldown: 0.5
   meleeDamage: 1
+  meleeStoppingDistance: 3
   tower: {fileID: 0}
 --- !u!195 &8379906084623351232
 NavMeshAgent:
