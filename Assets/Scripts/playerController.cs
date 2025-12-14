@@ -23,6 +23,7 @@ public class playerController : MonoBehaviour, IDamage, IPickup
     [SerializeField] List<WeaponType> weaponTypes = new List<WeaponType>();
     [SerializeField] GameObject gunModel;
     [SerializeField] GameObject staffModel;
+    [SerializeField] HealingFlask healingFlask;
 
     int shootDamage;
     int shootDist;
@@ -65,6 +66,11 @@ public class playerController : MonoBehaviour, IDamage, IPickup
             Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
 
             shootTimer += Time.deltaTime;
+
+            if(Input.GetKeyDown(KeyCode.H) && healingFlask != null)
+            {
+                healingFlask.UseFlask(this);
+            }
 
             movement();
         }
