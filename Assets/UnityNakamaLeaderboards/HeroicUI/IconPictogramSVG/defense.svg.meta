@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 21098ddb6501543e5a466822d3f01779
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/defense.svg
+  uploadId: 804188

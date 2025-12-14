@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bde50563f54f741d197e2f2a2d98a70e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/headgear.svg
+  uploadId: 804188

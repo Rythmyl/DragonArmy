@@ -12,23 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
   m_Name: Readme
   m_EditorClassIdentifier: 
-  icon: {fileID: 2800000, guid: 727a75301c3d24613a3ebcec4a24c2c8, type: 3}
-  title: URP Empty Template
+  icon: {fileID: 2800000, guid: 2287ceace33d64348b1c2701d0b0bd2e, type: 3}
+  title: Leaderboards, powered by Nakama
   sections:
-  - heading: Welcome to the Universal Render Pipeline
-    text: This template includes the settings and assets you need to start creating with the Universal Render Pipeline.
+  - heading: Leaderboards
+    text: The official sample project for the Nakama Leaderboards system. Built with
+      minimal boilerplate so you can easily copy the code into your project and adapt
+      the scripts and UI to suit your game.
     linkText: 
-    url:
-  - heading: URP Documentation
-    text:
-    linkText: Read more about URP
-    url: https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest
-  - heading: Forums
-    text:
-    linkText: Get answers and support
-    url: https://forum.unity.com/forums/universal-render-pipeline.383/
-  - heading: Report bugs
-    text:
-    linkText: Submit a report
-    url: https://unity3d.com/unity/qa/bug-reporting
+    url: 
+  - heading: Resources
+    text: 
+    linkText: 
+    url: 
+  - heading: 
+    text: 
+    linkText: Docs
+    url: https://heroiclabs.com/docs/sample-projects
+  - heading: 
+    text: 
+    linkText: Community forums
+    url: https://forum.heroiclabs.com/
+  - heading: 
+    text: 
+    linkText: Github
+    url: https://github.com/heroiclabs/sample-projects
+  - heading: 
+    text: 
+    linkText: Nakama Unity Client SDK Guide
+    url: https://heroiclabs.com/docs/nakama/client-libraries/unity/index.html#leaderboards
+  - heading: 
+    text: 
+    linkText: Learn about Nakama
+    url: https://heroiclabs.com/docs/nakama/getting-started/
   loadedLayout: 1

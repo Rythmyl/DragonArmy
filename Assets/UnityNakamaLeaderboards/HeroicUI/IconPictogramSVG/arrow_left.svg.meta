@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5fc9520a607894527854c5aad7ca496c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/arrow_left.svg
+  uploadId: 804188

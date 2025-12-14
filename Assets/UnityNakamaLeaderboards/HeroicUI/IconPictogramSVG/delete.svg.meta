@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f289fc64d41f54758b0bd134aed67b90
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/delete.svg
+  uploadId: 804188

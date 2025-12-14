@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d8c29bc141730497d9ed63e25976218a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/emoji.svg
+  uploadId: 804188

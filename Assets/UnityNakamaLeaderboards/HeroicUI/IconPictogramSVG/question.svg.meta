@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 12f791ac040a9418c93b3c9f1fbeacfd
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/question.svg
+  uploadId: 804188

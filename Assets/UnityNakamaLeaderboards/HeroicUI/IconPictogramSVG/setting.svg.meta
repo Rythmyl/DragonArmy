@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 68ec6f1e3f0f046778ffc9e0c6b3395e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/setting.svg
+  uploadId: 804188
