@@ -72,7 +72,7 @@ public class audioManager : MonoBehaviour
 
         if (Application.isPlaying)
         {
-            UnityEditor.EditorUtility.SetDirty(this);
+            //UnityEditor.EditorUtility.SetDirty(this);
         }
 
         ApplyVolumes();
