@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7543890101986458030}
   - component: {fileID: 6689313786306972761}
   m_Layer: 0
-  m_Name: Purple Dragon Fire
+  m_Name: Green Dragon Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.72856617, g: 0, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.030862093, a: 1}
   m_Intensity: 8
   m_Range: 10
   m_SpotAngle: 30
