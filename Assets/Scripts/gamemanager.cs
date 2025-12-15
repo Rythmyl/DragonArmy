@@ -70,6 +70,7 @@ public class gamemanager : MonoBehaviour
         {
             audioManager.Instance.musicSource.Stop();
             audioManager.Instance?.PlayGameMusic();
+            
         }
     }
 

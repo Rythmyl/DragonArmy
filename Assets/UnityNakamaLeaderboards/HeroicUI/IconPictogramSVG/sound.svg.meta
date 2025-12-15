@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c43a8b02e52d7400bb71557cb0c8d3a2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/sound.svg
+  uploadId: 804188

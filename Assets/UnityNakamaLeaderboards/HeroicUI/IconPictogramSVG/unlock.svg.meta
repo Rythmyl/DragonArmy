@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6b5e1939f74c94a47ae3cf7cc5deb90d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/unlock.svg
+  uploadId: 804188

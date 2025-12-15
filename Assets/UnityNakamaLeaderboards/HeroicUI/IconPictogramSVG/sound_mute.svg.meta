@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7e3210e09bcea4e9d8e1e2353b479d9f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/sound_mute.svg
+  uploadId: 804188

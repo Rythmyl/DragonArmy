@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fbc6e18f9e85440acbd62e5a5b56d0b3
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/question_round.svg
+  uploadId: 804188

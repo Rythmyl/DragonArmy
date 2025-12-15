@@ -233,6 +233,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67002b699526044f85d0e36851b5e7c, type: 3}
+--- !u!1001 &773190229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 12918065252588900, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_Name
+      value: Dragon Slaying Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6218303
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.025592625
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.785868
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99897265
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.032471173
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.027895834
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.01486994
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 3.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.81
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
 --- !u!1001 &1234120297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,6 +649,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 287402700902320150, guid: c88ca9178aac74842859348891243f60, type: 3}
+      propertyPath: gameMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 29e035cec2e92b1459a5fc22599d1a04, type: 3}
+    - target: {fileID: 287402700902320150, guid: c88ca9178aac74842859348891243f60, type: 3}
+      propertyPath: creditsMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: ca7e8dff5d464a243ba35fb5b694db79, type: 3}
     - target: {fileID: 6882295406314974417, guid: c88ca9178aac74842859348891243f60, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -754,6 +819,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e822003b208d0be448dd3f1a9e500a3b, type: 3}
+--- !u!1001 &1964602097
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 12918065252588900, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_Name
+      value: Dragon Slaying Turret (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.543217
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.030852467
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5745515
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6430021
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.09197257
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.75831795
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.055164993
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -11.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 99.818
+      objectReference: {fileID: 0}
+    - target: {fileID: 813521095133925787, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.013
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
 --- !u!1001 &2059178592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,3 +1443,9 @@ SceneRoots:
   - {fileID: 8804560699733645796}
   - {fileID: 1357564978}
   - {fileID: 1220148008220397171}
+
+  - {fileID: 2212592744957256555}
+  - {fileID: 7234334381518903415}
+  - {fileID: 773190229}
+  - {fileID: 1964602097}
+
