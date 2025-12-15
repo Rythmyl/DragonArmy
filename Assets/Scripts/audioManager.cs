@@ -27,6 +27,7 @@ public class audioManager : MonoBehaviour
     [Header("------ Music Clips -----")]
     public AudioClip menuMusic;
     public AudioClip gameMusic;
+    public AudioClip creditsMusic;
 
     [Header("----- UI SFX -----")]
     public AudioClip uiClick;
@@ -103,6 +104,13 @@ public class audioManager : MonoBehaviour
     {
         PlayMusic(gameMusic);
     }
+
+    public void PlayCreditsMusic()
+    {
+        PlayMusic(creditsMusic);
+    }
+    
+     
 
     public void DuckMusic()
     {
