@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a3d2c1c2a85a64c569e17a8d58afe95d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/pause.svg
+  uploadId: 804188

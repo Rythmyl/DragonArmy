@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 17fbe288c9e5b43bba7fe8756170d17a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/info.svg
+  uploadId: 804188

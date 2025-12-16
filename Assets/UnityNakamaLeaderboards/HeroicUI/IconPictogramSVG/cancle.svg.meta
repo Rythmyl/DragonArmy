@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 57ec6418aa3bc4bd4aa16b27f27ceca3
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/cancle.svg
+  uploadId: 804188

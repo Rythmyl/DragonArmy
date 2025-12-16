@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 94cb9c5d79253407c8ff310cd96c9419
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/arrow_back.svg
+  uploadId: 804188

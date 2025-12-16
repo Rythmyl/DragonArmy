@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3efbe68042cc44461bff366b8bbdce35
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/lock.svg
+  uploadId: 804188

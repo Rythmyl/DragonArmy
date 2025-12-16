@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8058364d6307b4a73859458c33a4b67a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 326477
+  packageName: Leaderboards, powered by Nakama
+  packageVersion: 1.1.0
+  assetPath: Assets/UnityNakamaLeaderboards/HeroicUI/IconPictogramSVG/cancle_round.svg
+  uploadId: 804188
