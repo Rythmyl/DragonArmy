@@ -5,24 +5,19 @@ public class HealingFlask : MonoBehaviour
     [Header("----- Flask Setting -----")]
     [SerializeField] int healAmount = 25;
     [SerializeField] int maxUses = 5;
-
-
     int currentUses;
 
     private void Awake()
     {
-        currentUses = maxUses; 
+        currentUses = maxUses;
     }
 
-    public void UseFlask(playerController player)
+    public void UseFlask(towerHealth tower)
     {
-        if(currentUses <= 0)
-        {
+        if (currentUses <= 0)
             return;
-        }
 
-
-        player.Heal(healAmount);
+        tower.TakeDamage(-healAmount); 
         currentUses--;
     }
 

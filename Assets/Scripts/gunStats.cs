@@ -13,7 +13,7 @@ public class gunStats : ScriptableObject
 
     [Header("----- Ammo -----")]
     public int ammoCur;
-    [Range(5, 50)] public int ammoMax;
+    [Range(5, 500)] public int ammoMax;
 
     [Header("----- Effects -----")]
     public ParticleSystem hitEffect;

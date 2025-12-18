@@ -57,7 +57,8 @@ MonoBehaviour:
   musicSource: {fileID: 2276343664087570375}
   sfxSource: {fileID: 1678096361317250232}
   menuMusic: {fileID: 8300000, guid: 2bd8d086c4f02b6469d01a6b2136ab2a, type: 3}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 29e035cec2e92b1459a5fc22599d1a04, type: 3}
+  creditsMusic: {fileID: 8300000, guid: ca7e8dff5d464a243ba35fb5b694db79, type: 3}
   uiClick: {fileID: 8300000, guid: b5beda5570339f6499622ca05816ad85, type: 3}
   uiHover: {fileID: 8300000, guid: 60cb455c24e3aad4385b3b9be38bcf9f, type: 3}
 --- !u!82 &2276343664087570375

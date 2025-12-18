@@ -27,6 +27,7 @@ public class buffs : MonoBehaviour
     Coroutine resistCoroutine;
     Coroutine speedCoroutine;
     Coroutine strengthCoroutine;
+
     public void DropBuff(Vector3 dropPosition)
     {
         if (Random.value <= dropChance)
@@ -35,6 +36,7 @@ public class buffs : MonoBehaviour
             SpawnBuff(buffType, dropPosition);
         }
     }
+
     void SpawnBuff(BuffType buffType, Vector3 position)
     {
         GameObject buff = null;
@@ -75,32 +77,35 @@ public class buffs : MonoBehaviour
             case BuffType.Heal:
                 ApplyHeal();
                 break;
-            case BuffType.Speed:
-                ApplySpeed();
-                break;
-            case BuffType.Strength:
-                ApplyStrength();
-                break;
+            //case BuffType.Speed:
+                //ApplySpeed();
+               // break;
+            //case BuffType.Strength:
+               // ApplyStrength();
+                //break;
         }
     }
 
     void ApplyResistance()
     {
         if (resistCoroutine != null)
-        StopCoroutine(resistCoroutine);
+            StopCoroutine(resistCoroutine);
         hasResist = true;
         resistCoroutine = StartCoroutine(ResistBuffCoroutine());
     }
 
     void ApplyHeal()
     {
-        playerController player = GetComponent<playerController>();
-        if (player != null)
+        // Changed from playerController to towerHealth
+        towerHealth tower = GetComponent<towerHealth>();
+        if (tower != null)
         {
-            player.Heal(healAmo);
+            tower.TakeDamage(-healAmo); // Heal tower by negative damage
         }
     }
 
+    // Commented out because speed buff currently not supported on tower
+    /*
     void ApplySpeed()
     {
         playerController player = GetComponent<playerController>();
@@ -116,7 +121,10 @@ public class buffs : MonoBehaviour
             speedCoroutine = StartCoroutine(SpeedBuffCoroutine(player));
         }
     }
+    */
 
+    // Commented out because strength buff currently not supported on tower
+    /*
     void ApplyStrength()
     {
         playerController player = GetComponent<playerController>();
@@ -132,6 +140,7 @@ public class buffs : MonoBehaviour
             strengthCoroutine = StartCoroutine(StrengthBuffCoroutine(player));
         }
     }
+    */
 
     IEnumerator ResistBuffCoroutine()
     {
@@ -139,19 +148,25 @@ public class buffs : MonoBehaviour
         hasResist = false;
     }
 
+    // Commented out because speed buff coroutine is not used
+    /*
     IEnumerator SpeedBuffCoroutine(playerController player)
     {
         yield return new WaitForSeconds(speedDur);
         player.ModifySpeed(-speedBoost);
         hasSpeedBst = false;
     }
+    */
 
+    // Commented out because strength buff coroutine is not used
+    /*
     IEnumerator StrengthBuffCoroutine(playerController player)
     {
         yield return new WaitForSeconds(strengthDur);
         player.ModifyDMG(-strengthBoost);
         hasStrengthBst = false;
     }
+    */
 
     public float GetResistMultiply()
     {
