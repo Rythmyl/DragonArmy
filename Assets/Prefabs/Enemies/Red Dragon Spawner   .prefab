@@ -154,49 +154,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd18ed7b61bd5d140b4dd267d426bd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dragonSpawner
-  spawners:
-  - dragonPrefab: {fileID: 3189712001996144903, guid: 914d0aa110795d74f8aa23fb87dc073c, type: 3}
-    spawnPoints:
-    - {fileID: 1557406253857688242}
-    - {fileID: 3394839198777309520}
-    - {fileID: 8648486423616281391}
-    - {fileID: 8918407968392106335}
+  babyDragonSpawners:
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
     towerTarget: {fileID: 0}
-    quantityToSpawn: 10
-    spawnFrequency: 5
+    quantityToSpawn: 0
+    spawnFrequency: 0
     dragonsSpawned: 0
     nextSpawnIndex: 0
-  - dragonPrefab: {fileID: 9089047138810495743, guid: 01ad9e9a161a24b4ebaa2866ea2dab03, type: 3}
-    spawnPoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
     towerTarget: {fileID: 0}
-    quantityToSpawn: 10
-    spawnFrequency: 5
+    quantityToSpawn: 0
+    spawnFrequency: 0
     dragonsSpawned: 0
     nextSpawnIndex: 0
-  - dragonPrefab: {fileID: 4743786681775991303, guid: be43d2c915cecc34583ce22f8ceaacc7, type: 3}
-    spawnPoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
     towerTarget: {fileID: 0}
-    quantityToSpawn: 10
-    spawnFrequency: 5
+    quantityToSpawn: 0
+    spawnFrequency: 0
     dragonsSpawned: 0
     nextSpawnIndex: 0
-  - dragonPrefab: {fileID: 7618543864616175509, guid: 6c280a39234779740a9534d9a150a68b, type: 3}
-    spawnPoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
     towerTarget: {fileID: 0}
-    quantityToSpawn: 10
-    spawnFrequency: 5
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  dragonBoarSpawners:
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  bossSpawners:
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
+    dragonsSpawned: 0
+    nextSpawnIndex: 0
+  - dragonPrefab: {fileID: 0}
+    spawnPoints: []
+    towerTarget: {fileID: 0}
+    quantityToSpawn: 0
+    spawnFrequency: 0
     dragonsSpawned: 0
     nextSpawnIndex: 0
   delayBetweenSpawners: 30

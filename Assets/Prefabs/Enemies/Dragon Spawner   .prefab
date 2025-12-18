@@ -1103,7 +1103,7 @@ MonoBehaviour:
   bossSpawners:
   - dragonPrefab: {fileID: 9153301434852153888, guid: 17915ffb0e3d57947ab3f88a38bb9177, type: 3}
     spawnPoints:
-    - {fileID: 9006047000966835756}
+    - {fileID: 0}
     towerTarget: {fileID: 0}
     quantityToSpawn: 1
     spawnFrequency: 3
@@ -1111,7 +1111,7 @@ MonoBehaviour:
     nextSpawnIndex: 0
   - dragonPrefab: {fileID: 4850503611351946161, guid: 3d60c06aea99c344aa0daf68971cf47a, type: 3}
     spawnPoints:
-    - {fileID: 7455679148989921070}
+    - {fileID: 0}
     towerTarget: {fileID: 0}
     quantityToSpawn: 1
     spawnFrequency: 3
@@ -1127,7 +1127,7 @@ MonoBehaviour:
     nextSpawnIndex: 0
   - dragonPrefab: {fileID: 1193703482200591286, guid: 3cd1ceae508e8e94cb95bd7850eec001, type: 3}
     spawnPoints:
-    - {fileID: 8446813185666086186}
+    - {fileID: 0}
     towerTarget: {fileID: 0}
     quantityToSpawn: 1
     spawnFrequency: 3
