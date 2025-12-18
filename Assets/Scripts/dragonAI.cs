@@ -13,7 +13,6 @@ public class dragonAI : MonoBehaviour, IDamage
 
     [Header("----- Stats -----")]
     [Range(50, 500)][SerializeField] int HP;
-    [Range(0, 180)][SerializeField] int FOV;
     [Range(1, 360)][SerializeField] int faceTargetSpeed;
     [Range(1, 20)][SerializeField] int animTranSpeed;
 
@@ -35,15 +34,10 @@ public class dragonAI : MonoBehaviour, IDamage
 
     Color colorOrig;
 
-    bool playerInTrigger;
     bool isDead = false;
-    bool isEngagedByPlayer = false;
 
     float shootTimer;
     float meleeTimer;
-    Vector3 playerDir;
-    float angleToPlayer;
-    Vector3 lastAttackPosition;
 
     void Start()
     {
@@ -57,11 +51,7 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (tower != null && agent != null)
         {
-            if (bullet == null) 
-                agent.stoppingDistance = meleeStoppingDistance;
-            else
-                agent.stoppingDistance = rangedStoppingDistance;
-
+            agent.stoppingDistance = bullet == null ? meleeStoppingDistance : rangedStoppingDistance;
             agent.SetDestination(GetClosestPointOnTower(transform.position));
         }
     }
@@ -79,86 +69,47 @@ public class dragonAI : MonoBehaviour, IDamage
         float agentSpeedAnim = anim.GetFloat("Speed");
         anim.SetFloat("Speed", Mathf.Lerp(agentSpeedAnim, agentSpeedCur, Time.deltaTime * animTranSpeed));
 
-        if (isEngagedByPlayer)
-        {
-            if (playerInTrigger && !CanSeePlayer())
-                isEngagedByPlayer = false;
-            else if (!playerInTrigger)
-                isEngagedByPlayer = false;
-        }
+        if (tower == null) return;
 
-        if (isEngagedByPlayer)
+        float distToTower = Vector3.Distance(transform.position, GetClosestPointOnTower(transform.position));
+
+        if (bullet == null)
         {
-            if (gamemanager.instance?.rythmyl != null)
+            if (distToTower <= meleeStoppingDistance)
             {
-                Vector3 playerPos = gamemanager.instance.rythmyl.transform.position;
-                float distToPlayer = Vector3.Distance(transform.position, playerPos);
+                FaceTarget(tower.transform.position);
 
-                if (distToPlayer <= meleeStoppingDistance && meleeTimer >= meleeCooldown)
-                {
-                    agent.stoppingDistance = meleeStoppingDistance;
-                    agent.SetDestination(playerPos);
-                    FaceTarget(playerPos);
+                if (meleeTimer >= meleeCooldown)
                     MeleeAttack();
-                }
-                else if (bullet != null && shootRate > 0 && distToPlayer <= rangedStoppingDistance && shootTimer >= shootRate)
-                {
-                    agent.stoppingDistance = rangedStoppingDistance;
-                    agent.SetDestination(playerPos);
-                    FaceTarget(playerPos);
-                    Shoot();
-                }
-                else
-                {
-                    agent.SetDestination(playerPos);
-                    FaceTarget(playerPos);
-                }
+
+                agent.stoppingDistance = meleeStoppingDistance;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
+            }
+            else
+            {
+                agent.stoppingDistance = meleeStoppingDistance;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
             }
         }
         else
         {
-            if (tower == null) return;
-
-            float distToTower = Vector3.Distance(transform.position, GetClosestPointOnTower(transform.position));
-
-            if (bullet == null)
+            if (distToTower <= rangedStoppingDistance)
             {
-                if (distToTower <= meleeStoppingDistance)
-                {
-                    FaceTarget(tower.transform.position);
+                FaceTarget(tower.transform.position);
 
-                    if (meleeTimer >= meleeCooldown)
-                        MeleeAttack();
+                if (shootRate > 0 && shootTimer >= shootRate)
+                    Shoot();
 
-                    agent.stoppingDistance = meleeStoppingDistance;
-                    agent.SetDestination(GetClosestPointOnTower(transform.position));
-                }
-                else
-                {
-                    agent.stoppingDistance = meleeStoppingDistance;
-                    agent.SetDestination(GetClosestPointOnTower(transform.position));
-                }
+                if (meleeRange > 0 && meleeTimer >= meleeCooldown && distToTower <= meleeStoppingDistance)
+                    MeleeAttack();
+
+                agent.stoppingDistance = rangedStoppingDistance;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
             }
             else
             {
-                if (distToTower <= rangedStoppingDistance)
-                {
-                    FaceTarget(tower.transform.position);
-
-                    if (shootRate > 0 && shootTimer >= shootRate)
-                        Shoot();
-
-                    if (meleeRange > 0 && meleeTimer >= meleeCooldown && distToTower <= meleeStoppingDistance)
-                        MeleeAttack();
-
-                    agent.stoppingDistance = rangedStoppingDistance;
-                    agent.SetDestination(GetClosestPointOnTower(transform.position));
-                }
-                else
-                {
-                    agent.stoppingDistance = rangedStoppingDistance;
-                    agent.SetDestination(GetClosestPointOnTower(transform.position));
-                }
+                agent.stoppingDistance = rangedStoppingDistance;
+                agent.SetDestination(GetClosestPointOnTower(transform.position));
             }
         }
     }
@@ -174,42 +125,11 @@ public class dragonAI : MonoBehaviour, IDamage
         return tower.transform.position;
     }
 
-    bool CanSeePlayer()
-    {
-        if (headPos == null || agent == null) return false;
-
-        Vector3 playerPos = gamemanager.instance?.rythmyl?.transform.position ?? Vector3.zero;
-        playerDir = playerPos - headPos.position;
-        angleToPlayer = Vector3.Angle(playerDir, transform.forward);
-
-        if (Physics.Raycast(headPos.position, playerDir, out RaycastHit hit))
-        {
-            if (angleToPlayer <= FOV && hit.collider.CompareTag("Rythmyl"))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     void FaceTarget(Vector3 targetPos)
     {
         Vector3 dir = targetPos - transform.position;
         Quaternion rot = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, faceTargetSpeed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other == null) return;
-        if (other.CompareTag("Rythmyl"))
-            playerInTrigger = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Rythmyl")) return;
-        playerInTrigger = false;
     }
 
     void Shoot()
@@ -231,11 +151,6 @@ public class dragonAI : MonoBehaviour, IDamage
     {
         meleeTimer = 0;
         anim?.SetTrigger("Attack");
-
-        if (isEngagedByPlayer)
-            lastAttackPosition = gamemanager.instance?.rythmyl?.transform.position ?? lastAttackPosition;
-        else if (tower != null)
-            lastAttackPosition = tower.transform.position;
     }
 
     public void weaponColOn()
@@ -255,12 +170,6 @@ public class dragonAI : MonoBehaviour, IDamage
         if (isDead) return;
 
         HP -= amount;
-
-        if (!isEngagedByPlayer)
-            isEngagedByPlayer = true;
-
-        if (agent != null && gamemanager.instance?.rythmyl != null && isEngagedByPlayer)
-            agent.SetDestination(gamemanager.instance.rythmyl.transform.position);
 
         if (HP <= 0)
         {
@@ -286,11 +195,7 @@ public class dragonAI : MonoBehaviour, IDamage
 
         if (agent != null && tower != null)
         {
-            if (bullet == null)
-                agent.stoppingDistance = meleeStoppingDistance;
-            else
-                agent.stoppingDistance = rangedStoppingDistance;
-
+            agent.stoppingDistance = bullet == null ? meleeStoppingDistance : rangedStoppingDistance;
             agent.SetDestination(GetClosestPointOnTower(transform.position));
         }
     }

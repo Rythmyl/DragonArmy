@@ -46,4 +46,15 @@ public class towerHealth : MonoBehaviour, IDamage
             TakeDamage(damageComponent.damageAmount);
         }
     }
+
+    public void SetHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
+        OnHealthChanged?.Invoke(currentHealth);
+    }
+
+    public void NotifyHealthChanged()
+    {
+        OnHealthChanged?.Invoke(currentHealth);
+    }
 }

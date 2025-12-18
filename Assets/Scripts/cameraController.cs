@@ -2,37 +2,24 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
-    [Header("----- Camera Settings -----")]
-    [Range(1, 100)] [SerializeField] int sens;
+    public Transform discTransform; 
+    public float mouseSensitivity = 2f;
 
-    [Header("----- Vertical Clamp -----")]
-    [Range(-90, 0)] [SerializeField] int lockVertMin;
-    [Range(0, 90)] [SerializeField] int lockVertMax;
-
-    [Header("----- Options -----")]
-    [SerializeField] bool invertY;
-
-    float camRotX;
+    private float xRotation = 90f;
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        transform.rotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * sens * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * sens * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, 0f, 90f);
 
-        if (invertY)
-            camRotX += mouseY;
-        else
-            camRotX -= mouseY;
+        float discYRotation = discTransform.eulerAngles.y;
 
-        camRotX = Mathf.Clamp(camRotX, lockVertMin, lockVertMax);
-
-        transform.localRotation = Quaternion.Euler(camRotX, 0, 0);
-        transform.parent.Rotate(Vector3.up * mouseX);
+        transform.rotation = Quaternion.Euler(xRotation, discYRotation, 0f);
     }
 }

@@ -1,67 +1,56 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+
 public class Turret : MonoBehaviour
 {
+    [Header("--- Gun Stats ---")]
+    public gunStats gunStatsData;
 
-
-    [Header("---Detection---")]
-    public float range = 8f;
-    public LayerMask excludeLayers;
-
-    [Header("---Shooting---")]
-    public float fireRate = 1f;
-    public int damage = 5;
+    [Header("--- Shooting Setup ---")]
     public GameObject projectilePrefab;
     public Transform firePoint;
 
-    float fireTimer; 
-    List<Transform> targets = new List<Transform>();
+    [Header("--- Turn Management ---")]
+    public int turretID;
+    public static int currentTurn = 0;
+    public static int turretCount = 2;
 
+    private float shootCooldown;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
+        shootCooldown -= Time.deltaTime;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        fireTimer += Time.deltaTime;
-
-        if(targets.Count > 0 && fireTimer >= 1f/fireRate)
+        if (shootCooldown <= 0f && Input.GetMouseButton(0) && currentTurn == turretID && gunStatsData.ammoCur > 0)
         {
-            Shoot(targets[0]);
-            fireTimer = 0f;
+            Shoot();
+            shootCooldown = gunStatsData.shootRate;
+
+            currentTurn = (currentTurn + 1) % turretCount;
         }
     }
 
-    void Shoot(Transform target)
+    private void Shoot()
     {
-        if (target == null)
-            return;
-
-
-        GameObject proj = Instantiate(projectilePrefab,firePoint.position,Quaternion.identity);
-        proj.GetComponent<Projectile>()
-            .Init(target, damage);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if((excludeLayers.value & (1<<other.gameObject.layer)) != 0)
+        if (projectilePrefab != null && firePoint != null)
         {
-            return;
+            GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile projectileScript = proj.GetComponent<Projectile>();
+            if (projectileScript != null)
+            {
+                projectileScript.Init(transform, gunStatsData.shootDamage);
+            }
         }
-        
-        targets.Add(other.transform);
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        targets.Remove(other.transform);
-    }
+        if (gunStatsData.hitEffect != null)
+        {
+            Instantiate(gunStatsData.hitEffect, transform.position, Quaternion.identity);
+        }
 
+        if (gunStatsData.shootSound != null && gunStatsData.shootSound.Length > 0)
+        {
+            AudioSource.PlayClipAtPoint(gunStatsData.shootSound[0], transform.position, gunStatsData.shootSoundVol);
+        }
+
+        gunStatsData.ammoCur = Mathf.Max(gunStatsData.ammoCur - 1, 0);
+    }
 }

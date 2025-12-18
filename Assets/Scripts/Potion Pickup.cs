@@ -7,13 +7,11 @@ public class PotionPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        playerController player = other.GetComponent<playerController>();
-
-        if(player != null )
+        towerHealth tower = other.GetComponent<towerHealth>();
+        if (tower != null)
         {
-            player.Heal(healAmount);
+            tower.SetHealth(tower.currentHealth + healAmount);
             Destroy(gameObject);
         }
-
     }
 }

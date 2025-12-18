@@ -9,13 +9,16 @@ public class damage : MonoBehaviour
     [Header("----- Damage Settings -----")]
     [SerializeField] damageType type;
 
-    [Range(1, 1000)]public int damageAmount;
+    [Range(1, 1000)] public int damageAmount;
     [Range(0.01f, 5f)][SerializeField] float damageRate;
     [Range(0, 50)][SerializeField] int speed;
     [Range(1, 30)][SerializeField] int destroyTime;
 
     [Header("----- Components -----")]
     [SerializeField] Rigidbody rb;
+
+    [Header("----- Homing Target -----")]
+    [SerializeField] Transform homingTarget;
 
     private bool isDamaging;
     private HashSet<IDamage> damagedTargets = new HashSet<IDamage>();
@@ -38,13 +41,10 @@ public class damage : MonoBehaviour
 
     void Update()
     {
-        if (type == damageType.homing && rb != null)
+        if (type == damageType.homing && rb != null && homingTarget != null)
         {
-            if (gamemanager.instance != null && gamemanager.instance.rythmyl != null)
-            {
-                Vector3 direction = (gamemanager.instance.rythmyl.transform.position - transform.position).normalized;
-                rb.linearVelocity = direction * speed;
-            }
+            Vector3 direction = (homingTarget.position - transform.position).normalized;
+            rb.linearVelocity = direction * speed;
         }
     }
 
@@ -89,8 +89,6 @@ public class damage : MonoBehaviour
         {
             target.takeDamage(damageAmount);
             yield return new WaitForSeconds(damageRate);
-            // Optionally, add a condition to break this loop if needed
         }
-        // damagedTargets.Remove(target); // If you add a break condition, remove target here
     }
 }

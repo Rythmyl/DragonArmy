@@ -31,7 +31,7 @@ public class buttonFunctions : MonoBehaviour
 
     public void respawn()
     {
-        gamemanager.instance.RespawnPlayer();
+        gamemanager.instance.RespawnTower();
         gamemanager.instance.stateUnpause();
     }
 }
