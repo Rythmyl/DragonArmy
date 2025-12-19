@@ -897,7 +897,6 @@ GameObject:
   - component: {fileID: 6939888004743441435}
   - component: {fileID: 3203213664398306413}
   - component: {fileID: 2670011576626570031}
-  - component: {fileID: 9202972066856492490}
   m_Layer: 0
   m_Name: Red Baby Dragon
   m_TagString: Untagged
@@ -1019,27 +1018,6 @@ CapsuleCollider:
   m_Height: 7.5
   m_Direction: 1
   m_Center: {x: 0, y: 3.75, z: 0}
---- !u!135 &9202972066856492490
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189712001996144903}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 80
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3201543388905264182
 GameObject:
   m_ObjectHideFlags: 0

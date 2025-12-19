@@ -912,7 +912,6 @@ GameObject:
   - component: {fileID: 7233180313863212970}
   - component: {fileID: 5268507087346819945}
   - component: {fileID: 5924582013747660033}
-  - component: {fileID: 494492116436518508}
   m_Layer: 0
   m_Name: Purple Baby Dragon
   m_TagString: Untagged
@@ -1034,27 +1033,6 @@ CapsuleCollider:
   m_Height: 7.5
   m_Direction: 1
   m_Center: {x: 0, y: 3.75, z: 0}
---- !u!135 &494492116436518508
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743786681775991303}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 80
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5060437096773476361
 GameObject:
   m_ObjectHideFlags: 0
