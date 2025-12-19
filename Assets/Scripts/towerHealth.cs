@@ -29,7 +29,6 @@ public class towerHealth : MonoBehaviour, IDamage
 
     public void takeDamage(int amount)
     {
-        Debug.Log($"Tower taking damage: {amount}");
         TakeDamage(amount);
     }
 
