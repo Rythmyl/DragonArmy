@@ -145,7 +145,6 @@ public class gamemanager : MonoBehaviour
 
         float healthPercent = (float)towerHealthComponent.currentHealth / towerHealthComponent.maxHealth;
         towerHPBar.fillAmount = healthPercent;
-        towerHPText.text = $"{towerHealthComponent.currentHealth} / {towerHealthComponent.maxHealth}";
     }
 
     public void RespawnTower()
