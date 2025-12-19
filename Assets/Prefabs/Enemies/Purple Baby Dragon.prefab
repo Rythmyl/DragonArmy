@@ -955,16 +955,17 @@ MonoBehaviour:
   headPos: {fileID: 1123575850608145341}
   weaponCol: {fileID: 0}
   HP: 50
-  FOV: 180
   faceTargetSpeed: 8
   animTranSpeed: 1
   bullet: {fileID: 7672880700505270150, guid: 86e68fc486edf9a41a9fe6b5e73df5b0, type: 3}
   shootRate: 0.1
   shootPos: {fileID: 2070463935100091816}
   bulletSpeed: 0.1
+  rangedStoppingDistance: 10
   meleeRange: 0.1
   meleeCooldown: 0.5
   meleeDamage: 1
+  meleeStoppingDistance: 3
   tower: {fileID: 0}
 --- !u!195 &7233180313863212970
 NavMeshAgent:
