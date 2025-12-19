@@ -1296,7 +1296,6 @@ GameObject:
   - component: {fileID: 1494158691133307774}
   - component: {fileID: 927394513666079745}
   - component: {fileID: 9220912737397922828}
-  - component: {fileID: 4899171660026962080}
   m_Layer: 0
   m_Name: Purple Boar
   m_TagString: Untagged
@@ -1419,27 +1418,6 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
---- !u!135 &4899171660026962080
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488061173931675818}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 40
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8575219110366876559
 GameObject:
   m_ObjectHideFlags: 0

@@ -1260,7 +1260,6 @@ GameObject:
   - component: {fileID: 7692932689926942088}
   - component: {fileID: 8853621376247478998}
   - component: {fileID: 5763274724501458441}
-  - component: {fileID: 2431927408574242940}
   m_Layer: 0
   m_Name: Blue Dragon
   m_TagString: Untagged
@@ -1382,27 +1381,6 @@ CapsuleCollider:
   m_Height: 7.5
   m_Direction: 1
   m_Center: {x: 0, y: 3.75, z: 0}
---- !u!135 &2431927408574242940
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4850503611351946161}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 80
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4919753247507405199
 GameObject:
   m_ObjectHideFlags: 0

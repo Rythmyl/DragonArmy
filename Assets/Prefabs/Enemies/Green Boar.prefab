@@ -651,7 +651,6 @@ GameObject:
   - component: {fileID: 8501844343430760316}
   - component: {fileID: 3602235545067174746}
   - component: {fileID: 2061851579825516254}
-  - component: {fileID: 3423643974605905359}
   m_Layer: 0
   m_Name: Green Boar
   m_TagString: Untagged
@@ -774,27 +773,6 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
---- !u!135 &3423643974605905359
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3967290339680924597}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 40
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4154797129513223403
 GameObject:
   m_ObjectHideFlags: 0

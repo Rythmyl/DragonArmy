@@ -41,12 +41,8 @@ public class Turret : MonoBehaviour
             if (projectileScript != null)
             {
                 projectileScript.Init(gunStatsData.shootDamage);
+                projectileScript.hitEffectPrefab = gunStatsData.hitEffect?.gameObject;
             }
-        }
-
-        if (gunStatsData.hitEffect != null)
-        {
-            Instantiate(gunStatsData.hitEffect, transform.position, Quaternion.identity);
         }
 
         if (gunStatsData.shootSound != null && gunStatsData.shootSound.Length > 0)
