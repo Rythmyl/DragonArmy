@@ -21,4 +21,6 @@ public class gunStats : ScriptableObject
     [Header("----- Audio -----")]
     public AudioClip[] shootSound;
     [Range(0, 1)] public float shootSoundVol;
+
+    public bool unlimitedAmmo = true;  
 }

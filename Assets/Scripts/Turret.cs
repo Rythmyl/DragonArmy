@@ -20,7 +20,9 @@ public class Turret : MonoBehaviour
     {
         shootCooldown -= Time.deltaTime;
 
-        if (shootCooldown <= 0f && Input.GetMouseButton(0) && currentTurn == turretID && gunStatsData.ammoCur > 0)
+        bool canShoot = (gunStatsData.unlimitedAmmo || gunStatsData.ammoCur > 0);
+
+        if (shootCooldown <= 0f && (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && currentTurn == turretID && canShoot)
         {
             Shoot();
             shootCooldown = gunStatsData.shootRate;
@@ -51,6 +53,9 @@ public class Turret : MonoBehaviour
             AudioSource.PlayClipAtPoint(gunStatsData.shootSound[0], transform.position, gunStatsData.shootSoundVol);
         }
 
-        gunStatsData.ammoCur = Mathf.Max(gunStatsData.ammoCur - 1, 0);
+        if (!gunStatsData.unlimitedAmmo)
+        {
+            gunStatsData.ammoCur = Mathf.Max(gunStatsData.ammoCur - 1, 0);
+        }
     }
 }
