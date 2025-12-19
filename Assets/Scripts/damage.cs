@@ -20,7 +20,6 @@ public class damage : MonoBehaviour
     [Header("----- Homing Target -----")]
     [SerializeField] Transform homingTarget;
 
-    private bool isDamaging;
     private HashSet<IDamage> damagedTargets = new HashSet<IDamage>();
 
     void Start()
@@ -57,10 +56,7 @@ public class damage : MonoBehaviour
 
         if (dmg != null && type != damageType.DOT)
         {
-            if (other.CompareTag("Rythmyl") || dmg != null)
-            {
-                dmg.takeDamage(damageAmount);
-            }
+            dmg.takeDamage(damageAmount);
         }
 
         if (type == damageType.moving || type == damageType.homing)

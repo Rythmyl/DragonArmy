@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48bbfd720a6ba034bafe0d12a2790d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 10
+  speed: 50
+  hitEffectPrefab: {fileID: 5771099495069920430, guid: e3414d7241e8af54ea44af20b6b93a02, type: 3}
 --- !u!114 &6296761792202800119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +67,8 @@ MonoBehaviour:
   type: 0
   damageAmount: 1
   damageRate: 0.01
-  speed: 25
-  destroyTime: 3
+  speed: 50
+  destroyTime: 5
   rb: {fileID: 2048439625003922629}
   homingTarget: {fileID: 0}
 --- !u!135 &8471640018764900624
@@ -166,7 +167,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -240,7 +241,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.5283019, g: 0.41323316, b: 0.27162692, a: 1}
   m_Intensity: 8
-  m_Range: 10
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

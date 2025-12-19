@@ -219,7 +219,6 @@ MonoBehaviour:
   headPos: {fileID: 6784799129244131620}
   weaponCol: {fileID: 8106789688105607055}
   HP: 50
-  FOV: 180
   faceTargetSpeed: 10
   animTranSpeed: 3
   bullet: {fileID: 0}

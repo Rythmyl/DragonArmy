@@ -36,10 +36,11 @@ public class Turret : MonoBehaviour
         if (projectilePrefab != null && firePoint != null)
         {
             GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
             Projectile projectileScript = proj.GetComponent<Projectile>();
             if (projectileScript != null)
             {
-                projectileScript.Init(transform, gunStatsData.shootDamage);
+                projectileScript.Init(gunStatsData.shootDamage);
             }
         }
 
