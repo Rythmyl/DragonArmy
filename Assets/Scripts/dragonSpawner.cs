@@ -18,9 +18,9 @@ public class dragonSpawner : MonoBehaviour
 
     public Spawner[] babyDragonSpawners = new Spawner[4];
     public Spawner[] dragonBoarSpawners = new Spawner[4];
-    public Spawner[] bossSpawners = new Spawner[1];  
+    public Spawner[] bossSpawners = new Spawner[4];  
 
-    public float delayBetweenSpawners = 30f;
+    public float delayBetweenSpawners;
 
     void Start()
     {
@@ -38,8 +38,6 @@ public class dragonSpawner : MonoBehaviour
 
             spawner.dragonsSpawned = 0;
             spawner.nextSpawnIndex = 0;
-
-            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
 
             yield return StartCoroutine(SpawnFromSpawner(spawner));
 
@@ -60,8 +58,6 @@ public class dragonSpawner : MonoBehaviour
             spawner.dragonsSpawned = 0;
             spawner.nextSpawnIndex = 0;
 
-            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
-
             yield return StartCoroutine(SpawnFromSpawner(spawner));
 
             float spawnDuration = spawner.quantityToSpawn * spawner.spawnFrequency;
@@ -80,8 +76,6 @@ public class dragonSpawner : MonoBehaviour
 
             spawner.dragonsSpawned = 0;
             spawner.nextSpawnIndex = 0;
-
-            gamemanager.instance?.updateGameGoal(spawner.quantityToSpawn, isDragon: true);
 
             yield return StartCoroutine(SpawnFromSpawner(spawner));
 

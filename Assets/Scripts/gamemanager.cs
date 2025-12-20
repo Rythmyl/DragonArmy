@@ -7,27 +7,27 @@ public class gamemanager : MonoBehaviour
     public static gamemanager instance;
 
     [Header("----- UI Menus -----")]
-    [SerializeField] GameObject menuActive;
-    [SerializeField] GameObject menuPause;
-    [SerializeField] GameObject menuWin;
-    [SerializeField] GameObject menuLose;
+    [SerializeField] private GameObject menuActive;
+    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject menuWin;
+    [SerializeField] private GameObject menuLose;
 
     [Header("----- UI Elements -----")]
-    public TMP_Text gameGoalCountText;
+    [SerializeField] private TMP_Text gameGoalCountText;
 
     [Header("----- Tower UI Elements -----")]
-    public towerHealth towerHealthComponent;
-    public Image towerHPBar;
-    public TMP_Text towerHPText;
+    [SerializeField] private towerHealth towerHealthComponent;
+    [SerializeField] private Image towerHPBar;
+    [SerializeField] private TMP_Text towerHPText;
 
     [Header("----- Game State -----")]
     public bool isPaused;
 
-    float timeScaleOrig;
+    private int enemyCountFromDragons;
 
-    int enemyCountFromDragons;
+    private float timeScaleOrig;
 
-    void Awake()
+    private void Awake()
     {
         if (instance != null && instance != this)
         {
@@ -38,20 +38,20 @@ public class gamemanager : MonoBehaviour
 
         timeScaleOrig = Time.timeScale;
 
-        InitializeEnemyCount();
+        InitializeEnemyCountFromSpawner();
         UpdateTowerHPUI();
     }
 
-    void Start()
+    private void Start()
     {
         if (audioManager.Instance != null)
         {
             audioManager.Instance.musicSource.Stop();
-            audioManager.Instance?.PlayGameMusic();
+            audioManager.Instance.PlayGameMusic();
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
@@ -70,14 +70,36 @@ public class gamemanager : MonoBehaviour
         UpdateTowerHPUI();
     }
 
-    void InitializeEnemyCount()
+    private void InitializeEnemyCountFromSpawner()
     {
-        var dragons = Object.FindObjectsByType<dragonAI>(FindObjectsSortMode.None);
-        enemyCountFromDragons = dragons.Length;
+        dragonSpawner spawner = Object.FindFirstObjectByType<dragonSpawner>();
+        if (spawner != null)
+        {
+            int totalQuantity = 0;
+
+            foreach (var babySpawner in spawner.babyDragonSpawners)
+            {
+                totalQuantity += babySpawner.quantityToSpawn;
+            }
+            foreach (var boarSpawner in spawner.dragonBoarSpawners)
+            {
+                totalQuantity += boarSpawner.quantityToSpawn;
+            }
+            foreach (var bossSpawner in spawner.bossSpawners)
+            {
+                totalQuantity += bossSpawner.quantityToSpawn;
+            }
+
+            enemyCountFromDragons = totalQuantity;
+        }
+        else
+        {
+            enemyCountFromDragons = 0;
+        }
         UpdateGameGoalUI();
     }
 
-    void UpdateGameGoalUI()
+    private void UpdateGameGoalUI()
     {
         gameGoalCountText.text = enemyCountFromDragons.ToString("F0");
     }
@@ -88,15 +110,14 @@ public class gamemanager : MonoBehaviour
         {
             enemyCountFromDragons += amount;
             if (enemyCountFromDragons < 0) enemyCountFromDragons = 0;
-        }
+            UpdateGameGoalUI();
 
-        UpdateGameGoalUI();
-
-        if (enemyCountFromDragons <= 0)
-        {
-            statePause();
-            menuActive = menuWin;
-            menuActive.SetActive(true);
+            if (enemyCountFromDragons <= 0)
+            {
+                statePause();
+                menuActive = menuWin;
+                menuActive.SetActive(true);
+            }
         }
     }
 
@@ -129,6 +150,7 @@ public class gamemanager : MonoBehaviour
         Time.timeScale = timeScaleOrig;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         if (menuActive != null)
         {
             menuActive.SetActive(false);
@@ -139,7 +161,7 @@ public class gamemanager : MonoBehaviour
             audioManager.Instance.UnduckMusic();
     }
 
-    void UpdateTowerHPUI()
+    private void UpdateTowerHPUI()
     {
         if (towerHealthComponent == null || towerHPBar == null || towerHPText == null) return;
 
