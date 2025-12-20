@@ -1104,7 +1104,7 @@ MonoBehaviour:
   shootRate: 0.1
   shootPos: {fileID: 4083105311244311453}
   bulletSpeed: 25
-  rangedStoppingDistance: 10
+  rangedStoppingDistance: 15
   meleeRange: 0.1
   meleeCooldown: 0.5
   meleeDamage: 1
