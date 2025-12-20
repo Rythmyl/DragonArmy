@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class gamemanager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class gamemanager : MonoBehaviour
     [SerializeField] private towerHealth towerHealthComponent;
     [SerializeField] private Image towerHPBar;
     [SerializeField] private TMP_Text towerHPText;
+
+    [Header("----- Start Pop Up -----")]
+    [SerializeField] private GameObject startPopUp;  
 
     [Header("----- Game State -----")]
     public bool isPaused;
@@ -40,6 +44,9 @@ public class gamemanager : MonoBehaviour
 
         InitializeEnemyCountFromSpawner();
         UpdateTowerHPUI();
+
+        if (startPopUp != null)
+            startPopUp.SetActive(false); 
     }
 
     private void Start()
@@ -48,6 +55,18 @@ public class gamemanager : MonoBehaviour
         {
             audioManager.Instance.musicSource.Stop();
             audioManager.Instance.PlayGameMusic();
+        }
+
+        StartCoroutine(ShowStartPopUpRoutine());
+    }
+
+    private IEnumerator ShowStartPopUpRoutine()
+    {
+        if (startPopUp != null)
+        {
+            startPopUp.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            startPopUp.SetActive(false);
         }
     }
 
