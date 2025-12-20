@@ -21,6 +21,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
+
+    public void OpenCredits()
+    {
+        if (audioManager.Instance != null)
+        {
+           audioManager.Instance.PlayCreditsMusic();
+        }
+
+        SceneManager.LoadScene("Credits");
+    }
     public void Quit()
     {
         Application.Quit();
