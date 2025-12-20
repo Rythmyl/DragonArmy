@@ -15,6 +15,7 @@ public class gamemanager : MonoBehaviour
 
     [Header("----- UI Elements -----")]
     [SerializeField] private TMP_Text gameGoalCountText;
+    [SerializeField] private TMP_Text towerLifeText;
 
     [Header("----- Tower UI Elements -----")]
     [SerializeField] private towerHealth towerHealthComponent;
@@ -22,14 +23,18 @@ public class gamemanager : MonoBehaviour
     [SerializeField] private TMP_Text towerHPText;
 
     [Header("----- Start Pop Up -----")]
-    [SerializeField] private GameObject startPopUp;  
+    [SerializeField] private GameObject startPopUp;
 
     [Header("----- Game State -----")]
     public bool isPaused;
 
-    private int enemyCountFromDragons;
+    [Header("----- Tower Lives Settings -----")]
+    [SerializeField, Range(1, 10)] private int towerLives;
 
+    private int enemyCountFromDragons;
     private float timeScaleOrig;
+
+    private bool gameOver = false;
 
     private void Awake()
     {
@@ -44,9 +49,10 @@ public class gamemanager : MonoBehaviour
 
         InitializeEnemyCountFromSpawner();
         UpdateTowerHPUI();
+        UpdateTowerLifeUI();
 
         if (startPopUp != null)
-            startPopUp.SetActive(false); 
+            startPopUp.SetActive(false);
     }
 
     private void Start()
@@ -72,6 +78,8 @@ public class gamemanager : MonoBehaviour
 
     private void Update()
     {
+        if (gameOver) return;
+
         if (Input.GetButtonDown("Cancel"))
         {
             if (menuActive == null)
@@ -91,23 +99,18 @@ public class gamemanager : MonoBehaviour
 
     private void InitializeEnemyCountFromSpawner()
     {
-        dragonSpawner spawner = Object.FindFirstObjectByType<dragonSpawner>();
+        dragonSpawner spawner = FindFirstObjectByType<dragonSpawner>();
         if (spawner != null)
         {
             int totalQuantity = 0;
-
             foreach (var babySpawner in spawner.babyDragonSpawners)
-            {
                 totalQuantity += babySpawner.quantityToSpawn;
-            }
+
             foreach (var boarSpawner in spawner.dragonBoarSpawners)
-            {
                 totalQuantity += boarSpawner.quantityToSpawn;
-            }
+
             foreach (var bossSpawner in spawner.bossSpawners)
-            {
                 totalQuantity += bossSpawner.quantityToSpawn;
-            }
 
             enemyCountFromDragons = totalQuantity;
         }
@@ -120,7 +123,16 @@ public class gamemanager : MonoBehaviour
 
     private void UpdateGameGoalUI()
     {
-        gameGoalCountText.text = enemyCountFromDragons.ToString("F0");
+        if (gameGoalCountText != null)
+            gameGoalCountText.text = enemyCountFromDragons.ToString("F0");
+    }
+
+    private void UpdateTowerLifeUI()
+    {
+        if (towerLifeText != null)
+        {
+            towerLifeText.text = towerLives.ToString("F0");
+        }
     }
 
     public void updateGameGoal(int amount, bool isDragon = false)
@@ -142,7 +154,36 @@ public class gamemanager : MonoBehaviour
 
     public void DecrementDragonCount()
     {
-        updateGameGoal(-1, isDragon: true);
+        updateGameGoal(-1, true);
+    }
+
+    public void OnTowerDestroyed()
+    {
+        if (gameOver) return;
+
+        towerLives--;
+        UpdateTowerLifeUI();
+
+        statePause();
+        menuActive = menuLose;
+        menuActive.SetActive(true);
+
+        Transform respawnButton = menuLose.transform.Find("Respawn");
+        if (respawnButton != null)
+        {
+            if (towerLives > 0)
+            {
+                respawnButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                respawnButton.gameObject.SetActive(false);
+                gameOver = true;
+
+                if (towerHealthComponent != null)
+                    towerHealthComponent.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void youLose()
@@ -165,6 +206,8 @@ public class gamemanager : MonoBehaviour
 
     public void stateUnpause()
     {
+        if (gameOver) return;
+
         isPaused = false;
         Time.timeScale = timeScaleOrig;
         Cursor.visible = false;
@@ -186,16 +229,26 @@ public class gamemanager : MonoBehaviour
 
         float healthPercent = (float)towerHealthComponent.currentHealth / towerHealthComponent.maxHealth;
         towerHPBar.fillAmount = healthPercent;
+
+        if (towerHealthComponent.currentHealth <= 0 && towerHealthComponent.gameObject.activeSelf)
+        {
+            towerHealthComponent.gameObject.SetActive(false);
+            OnTowerDestroyed();
+        }
     }
 
     public void RespawnTower()
     {
-        if (towerHealthComponent != null)
+        if (gameOver) return;
+
+        if (towerLives > 0 && towerHealthComponent != null)
         {
             towerHealthComponent.SetHealth(towerHealthComponent.maxHealth);
             UpdateTowerHPUI();
 
             towerHealthComponent.gameObject.SetActive(true);
+
+            stateUnpause();
         }
     }
 }
