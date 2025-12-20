@@ -14,19 +14,18 @@ public class Turret : MonoBehaviour
     public static int currentTurn = 0;
     public static int turretCount = 2;
 
-    private float shootCooldown;
+    private static float globalShootCooldown = 0f;
 
     private void Update()
     {
-        shootCooldown -= Time.deltaTime;
+        globalShootCooldown -= Time.deltaTime;
 
         bool canShoot = (gunStatsData.unlimitedAmmo || gunStatsData.ammoCur > 0);
 
-        if (shootCooldown <= 0f && (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && currentTurn == turretID && canShoot)
+        if (globalShootCooldown <= 0f && Input.GetMouseButton(0) && currentTurn == turretID && canShoot)
         {
             Shoot();
-            shootCooldown = gunStatsData.shootRate;
-
+            globalShootCooldown = gunStatsData.shootRate;
             currentTurn = (currentTurn + 1) % turretCount;
         }
     }

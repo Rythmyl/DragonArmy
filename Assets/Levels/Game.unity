@@ -1294,6 +1294,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4893335330388211666, guid: 479319df1af977147acb07ad27ec257d, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 5256d47ff889fd643bff1d1e1e8af626, type: 2}
     - target: {fileID: 6188584504202353749, guid: 479319df1af977147acb07ad27ec257d, type: 3}
       propertyPath: m_Name
       value: NavMesh Surface
