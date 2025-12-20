@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dragon Slaying Turret Stats
   m_EditorClassIdentifier: Assembly-CSharp::gunStats
   gunModel: {fileID: 12918065252588900, guid: f0f50345eed4f6548b491773d20619b4, type: 3}
-  shootDamage: 1
+  shootDamage: 5
   shootDist: 100
-  shootRate: 0.1
+  shootRate: 0.2
   ammoCur: 500
   ammoMax: 500
   hitEffect: {fileID: 4117341631155570352, guid: e3414d7241e8af54ea44af20b6b93a02, type: 3}
