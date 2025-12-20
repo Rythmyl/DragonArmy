@@ -426,7 +426,7 @@ PrefabInstance:
     - target: {fileID: 4498354012076595142, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 252017974}
+      objectReference: {fileID: 0}
     - target: {fileID: 4826176213123400771, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
       propertyPath: m_Name
       value: Settings Menu
@@ -436,11 +436,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
---- !u!1 &252017974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 753332628980808427, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-  m_PrefabInstance: {fileID: 1452201138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &275993042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,17 +718,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3318195487652872182, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
   m_PrefabInstance: {fileID: 1255607051}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &985345215 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2139201565497557489, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
-  m_PrefabInstance: {fileID: 1255607051}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985345212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d97a16f2523fe4194ddb33535088ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::towerHealth
 --- !u!4 &1167509734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8222820607183467690, guid: d48a53b520b44364d8656f7e8494859d, type: 3}
@@ -925,12 +909,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6632044688008209110, guid: 5d52ba4a1eca27446aee27108a133a0a, type: 3}
   m_PrefabInstance: {fileID: 1350072716}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1447032478 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3753929617156281378, guid: 9adc8062f306f804a949e61ed6e6fdaa, type: 3}
-  m_PrefabInstance: {fileID: 1504818625}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1452201138
+--- !u!1001 &1433085195
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -938,41 +917,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
- Sam'sMess
-    - target: {fileID: 1635767267463298241, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1635767267463298241, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1635767267463298241, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 98.4
-      objectReference: {fileID: 0}
-
-    - target: {fileID: 693849665589790508, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1839313564}
- main
-    - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: towerHealthComponent
-      value: 
-      objectReference: {fileID: 985345215}
-    - target: {fileID: 4477250980197981477, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4477250980197981477, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4477250980197981477, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 176
-      objectReference: {fileID: 0}
     - target: {fileID: 5762342664059952911, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1062,6 +1006,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
+--- !u!4 &1447032478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3753929617156281378, guid: 9adc8062f306f804a949e61ed6e6fdaa, type: 3}
+  m_PrefabInstance: {fileID: 1504818625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1462740392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6778288288473789873, guid: d48a53b520b44364d8656f7e8494859d, type: 3}
@@ -1303,11 +1252,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 436580327194006852, guid: 5d52ba4a1eca27446aee27108a133a0a, type: 3}
   m_PrefabInstance: {fileID: 1350072716}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1839313564 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4826176213123400771, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
-  m_PrefabInstance: {fileID: 222404638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1854172551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1689981350551002797, guid: 5d52ba4a1eca27446aee27108a133a0a, type: 3}
@@ -1431,7 +1375,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1452201138}
+  - {fileID: 1433085195}
   - {fileID: 222404638}
   - {fileID: 442731039}
   - {fileID: 119997001107590892}
