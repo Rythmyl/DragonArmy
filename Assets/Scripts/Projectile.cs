@@ -4,7 +4,6 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 10f;
     public GameObject hitEffectPrefab;
-
     int damage;
 
     public void Init(int dmg)
@@ -20,7 +19,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Tower"))
+        {
+            return;
+        }
+
         IDamage dmg = other.GetComponent<IDamage>();
+
         if (dmg != null)
         {
             dmg.takeDamage(damage);
