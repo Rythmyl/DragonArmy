@@ -54,6 +54,25 @@ public class gamemanager : MonoBehaviour
         if (startPopUp != null)
             startPopUp.SetActive(false);
 
+
+        if (towerHealthComponent != null)
+        {
+            towerHealthComponent.OnHealthChanged += OnTowerHealthChanged;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (towerHealthComponent != null)
+        {
+            towerHealthComponent.OnHealthChanged -= OnTowerHealthChanged;
+        }
+    }
+
+    private void OnTowerHealthChanged(int currentHealth)
+    {
+        UpdateTowerHPUI();
+
         if (PlayerSkills.instance == null)
             gameObject.AddComponent<PlayerSkills>();
 
@@ -62,6 +81,7 @@ public class gamemanager : MonoBehaviour
 
         if (ScoreSystem.instance == null)
             gameObject.AddComponent<ScoreSystem>();
+
     }
 
     private void Start()
@@ -103,6 +123,7 @@ public class gamemanager : MonoBehaviour
                 menuActive = null;
             }
         }
+
         UpdateTowerHPUI();
     }
 
