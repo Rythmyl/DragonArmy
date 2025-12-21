@@ -59,8 +59,8 @@ public class ExpManager : MonoBehaviour
             if (PlayerSkills.instance != null)
                 PlayerSkills.instance.AddSkillPoint();
 
-            if (Upgrademanager.instance != null)
-                Upgrademanager.instance.OnLevelUp();
+            //if (Upgrademanager.instance != null)
+            //    Upgrademanager.instance.OnLevelUp();
 
             if (ScoreSystem.instance != null)
                 ScoreSystem.instance.AddLvlUpScore();

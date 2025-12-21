@@ -194,23 +194,23 @@ public class dragonAI : MonoBehaviour, IDamage
             if (buffmanager != null)
                 buffmanager.DropBuff(transform.position);
 
-            if (PlayerSkills.instance != null)
-            {
-                float bombChance PlayerSkills.instance.GetBombDropChance();
-                if (Random.value <= bombChance)
-                {
-                    DropBomb();
-                }
-            }
+            //if (PlayerSkills.instance != null)
+            //{
+            //    float bombChance PlayerSkills.instance.GetBombDropChance();
+            //    if (Random.value <= bombChance)
+            //    {
+            //        DropBomb();
+            //    }
+            //}
 
-            if (PlayerSkills.instance != null)
-            {
-                float potionChance PlayerSkills.instance.GetPotionDropChance();
-                if (Random.value <= potionChance)
-                {
-                    DropPotion();
-                }
-            }
+            //if (PlayerSkills.instance != null)
+            //{
+            //    float potionChance PlayerSkills.instance.GetPotionDropChance();
+            //    if (Random.value <= potionChance)
+            //    {
+            //        DropPotion();
+            //    }
+            //}
             gamemanager.instance.updateGameGoal(-1, isDragon: true);
             agent.isStopped = true;
             Destroy(gameObject);

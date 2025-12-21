@@ -76,8 +76,8 @@ public class gamemanager : MonoBehaviour
         if (PlayerSkills.instance == null)
             gameObject.AddComponent<PlayerSkills>();
 
-        if (Upgrademanager.instance == null)
-            gameObject.AddComponent<Upgrademanager>();
+        //if (Upgrademanager.instance == null)
+        //    gameObject.AddComponent<Upgrademanager>();
 
         if (ScoreSystem.instance == null)
             gameObject.AddComponent<ScoreSystem>();
