@@ -448,10 +448,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498354012076595142, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4826176213123400771, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
       propertyPath: m_Name
       value: Settings Menu
@@ -538,6 +534,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e64c3e80ff3929438e57c44bfe70080, type: 3}
+--- !u!1 &309067872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4826176213123400771, guid: 4b3aecdfa6104f24b9510c91d5916663, type: 3}
+  m_PrefabInstance: {fileID: 222404638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &442731039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1036,6 +1037,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693849665589790508, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 309067872}
     - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: towerHealthComponent
       value: 
