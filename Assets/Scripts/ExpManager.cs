@@ -55,8 +55,18 @@ public class ExpManager : MonoBehaviour
         {
             currLvl++;
             UpdateLvl();
+
+            if (PlayerSkills.instance != null)
+                PlayerSkills.instance.AddSkillPoint();
+
+            if (Upgrademanager.instance != null)
+                Upgrademanager.instance.OnLevelUp();
+
+            if (ScoreSystem.instance != null)
+                ScoreSystem.instance.AddLvlUpScore();
+
         }
-    
+
     }
 
     void UpdateLvl()
