@@ -54,7 +54,6 @@ public class gamemanager : MonoBehaviour
         if (startPopUp != null)
             startPopUp.SetActive(false);
 
-
         if (towerHealthComponent != null)
         {
             towerHealthComponent.OnHealthChanged += OnTowerHealthChanged;
@@ -72,16 +71,6 @@ public class gamemanager : MonoBehaviour
     private void OnTowerHealthChanged(int currentHealth)
     {
         UpdateTowerHPUI();
-
-        if (PlayerSkills.instance == null)
-            gameObject.AddComponent<PlayerSkills>();
-
-        //if (Upgrademanager.instance == null)
-        //    gameObject.AddComponent<Upgrademanager>();
-
-        if (ScoreSystem.instance == null)
-            gameObject.AddComponent<ScoreSystem>();
-
     }
 
     private void Start()
@@ -259,6 +248,8 @@ public class gamemanager : MonoBehaviour
 
         float healthPercent = (float)towerHealthComponent.currentHealth / towerHealthComponent.maxHealth;
         towerHPBar.fillAmount = healthPercent;
+
+        towerHPText.text = $"{towerHealthComponent.currentHealth} / {towerHealthComponent.maxHealth}";
 
         if (towerHealthComponent.currentHealth <= 0 && towerHealthComponent.gameObject.activeSelf)
         {
