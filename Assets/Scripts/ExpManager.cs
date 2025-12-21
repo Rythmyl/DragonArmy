@@ -1,9 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Rendering;
 
 public class ExpManager : MonoBehaviour
 {
@@ -11,7 +8,8 @@ public class ExpManager : MonoBehaviour
     public static ExpManager instance;
     [SerializeField] AnimationCurve ExpCurve;
 
-    int currLvl, totalExp;
+    public int currLvl;
+    int totalExp;
     int prevLvlExp, nextLvlExp;
 
     [SerializeField] TextMeshProUGUI lvlText;
