@@ -718,6 +718,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3318195487652872182, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
   m_PrefabInstance: {fileID: 1255607051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &985345214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2139201565497557489, guid: 5a97388b195ab2241b7fc8d37223c0d6, type: 3}
+  m_PrefabInstance: {fileID: 1255607051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985345212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d97a16f2523fe4194ddb33535088ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::towerHealth
 --- !u!4 &1167509734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8222820607183467690, guid: d48a53b520b44364d8656f7e8494859d, type: 3}
@@ -917,6 +928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3014641849036559750, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
+      propertyPath: towerHealthComponent
+      value: 
+      objectReference: {fileID: 985345214}
     - target: {fileID: 5762342664059952911, guid: a67da849ff87f5a438ff2a2b9b7456d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
