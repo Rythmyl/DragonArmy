@@ -53,6 +53,15 @@ public class gamemanager : MonoBehaviour
 
         if (startPopUp != null)
             startPopUp.SetActive(false);
+
+        if (PlayerSkills.instance == null)
+            gameObject.AddComponent<PlayerSkills>();
+
+        if (Upgrademanager.instance == null)
+            gameObject.AddComponent<Upgrademanager>();
+
+        if (ScoreSystem.instance == null)
+            gameObject.AddComponent<ScoreSystem>();
     }
 
     private void Start()
