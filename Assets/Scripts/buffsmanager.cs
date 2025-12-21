@@ -5,7 +5,7 @@ public class buffs : MonoBehaviour
 {
     public enum BuffType { Resistance, Heal, Speed, Strength }
 
-    [Range(0f, 1f)][SerializeField] float dropChance = 0.33f;
+    [Range(0f, 1f)] public float dropChance = 0.33f;
     [Range(1, 50)][SerializeField] int healAmo = 15;
     [Range(0.1f, 0.5f)][SerializeField] float resistAmo = 0.25f;
     [Range(1, 5)][SerializeField] int speedBoost = 2;
