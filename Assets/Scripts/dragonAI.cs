@@ -164,18 +164,21 @@ public class dragonAI : MonoBehaviour, IDamage
         if (weaponCol != null)
             weaponCol.enabled = false;
     }
+
     void DropBomb()
     {
         GameObject bombPickup = Resources.Load<GameObject>("BombPickup");
         if (bombPickup != null)
             Instantiate(bombPickup, transform.position + Vector3.up, Quaternion.identity);
     }
+
     void DropPotion()
     {
         GameObject potionPickup = Resources.Load<GameObject>("PotionPickup");
         if (potionPickup != null)
             Instantiate(potionPickup, transform.position + Vector3.up, Quaternion.identity);
     }
+
     public void takeDamage(int amount)
     {
         if (isDead) return;
@@ -190,6 +193,7 @@ public class dragonAI : MonoBehaviour, IDamage
                 ExpManager.instance.AddExp(25);
             if (ScoreSystem.instance != null)
                 ScoreSystem.instance.AddKillScore();
+
             buffs buffmanager = FindFirstObjectByType<buffs>();
             if (buffmanager != null)
                 buffmanager.DropBuff(transform.position);

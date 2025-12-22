@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ExpManager : MonoBehaviour
 {
-
     public static ExpManager instance;
     [SerializeField] AnimationCurve ExpCurve;
 
@@ -15,7 +14,6 @@ public class ExpManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI lvlText;
     [SerializeField] TextMeshProUGUI expText;
     [SerializeField] Image expFill;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -38,7 +36,6 @@ public class ExpManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void AddExp (int amount)
@@ -64,15 +61,13 @@ public class ExpManager : MonoBehaviour
 
             if (ScoreSystem.instance != null)
                 ScoreSystem.instance.AddLvlUpScore();
-
         }
-
     }
 
     void UpdateLvl()
     {
         prevLvlExp = Mathf.Max(0, (int)ExpCurve.Evaluate(currLvl));
-        nextLvlExp = Mathf.Max(prevLvlExp + 1, (int)ExpCurve .Evaluate(currLvl + 1));
+        nextLvlExp = Mathf.Max(prevLvlExp + 1, (int)ExpCurve.Evaluate(currLvl + 1));
         UpdateInterface();
     }
 
